@@ -10,6 +10,7 @@ import threading
 from tkinter import filedialog, messagebox, ttk
 import customtkinter as ctk
 import tkinter as tk
+from PIL import Image
 
 from config import WINDOW_TITLE, WINDOW_WIDTH, WINDOW_HEIGHT, MANUAL_LINKS_FILE
 from settings_manager import load_settings, save_settings
@@ -31,6 +32,14 @@ class ReconciliationApp(ctk.CTk):
         self.title(WINDOW_TITLE)
         self.geometry(f"{WINDOW_WIDTH}x{WINDOW_HEIGHT}")
         
+        # Устанавливаем иконку приложения если она есть
+        icon_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", "barsik_logo.png")
+        if os.path.exists(icon_path):
+            try:
+                self.iconphoto(False, tk.PhotoImage(file=icon_path))
+            except Exception:
+                pass
+                
         # Загружаем настройки папки по умолчанию
         self.default_folder = load_settings()
         
@@ -69,6 +78,19 @@ class ReconciliationApp(ctk.CTk):
         except Exception as e:
             messagebox.showerror("Ошибка", f"Не удалось сохранить ручные связи:\n{e}")
             
+    def get_asset_image(self, filename: str, size: tuple) -> ctk.CTkImage:
+        """
+        Безопасная загрузка изображения из папки assets
+        """
+        path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "assets", filename)
+        if os.path.exists(path):
+            try:
+                img = Image.open(path)
+                return ctk.CTkImage(light_image=img, dark_image=img, size=size)
+            except Exception:
+                pass
+        return None
+        
     def setup_ui(self):
         # Конфигурируем сетку главного окна
         self.grid_rowconfigure(2, weight=1)
@@ -81,35 +103,44 @@ class ReconciliationApp(ctk.CTk):
         self.ctrl_frame.grid(row=0, column=0, sticky="ew", padx=15, pady=(15, 5))
         self.ctrl_frame.grid_columnconfigure(1, weight=1)
         
+        # Отображение логотипа Барсика в левом верхнем углу
+        logo_img = self.get_asset_image("barsik_logo.png", (48, 48))
+        if logo_img:
+            self.lbl_logo = ctk.CTkLabel(self.ctrl_frame, image=logo_img, text="")
+            self.lbl_logo.grid(row=0, column=0, rowspan=2, padx=(15, 5), pady=10)
+            col_offset = 1
+        else:
+            col_offset = 0
+            
         # Строка 1: Реестр TicketProf (продажи)
         lbl_file_tp = ctk.CTkLabel(self.ctrl_frame, text="Реестр TicketProf (продажи):")
-        lbl_file_tp.grid(row=0, column=0, padx=(15, 5), pady=(10, 5), sticky="w")
+        lbl_file_tp.grid(row=0, column=col_offset, padx=(15, 5), pady=(10, 5), sticky="w")
         
         self.ent_file_tp = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_tp, placeholder_text="Выберите файл TicketProf (или сводный файл)...")
-        self.ent_file_tp.grid(row=0, column=1, padx=5, pady=(10, 5), sticky="ew")
+        self.ent_file_tp.grid(row=0, column=col_offset + 1, padx=5, pady=(10, 5), sticky="ew")
         
         btn_browse_tp = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_tp, width=90)
-        btn_browse_tp.grid(row=0, column=2, padx=(5, 5), pady=(10, 5))
+        btn_browse_tp.grid(row=0, column=col_offset + 2, padx=(5, 5), pady=(10, 5))
         
         self.lbl_tp_check = ctk.CTkLabel(self.ctrl_frame, text="", text_color="#A5D6A7")
-        self.lbl_tp_check.grid(row=0, column=3, padx=(5, 15), pady=(10, 5), sticky="w")
+        self.lbl_tp_check.grid(row=0, column=col_offset + 3, padx=(5, 15), pady=(10, 5), sticky="w")
         
         # Строка 2: Реестр Bars Tour (приходы)
         lbl_file_bt = ctk.CTkLabel(self.ctrl_frame, text="Реестр Bars Tour (приходы):")
-        lbl_file_bt.grid(row=1, column=0, padx=(15, 5), pady=(5, 10), sticky="w")
+        lbl_file_bt.grid(row=1, column=col_offset, padx=(15, 5), pady=(5, 10), sticky="w")
         
         self.ent_file_bt = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_bt, placeholder_text="Оставьте пустым для единого сводного файла...")
-        self.ent_file_bt.grid(row=1, column=1, padx=5, pady=(5, 10), sticky="ew")
+        self.ent_file_bt.grid(row=1, column=col_offset + 1, padx=5, pady=(5, 10), sticky="ew")
         
         btn_browse_bt = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_bt, width=90)
-        btn_browse_bt.grid(row=1, column=2, padx=(5, 5), pady=(5, 10))
+        btn_browse_bt.grid(row=1, column=col_offset + 2, padx=(5, 5), pady=(5, 10))
         
         self.lbl_bt_check = ctk.CTkLabel(self.ctrl_frame, text="", text_color="#A5D6A7")
-        self.lbl_bt_check.grid(row=1, column=3, padx=(5, 15), pady=(5, 10), sticky="w")
+        self.lbl_bt_check.grid(row=1, column=col_offset + 3, padx=(5, 15), pady=(5, 10), sticky="w")
         
         # Действия и Кнопки
         self.actions_frame = ctk.CTkFrame(self.ctrl_frame, fg_color="transparent")
-        self.actions_frame.grid(row=0, column=4, rowspan=2, padx=(15, 15), pady=10, sticky="ns")
+        self.actions_frame.grid(row=0, column=col_offset + 4, rowspan=2, padx=(15, 15), pady=10, sticky="ns")
         
         self.btn_run = ctk.CTkButton(
             self.actions_frame, 
@@ -165,27 +196,30 @@ class ReconciliationApp(ctk.CTk):
         self.tab_view = ctk.CTkTabview(self)
         self.tab_view.grid(row=2, column=0, sticky="nsew", padx=15, pady=5)
         
-        tab_all = self.tab_view.add("📊 Все сопоставления")
+        self.tab_all = self.tab_view.add("📊 Все сопоставления")
         tab_un_tp = self.tab_view.add("🟡 В Тикете, нет в Барсе")
         tab_un_bt = self.tab_view.add("🟡 В Барсе, нет в Тикете")
         tab_links = self.tab_view.add("⛓ Ручное сопоставление")
         tab_help = self.tab_view.add("❓ Справка")
         
         # Настройка сеток во вкладках
-        for tab in [tab_all, tab_un_tp, tab_un_bt, tab_links, tab_help]:
+        for tab in [self.tab_all, tab_un_tp, tab_un_bt, tab_links, tab_help]:
             tab.grid_rowconfigure(0, weight=1)
             tab.grid_columnconfigure(0, weight=1)
             
         self.style_treeviews()
         
         # Вкладка 1: Главная таблица сопоставлений
-        self.tree_all = self.create_treeview(tab_all, [
+        self.tree_all = self.create_treeview(self.tab_all, [
             ("ID", 100), ("Тип услуги", 85), 
             ("Номенклатура TicketProf", 260), ("Стоимость услуг", 110), 
             ("Номенклатура Bars Tour", 260), ("Итого в Барсе", 110), 
             ("Прибыль", 100), ("Метод привязки", 130), ("Статус", 150)
         ])
         self.tree_all.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_all))
+        
+        # Инициализируем пустое состояние (Empty State) в центре таблицы "Все сопоставления"
+        self.setup_empty_state()
         
         # Вкладка 2: В Тикете, нет в Барсе
         self.tree_tp = self.create_treeview(tab_un_tp, [
@@ -227,6 +261,35 @@ class ReconciliationApp(ctk.CTk):
         self.progress_bar.grid(row=0, column=1, sticky="e")
         self.progress_bar.set(0)
         
+    def setup_empty_state(self):
+        """
+        Создает красивое состояние приветствия в центре главной таблицы
+        """
+        self.empty_state_frame = ctk.CTkFrame(self.tab_all, fg_color="#1E1E1E", corner_radius=0)
+        self.empty_state_frame.grid(row=0, column=0, sticky="nsew")
+        
+        self.empty_state_frame.grid_rowconfigure(0, weight=1)
+        self.empty_state_frame.grid_rowconfigure(3, weight=1)
+        self.empty_state_frame.grid_columnconfigure(0, weight=1)
+        
+        # Картинка кота-хранителя
+        guardian_img = self.get_asset_image("barsik_guardian.png", (220, 220))
+        if guardian_img:
+            self.lbl_empty_img = ctk.CTkLabel(self.empty_state_frame, image=guardian_img, text="")
+            self.lbl_empty_img.grid(row=1, column=0, pady=(50, 10))
+            
+        self.lbl_empty_text = ctk.CTkLabel(
+            self.empty_state_frame, 
+            text="Привет! Я Барсик, хранитель финансов туркомпании 🐾\nЗагрузите реестры продаж и приходов, чтобы начать автоматическую сверку!", 
+            font=ctk.CTkFont(family="Arial", size=13, weight="bold"),
+            text_color="#8A8A8A",
+            justify="center"
+        )
+        self.lbl_empty_text.grid(row=2, column=0, pady=10)
+        
+        # Скрываем Treeview до момента первой сверки
+        self.tree_all.grid_remove()
+
     def style_treeviews(self):
         style = ttk.Style()
         style.theme_use("clam")
@@ -321,9 +384,13 @@ class ReconciliationApp(ctk.CTk):
         """
         Создает вкладку интерактивной встроенной справки с разметкой
         """
-        # Текстовое поле для справки
+        tab.grid_columnconfigure(0, weight=3)
+        tab.grid_columnconfigure(1, weight=1)
+        tab.grid_rowconfigure(0, weight=1)
+        
+        # Левая часть: Справочная информация
         help_box = ctk.CTkTextbox(tab, font=ctk.CTkFont(family="Arial", size=11), fg_color="#1E1E1E")
-        help_box.grid(row=0, column=0, sticky="nsew", padx=15, pady=15)
+        help_box.grid(row=0, column=0, sticky="nsew", padx=(15, 5), pady=15)
         
         # Настройка тегов форматирования
         help_box.tag_config("h1", font=("Arial", 14, "bold"), foreground="#90CAF9", spacing1=10, spacing3=5)
@@ -382,6 +449,28 @@ class ReconciliationApp(ctk.CTk):
         
         help_box.configure(state="disabled")
         
+        # Правая часть: Маскот Барсик-пилот
+        pilot_frame = ctk.CTkFrame(tab, fg_color="transparent")
+        pilot_frame.grid(row=0, column=1, sticky="nsew", padx=(5, 15), pady=15)
+        
+        pilot_frame.grid_rowconfigure(0, weight=1)
+        pilot_frame.grid_rowconfigure(2, weight=1)
+        pilot_frame.grid_columnconfigure(0, weight=1)
+        
+        pilot_img = self.get_asset_image("barsik_pilot.png", (180, 180))
+        if pilot_img:
+            self.lbl_pilot_img = ctk.CTkLabel(pilot_frame, image=pilot_img, text="")
+            self.lbl_pilot_img.grid(row=0, column=0, sticky="s", pady=10)
+            
+        self.lbl_pilot_caption = ctk.CTkLabel(
+            pilot_frame, 
+            text="Барсик-пилот желает вам\nлегкой сверки! ✈️🐾", 
+            font=ctk.CTkFont(family="Arial", size=11, italic=True),
+            text_color="#8A8A8A",
+            justify="center"
+        )
+        self.lbl_pilot_caption.grid(row=1, column=0, sticky="n", pady=5)
+        
     def browse_tp(self):
         file = filedialog.askopenfilename(
             initialdir=self.default_folder,
@@ -393,11 +482,9 @@ class ReconciliationApp(ctk.CTk):
             self.default_folder = os.path.dirname(file)
             save_settings(self.default_folder)
             
-            # Показываем имя файла и галочку
             fname = os.path.basename(file)
             self.lbl_tp_check.configure(text=f"✅ {fname[:20]}...")
             
-            # Предлагаем пути сохранения
             base = os.path.splitext(file)[0]
             self.output_excel.set(f"{base}_сопоставлено.xlsx")
             self.output_word.set(f"{base}_акт_сверки.docx")
@@ -414,13 +501,11 @@ class ReconciliationApp(ctk.CTk):
             self.default_folder = os.path.dirname(file)
             save_settings(self.default_folder)
             
-            # Показываем имя файла и галочку
             fname = os.path.basename(file)
             self.lbl_bt_check.configure(text=f"✅ {fname[:20]}...")
             self.check_ready_state()
             
     def check_ready_state(self):
-        # Кнопка Запуск анализа активна, если выбран хотя бы TicketProf (сводный файл)
         if self.input_file_tp.get():
             self.btn_run.configure(state="normal")
             
@@ -436,12 +521,10 @@ class ReconciliationApp(ctk.CTk):
         self.lbl_status.configure(text="Чтение и парсинг файлов Excel...")
         self.progress_bar.set(0.2)
         
-        # Запуск сверки в фоне
         threading.Thread(target=self.run_reconciliation_thread, args=(tp_path, bt_path), daemon=True).start()
         
     def run_reconciliation_thread(self, tp_path: str, bt_path: str):
         try:
-            # 1. Загрузка
             path_bt_param = bt_path if bt_path and os.path.exists(bt_path) else None
             tp_items, bt_items = load_data(tp_path, path_bt_param)
             self.tp_items = tp_items
@@ -450,12 +533,10 @@ class ReconciliationApp(ctk.CTk):
             self.lbl_status.configure(text="Запущен интеллектуальный поиск...")
             self.progress_bar.set(0.5)
             
-            # 2. Сопоставление
             self.matches, self.unmatched_tp, self.unmatched_bt = match_records(
                 tp_items, bt_items, self.manual_links
             )
             
-            # 3. Финансовый расчет
             self.summary = calculate_reconciliation(self.tp_items, self.bt_items, self.matches)
             
             self.after(0, self.on_analysis_complete)
@@ -474,28 +555,26 @@ class ReconciliationApp(ctk.CTk):
         total_str = f"{len(self.tp_items) + len(self.bt_items)} ({len(self.tp_items)} TP / {len(self.bt_items)} BT)"
         self.kpi_total.update_value(total_str)
         
-        # Стоимость услуг
         self.kpi_rate.update_value(f"{self.summary.total_tp_sum:,.2f} руб.")
-        # Итого в Барсе
         self.kpi_profit.update_value(f"{self.summary.total_bt_sum:,.2f} руб.")
-        # Прибыль
         self.kpi_discrepancy.update_value(f"{self.summary.total_profit:,.2f} руб.")
         
-        # Заполняем таблицы
+        # Скрываем empty state и отображаем Treeview
+        if self.empty_state_frame:
+            self.empty_state_frame.grid_remove()
+        self.tree_all.grid()
+        
         self.populate_grids()
         
     def populate_grids(self):
-        # Очистка
         for tree in [self.tree_all, self.tree_tp, self.tree_bt, self.tree_manual_tp, self.tree_manual_bt]:
             for row in tree.get_children():
                 tree.delete(row)
                 
-        # Настройка тегов строк для раскраски
         self.tree_all.tag_configure("matched", background="#1E3E20", foreground="#A5D6A7")
         self.tree_all.tag_configure("unmatched", background="#3E2723", foreground="#FFAB91")
         self.tree_all.tag_configure("discrepancy", background="#4A148C", foreground="#E1BEE7")
         
-        # 1. Заполняем совпадения
         for tp, bt, method, score in self.matches:
             status_text = tp.get_status_text(bt)
             tag = "discrepancy" if status_text in ["Нетипичная маржа", "Несовпадение по суммам"] else "matched"
@@ -508,7 +587,6 @@ class ReconciliationApp(ctk.CTk):
                 method, status_text
             ), tags=(tag,))
             
-        # Добавляем нераспределенные в общую таблицу
         for tp in self.unmatched_tp:
             tp_id = list(tp.ids)[0] if tp.ids else "N/A"
             status_text = tp.get_status_text(None)
@@ -529,7 +607,6 @@ class ReconciliationApp(ctk.CTk):
                 "Не сопоставлено", status_text
             ), tags=("unmatched",))
             
-        # 2. Вкладки "В Тикете, нет в Барсе"
         for tp in self.unmatched_tp:
             tp_id = list(tp.ids)[0] if tp.ids else "N/A"
             self.tree_tp.insert("", "end", values=(
@@ -537,7 +614,6 @@ class ReconciliationApp(ctk.CTk):
             ))
             self.tree_manual_tp.insert("", "end", values=(tp.row, tp.desc, f"{tp.allocated_amount:,.2f}"))
             
-        # 3. Вкладка "В Барсе, нет в Тикете"
         for bt in self.unmatched_bt:
             bt_id = list(bt.ids)[0] if bt.ids else "N/A"
             self.tree_bt.insert("", "end", values=(
@@ -545,7 +621,6 @@ class ReconciliationApp(ctk.CTk):
             ))
             self.tree_manual_bt.insert("", "end", values=(bt.row, bt.desc, f"{bt.amount:,.2f}"))
             
-        # Обновляем текстовый блок активных связей
         self.update_manual_links_list()
         
     def update_manual_links_list(self):
@@ -616,11 +691,9 @@ class ReconciliationApp(ctk.CTk):
         tp_item = next(item for item in self.tp_items if item.row == tp_row)
         bt_item = next(item for item in self.bt_items if item.row == bt_row)
         
-        # Добавляем в словарь связей
         self.manual_links[tp_item.clean_desc] = bt_item.clean_desc
         self.save_manual_links()
         
-        # Перезапуск анализа
         self.start_analysis()
         messagebox.showinfo("Готово", "Связь успешно создана!")
         
