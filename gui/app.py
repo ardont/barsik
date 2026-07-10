@@ -389,8 +389,24 @@ class ReconciliationApp(ctk.CTk):
         tab.grid_rowconfigure(0, weight=1)
         
         # Левая часть: Справочная информация
-        help_box = ctk.CTkTextbox(tab, font=ctk.CTkFont(family="Arial", size=11), fg_color="#1E1E1E")
-        help_box.grid(row=0, column=0, sticky="nsew", padx=(15, 5), pady=15)
+        help_box = tk.Text(
+            tab, 
+            font=("Arial", 10), 
+            bg="#1E1E1E", 
+            fg="#CCCCCC", 
+            insertbackground="#FFFFFF",
+            relief="flat", 
+            bd=0, 
+            highlightthickness=0,
+            padx=15,
+            pady=15
+        )
+        help_box.grid(row=0, column=0, sticky="nsew", padx=(15, 0), pady=15)
+        
+        # Добавляем скроллбар
+        help_sb = ctk.CTkScrollbar(tab, command=help_box.yview)
+        help_sb.grid(row=0, column=0, sticky="nse", padx=(0, 5), pady=15)
+        help_box.configure(yscrollcommand=help_sb.set)
         
         # Настройка тегов форматирования
         help_box.tag_config("h1", font=("Arial", 14, "bold"), foreground="#90CAF9", spacing1=10, spacing3=5)
