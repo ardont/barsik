@@ -481,7 +481,7 @@ class ReconciliationApp(ctk.CTk):
         self.lbl_pilot_caption = ctk.CTkLabel(
             pilot_frame, 
             text="Барсик-пилот желает вам\nлегкой сверки! ✈️🐾", 
-            font=ctk.CTkFont(family="Arial", size=11, italic=True),
+            font=ctk.CTkFont(family="Arial", size=11, slant="italic"),
             text_color="#8A8A8A",
             justify="center"
         )
