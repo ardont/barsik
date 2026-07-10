@@ -9,6 +9,10 @@ from collections import defaultdict
 from typing import List, Tuple, Any, Optional
 from models import ServiceItem
 from engine.normalizer import clean_text, classify_service, extract_identifiers
+from config import (
+    COL_MAP_SINGLE_TP, COL_MAP_SINGLE_BT,
+    COL_MAP_DOUBLE_TP, COL_MAP_DOUBLE_BT
+)
 
 def to_float(val: Any) -> Optional[float]:
     """
@@ -26,129 +30,45 @@ def to_float(val: Any) -> Optional[float]:
     except (ValueError, TypeError):
         return None
 
-def load_data(file_path: str) -> Tuple[List[ServiceItem], List[ServiceItem]]:
+def load_data(tp_path: str, bt_path: Optional[str] = None) -> Tuple[List[ServiceItem], List[ServiceItem]]:
     """
-    Загружает файл Excel и разбирает его на два потока:
-    - TicketProf (Колонки A-D)
-    - Bars Tour (Колонки H-M)
-    Выполняет аллокацию отрицательных сумм корректировок.
+    Загружает файлы Excel и разбирает их на два потока: TicketProf и Bars Tour.
+    Поддерживает:
+    - Сводный режим (bt_path не передан): парсинг TP из A-D, BT из H-M в файле tp_path.
+    - Раздельный режим (переданы оба пути): парсинг TP из tp_path (A-D), BT из bt_path (A-F).
     """
-    import re # Нужен для регулярки в to_float
     
-    wb = openpyxl.load_workbook(file_path, data_only=True)
-    
-    # Ищем лист "Лист2", иначе берем первый активный
-    if "Лист2" in wb.sheetnames:
-        ws = wb["Лист2"]
-    else:
-        ws = wb.active
-        
     tp_items: List[ServiceItem] = []
     bt_items: List[ServiceItem] = []
-    
-    # Вспомогательные переменные для отслеживания текущих заголовков документов
-    current_doc_tp = None
-    current_date_tp = None
-    current_doc_tp_row = None
-    current_doc_tp_amt = 0.0
-    
-    current_doc_bt = None
-    current_date_bt = None
-    current_doc_bt_row = None
-    current_doc_bt_amt = 0.0
-    
-    # Карта сумм документов TicketProf по ключу (date, doc)
     doc_sums = {}
     
-    # Построчный разбор
-    for r in range(2, ws.max_row + 1):
-        # --- Разбор левой стороны (TicketProf) ---
-        val_a = ws.cell(row=r, column=1).value
-        val_b = ws.cell(row=r, column=2).value
-        val_c = ws.cell(row=r, column=3).value
-        val_d = ws.cell(row=r, column=4).value
+    # Режим сводного файла
+    if not bt_path:
+        wb = openpyxl.load_workbook(tp_path, data_only=True)
+        ws = wb["Лист2"] if "Лист2" in wb.sheetnames else wb.active
         
-        is_header_tp = False
-        if val_a is not None and val_b is not None:
-            if any(kw in str(val_b) for kw in ["Продажа", "Оплата", "Возврат", "Корректировка"]):
-                is_header_tp = True
-                
-        if is_header_tp:
-            current_date_tp = str(val_a).strip()
-            current_doc_tp = str(val_b).strip()
-            current_doc_tp_row = r
-            
-            c_val = to_float(val_c)
-            d_val = to_float(val_d)
-            current_doc_tp_amt = c_val if c_val is not None else (-d_val if d_val is not None else 0.0)
-            doc_sums[(current_date_tp, current_doc_tp)] = current_doc_tp_amt
-        elif val_a is not None and val_b is None:
-            desc = str(val_a).strip()
-            if not any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Итого"]):
-                c_val = to_float(val_c)
-                d_val = to_float(val_d)
-                amt = c_val if c_val is not None else (-d_val if d_val is not None else 0.0)
-                tp_items.append(ServiceItem(
-                    row=r,
-                    date=current_date_tp or "",
-                    doc=current_doc_tp or "",
-                    desc=desc,
-                    clean_desc=clean_text(desc),
-                    service_type=classify_service(desc),
-                    amount=amt,
-                    allocated_amount=amt,
-                    ids=extract_identifiers(desc),
-                    source="TP"
-                ))
-                
-        # --- Разбор правой стороны (Bars Tour) ---
-        val_h = ws.cell(row=r, column=8).value
-        val_i = ws.cell(row=r, column=9).value
-        val_j = ws.cell(row=r, column=10).value
-        val_l = ws.cell(row=r, column=12).value
-        val_m = ws.cell(row=r, column=13).value
+        # Разбор TicketProf (колонки A-D по COL_MAP_SINGLE_TP)
+        tp_items, doc_sums = parse_tp_sheet(ws, COL_MAP_SINGLE_TP)
         
-        is_header_bt = False
-        if val_h is not None and val_i is not None:
-            if any(kw in str(val_i) for kw in ["Приход", "Оплата", "Возврат", "Принято"]):
-                is_header_bt = True
-                
-        if is_header_bt:
-            current_date_bt = str(val_h).strip()
-            current_doc_bt = str(val_i).strip()
-            current_doc_bt_row = r
-            j_val = to_float(val_j)
-            current_doc_bt_amt = j_val if j_val is not None else 0.0
-        elif val_h is not None and val_i is None:
-            desc = str(val_h).strip()
-            if not any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Итого"]):
-                j_val = to_float(val_j)
-                amt = j_val if j_val is not None else 0.0
-                # Пропускаем строки с нулевой суммой и пустым ID, чтобы не перегружать таблицу
-                if amt == 0.0 and not extract_identifiers(desc):
-                    continue
-                
-                # Безопасное чтение прибыли и нетто
-                profit_val = to_float(val_l)
-                net_val = to_float(val_m)
-                
-                bt_items.append(ServiceItem(
-                    row=r,
-                    date=current_date_bt or "",
-                    doc=current_doc_bt or "",
-                    desc=desc,
-                    clean_desc=clean_text(desc),
-                    service_type=classify_service(desc),
-                    amount=amt,
-                    allocated_amount=amt,
-                    ids=extract_identifiers(desc),
-                    profit=profit_val,
-                    net=net_val,
-                    source="BT"
-                ))
-                
-    wb.close()
+        # Разбор Bars Tour (колонки H-M по COL_MAP_SINGLE_BT)
+        bt_items = parse_bt_sheet(ws, COL_MAP_SINGLE_BT)
+        
+        wb.close()
     
+    # Режим двух раздельных файлов
+    else:
+        # Парсим TicketProf
+        wb_tp = openpyxl.load_workbook(tp_path, data_only=True)
+        ws_tp = wb_tp["Лист2"] if "Лист2" in wb_tp.sheetnames else wb_tp.active
+        tp_items, doc_sums = parse_tp_sheet(ws_tp, COL_MAP_DOUBLE_TP)
+        wb_tp.close()
+        
+        # Парсим Bars Tour
+        wb_bt = openpyxl.load_workbook(bt_path, data_only=True)
+        ws_bt = wb_bt["Лист2"] if "Лист2" in wb_bt.sheetnames else wb_bt.active
+        bt_items = parse_bt_sheet(ws_bt, COL_MAP_DOUBLE_BT)
+        wb_bt.close()
+        
     # --- Алгоритм распределения (аллокации) отрицательных сумм корректировок в TicketProf ---
     tp_groups = defaultdict(list)
     for item in tp_items:
@@ -186,3 +106,104 @@ def load_data(file_path: str) -> Tuple[List[ServiceItem], List[ServiceItem]]:
                     zero_items[-1].allocated_amount += (remaining_to_allocate - total_allocated)
                     
     return tp_items, bt_items
+
+def parse_tp_sheet(ws: Any, col_map: dict) -> Tuple[List[ServiceItem], dict]:
+    """
+    Разбирает лист TicketProf и возвращает список элементов и суммы документов-родителей
+    """
+    tp_items = []
+    doc_sums = {}
+    
+    current_doc = None
+    current_date = None
+    
+    for r in range(2, ws.max_row + 1):
+        val_date = ws.cell(row=r, column=col_map["date"]).value
+        val_doc = ws.cell(row=r, column=col_map["doc"]).value
+        val_debit = ws.cell(row=r, column=col_map["debit"]).value
+        val_credit = ws.cell(row=r, column=col_map["credit"]).value
+        
+        is_header = False
+        if val_date is not None and val_doc is not None:
+            if any(kw in str(val_doc) for kw in ["Продажа", "Оплата", "Возврат", "Корректировка"]):
+                is_header = True
+                
+        if is_header:
+            current_date = str(val_date).strip()
+            current_doc = str(val_doc).strip()
+            c_val = to_float(val_debit)
+            d_val = to_float(val_credit)
+            current_doc_amt = c_val if c_val is not None else (-d_val if d_val is not None else 0.0)
+            doc_sums[(current_date, current_doc)] = current_doc_amt
+        elif val_date is not None and val_doc is None:
+            desc = str(val_date).strip()
+            if not any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Итого"]):
+                c_val = to_float(val_debit)
+                d_val = to_float(val_credit)
+                amt = c_val if c_val is not None else (-d_val if d_val is not None else 0.0)
+                tp_items.append(ServiceItem(
+                    row=r,
+                    date=current_date or "",
+                    doc=current_doc or "",
+                    desc=desc,
+                    clean_desc=clean_text(desc),
+                    service_type=classify_service(desc),
+                    amount=amt,
+                    allocated_amount=amt,
+                    ids=extract_identifiers(desc),
+                    source="TP"
+                ))
+                
+    return tp_items, doc_sums
+
+def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
+    """
+    Разбирает лист Bars Tour и возвращает список элементов
+    """
+    bt_items = []
+    
+    current_doc = None
+    current_date = None
+    
+    for r in range(2, ws.max_row + 1):
+        val_date = ws.cell(row=r, column=col_map["date"]).value
+        val_doc = ws.cell(row=r, column=col_map["doc"]).value
+        val_amt = ws.cell(row=r, column=col_map["amount"]).value
+        val_profit = ws.cell(row=r, column=col_map["profit"]).value
+        val_net = ws.cell(row=r, column=col_map["net"]).value
+        
+        is_header = False
+        if val_date is not None and val_doc is not None:
+            if any(kw in str(val_doc) for kw in ["Приход", "Оплата", "Возврат", "Принято"]):
+                is_header = True
+                
+        if is_header:
+            current_date = str(val_date).strip()
+            current_doc = str(val_doc).strip()
+        elif val_date is not None and val_doc is None:
+            desc = str(val_date).strip()
+            if not any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Итого"]):
+                j_val = to_float(val_amt)
+                amt = j_val if j_val is not None else 0.0
+                if amt == 0.0 and not extract_identifiers(desc):
+                    continue
+                    
+                profit_val = to_float(val_profit)
+                net_val = to_float(val_net)
+                
+                bt_items.append(ServiceItem(
+                    row=r,
+                    date=current_date or "",
+                    doc=current_doc or "",
+                    desc=desc,
+                    clean_desc=clean_text(desc),
+                    service_type=classify_service(desc),
+                    amount=amt,
+                    allocated_amount=amt,
+                    ids=extract_identifiers(desc),
+                    profit=profit_val,
+                    net=net_val,
+                    source="BT"
+                ))
+                
+    return bt_items

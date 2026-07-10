@@ -51,3 +51,13 @@ EXCEL_STYLES = {
     "discrepancy_fill": "FFC7CE",  # Светло-красный
     "border_color": "D9D9D9"
 }
+
+# Карты колонок для гибридного парсинга (1-based индексы)
+# Сводный файл
+COL_MAP_SINGLE_TP = {"date": 1, "doc": 2, "debit": 3, "credit": 4}
+COL_MAP_SINGLE_BT = {"date": 8, "doc": 9, "amount": 10, "profit": 12, "net": 13}
+
+# Раздельные файлы
+COL_MAP_DOUBLE_TP = {"date": 1, "doc": 2, "debit": 3, "credit": 4}
+COL_MAP_DOUBLE_BT = {"date": 1, "doc": 2, "amount": 3, "profit": 5, "net": 6}
+

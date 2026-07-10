@@ -64,11 +64,11 @@ def export_to_excel(
         ("Показатель", "Количество", "Сумма (руб.)"),
         ("Всего операций TicketProf", summary.total_tp_count, summary.total_tp_sum),
         ("Всего операций Bars Tour", summary.total_bt_count, summary.total_bt_sum),
-        ("Успешно сопоставлено (TicketProf)", summary.matched_tp_count, summary.matched_tp_sum),
-        ("Успешно сопоставлено (Bars Tour)", summary.matched_bt_count, summary.matched_bt_sum),
-        ("Не сопоставлено продаж (TicketProf)", summary.unmatched_tp_count, summary.unmatched_tp_sum),
-        ("Не сопоставлено приходов (Bars Tour)", summary.unmatched_bt_count, summary.unmatched_bt_sum),
-        ("Общая рассчитанная маржинальность (прибыль)", "", summary.total_profit)
+        ("Успешно сопоставлено (Стоимость услуг)", summary.matched_tp_count, summary.matched_tp_sum),
+        ("Успешно сопоставлено (Итого в Барсе)", summary.matched_bt_count, summary.matched_bt_sum),
+        ("В Тикете, нет в Барсе", summary.unmatched_tp_count, summary.unmatched_tp_sum),
+        ("В Барсе, нет в Тикете", summary.unmatched_bt_count, summary.unmatched_bt_sum),
+        ("Прибыль (Итого в Барсе - Стоимость услуг)", "", summary.total_profit)
     ]
     
     start_row = 5
@@ -102,9 +102,9 @@ def export_to_excel(
     
     headers = [
         "Сквозной ID", "Тип услуги",
-        "Описание TicketProf", "Сумма TicketProf (нетто)",
-        "Описание Bars Tour", "Сумма Bars Tour (брутто)",
-        "Прибыль (маржа)", "Метод сопоставления", "Статус"
+        "Описание TicketProf", "Стоимость услуг",
+        "Описание Bars Tour", "Итого в Барсе",
+        "Прибыль", "Метод сопоставления", "Статус"
     ]
     
     # Пишем заголовки
@@ -121,22 +121,12 @@ def export_to_excel(
     # Добавляем сначала совпадения
     for tp, bt, method, score in matches:
         profit = bt.amount - tp.allocated_amount
+        status_text = tp.get_status_text(bt)
         
-        # Определяем аномалию/расхождение для отелей
-        is_discrepancy = False
-        if tp.service_type == "Hotel":
-            # Для отелей прибыль должна быть около 10% брутто
-            expected_profit = 0.1 * bt.amount
-            if abs(profit - expected_profit) > 0.01:
-                is_discrepancy = True
-                
-        status_text = "Сверка успешна"
         row_fill = matched_fill
-        if is_discrepancy:
-            status_text = "Нетипичная маржа"
+        if status_text in ["Нетипичная маржа", "Несовпадение по суммам"]:
             row_fill = discrepancy_fill
             
-        # Форматируем ID для вывода
         tp_id = list(tp.ids)[0] if tp.ids else "N/A"
         
         row_data = [
@@ -167,11 +157,13 @@ def export_to_excel(
     # Добавляем нераспределенные TP
     for tp in unmatched_tp:
         tp_id = list(tp.ids)[0] if tp.ids else "N/A"
+        status_text = tp.get_status_text(None)
+        
         row_data = [
             tp_id, tp.service_type,
             tp.desc, tp.allocated_amount,
             "Отсутствует в Bars Tour", 0.0,
-            0.0, "Не сопоставлено", "Только в TicketProf"
+            0.0, "Не сопоставлено", status_text
         ]
         for col_idx, val in enumerate(row_data, 1):
             cell = ws_all.cell(row=row_idx, column=col_idx, value=val)
@@ -192,11 +184,13 @@ def export_to_excel(
     # Добавляем нераспределенные BT
     for bt in unmatched_bt:
         bt_id = list(bt.ids)[0] if bt.ids else "N/A"
+        status_text = bt.get_status_text(None)
+        
         row_data = [
             bt_id, bt.service_type,
             "Отсутствует в TicketProf", 0.0,
             bt.desc, bt.amount,
-            0.0, "Не сопоставлено", "Только в Bars Tour"
+            0.0, "Не сопоставлено", status_text
         ]
         for col_idx, val in enumerate(row_data, 1):
             cell = ws_all.cell(row=row_idx, column=col_idx, value=val)
@@ -232,8 +226,8 @@ def export_to_excel(
     # Копируем красные и желтые строки с основного листа
     for r in range(2, row_idx):
         status_val = ws_all.cell(row=r, column=9).value
-        if status_val in ["Нетипичная маржа", "Только в TicketProf", "Только в Bars Tour"]:
-            row_fill = discrepancy_fill if status_val == "Нетипичная маржа" else unmatched_fill
+        if status_val in ["Нетипичная маржа", "В Тикете, нет в Барсе", "В Барсе, нет в Тикете", "Несовпадение по суммам"]:
+            row_fill = discrepancy_fill if status_val in ["Нетипичная маржа", "Несовпадение по суммам"] else unmatched_fill
             for col_idx in range(1, 10):
                 cell_src = ws_all.cell(row=r, column=col_idx)
                 cell_dst = ws_mismatches.cell(row=m_row_idx, column=col_idx, value=cell_src.value)
@@ -261,7 +255,6 @@ def export_to_excel(
                 val_str = str(cell.value or '')
                 if len(val_str) > max_len:
                     max_len = len(val_str)
-            # Ставим адаптивную ширину с ограничением
             ws_cur.column_dimensions[col_letter].width = min(max(max_len + 3, 12), 45)
             
     wb.save(output_path)

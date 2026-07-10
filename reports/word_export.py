@@ -82,10 +82,10 @@ def export_to_word(
                 run.font.color.rgb = RGBColor(255, 255, 255)
                 
     row_data = [
-        ("Сведения по реестру ООО «ТИКЕТПРОФИ»", str(summary.total_tp_count), f"{summary.total_tp_sum:,.2f}"),
-        ("Сведения по реестру ООО «БАРС ТУР»", str(summary.total_bt_count), f"{summary.total_bt_sum:,.2f}"),
+        ("Стоимость услуг (ООО «ТИКЕТПРОФИ»)", str(summary.total_tp_count), f"{summary.total_tp_sum:,.2f}"),
+        ("Итого в Барсе (ООО «БАРС ТУР»)", str(summary.total_bt_count), f"{summary.total_bt_sum:,.2f}"),
         ("Сопоставленные (согласованные) позиции", str(summary.matched_tp_count), f"{summary.matched_tp_sum:,.2f}"),
-        ("Выявленная расчетная прибыль (маржа)", "", f"{summary.total_profit:,.2f}")
+        ("Прибыль (Итого в Барсе - Стоимость услуг)", "", f"{summary.total_profit:,.2f}")
     ]
     
     for r_idx, (p_name, count, total) in enumerate(row_data, 1):
@@ -124,7 +124,7 @@ def export_to_word(
         disc_table.style = 'Table Grid'
         
         # Заголовок таблицы расхождений
-        headers_disc = ["№", "Система происхождения", "Тип услуги", "Описание услуги", "Сумма (руб.)"]
+        headers_disc = ["№", "Статус / Категория расхождения", "Тип услуги", "Описание услуги", "Сумма (руб.)"]
         hdr_cells = disc_table.rows[0].cells
         for i, title in enumerate(headers_disc):
             hdr_cells[i].text = title
@@ -141,7 +141,7 @@ def export_to_word(
         for tp in unmatched_tp:
             row_cells = disc_table.add_row().cells
             row_cells[0].text = str(counter)
-            row_cells[1].text = "TicketProf"
+            row_cells[1].text = tp.get_status_text(None)
             row_cells[2].text = tp.service_type
             row_cells[3].text = tp.desc
             row_cells[4].text = f"{tp.allocated_amount:,.2f}"
@@ -161,7 +161,7 @@ def export_to_word(
         for bt in unmatched_bt:
             row_cells = disc_table.add_row().cells
             row_cells[0].text = str(counter)
-            row_cells[1].text = "Bars Tour"
+            row_cells[1].text = bt.get_status_text(None)
             row_cells[2].text = bt.service_type
             row_cells[3].text = bt.desc
             row_cells[4].text = f"{bt.amount:,.2f}"

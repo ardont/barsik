@@ -9,6 +9,7 @@ import json
 import threading
 from tkinter import filedialog, messagebox, ttk
 import customtkinter as ctk
+import tkinter as tk
 
 from config import WINDOW_TITLE, WINDOW_WIDTH, WINDOW_HEIGHT, MANUAL_LINKS_FILE
 from settings_manager import load_settings, save_settings
@@ -33,8 +34,9 @@ class ReconciliationApp(ctk.CTk):
         # Загружаем настройки папки по умолчанию
         self.default_folder = load_settings()
         
-        # Переменные путей
-        self.input_file = ctk.StringVar()
+        # Переменные путей файлов
+        self.input_file_tp = ctk.StringVar()
+        self.input_file_bt = ctk.StringVar()
         self.output_excel = ctk.StringVar()
         self.output_word = ctk.StringVar()
         
@@ -79,45 +81,63 @@ class ReconciliationApp(ctk.CTk):
         self.ctrl_frame.grid(row=0, column=0, sticky="ew", padx=15, pady=(15, 5))
         self.ctrl_frame.grid_columnconfigure(1, weight=1)
         
-        # Выбор исходного файла
-        lbl_file = ctk.CTkLabel(self.ctrl_frame, text="Исходный реестр Excel:")
-        lbl_file.grid(row=0, column=0, padx=(15, 5), pady=10, sticky="w")
+        # Строка 1: Реестр TicketProf (продажи)
+        lbl_file_tp = ctk.CTkLabel(self.ctrl_frame, text="Реестр TicketProf (продажи):")
+        lbl_file_tp.grid(row=0, column=0, padx=(15, 5), pady=(10, 5), sticky="w")
         
-        self.ent_file = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file)
-        self.ent_file.grid(row=0, column=1, padx=5, pady=10, sticky="ew")
+        self.ent_file_tp = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_tp, placeholder_text="Выберите файл TicketProf (или сводный файл)...")
+        self.ent_file_tp.grid(row=0, column=1, padx=5, pady=(10, 5), sticky="ew")
         
-        btn_browse = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_input, width=90)
-        btn_browse.grid(row=0, column=2, padx=(5, 15), pady=10)
+        btn_browse_tp = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_tp, width=90)
+        btn_browse_tp.grid(row=0, column=2, padx=(5, 5), pady=(10, 5))
         
-        # Кнопки действий
+        self.lbl_tp_check = ctk.CTkLabel(self.ctrl_frame, text="", text_color="#A5D6A7")
+        self.lbl_tp_check.grid(row=0, column=3, padx=(5, 15), pady=(10, 5), sticky="w")
+        
+        # Строка 2: Реестр Bars Tour (приходы)
+        lbl_file_bt = ctk.CTkLabel(self.ctrl_frame, text="Реестр Bars Tour (приходы):")
+        lbl_file_bt.grid(row=1, column=0, padx=(15, 5), pady=(5, 10), sticky="w")
+        
+        self.ent_file_bt = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_bt, placeholder_text="Оставьте пустым для единого сводного файла...")
+        self.ent_file_bt.grid(row=1, column=1, padx=5, pady=(5, 10), sticky="ew")
+        
+        btn_browse_bt = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_bt, width=90)
+        btn_browse_bt.grid(row=1, column=2, padx=(5, 5), pady=(5, 10))
+        
+        self.lbl_bt_check = ctk.CTkLabel(self.ctrl_frame, text="", text_color="#A5D6A7")
+        self.lbl_bt_check.grid(row=1, column=3, padx=(5, 15), pady=(5, 10), sticky="w")
+        
+        # Действия и Кнопки
+        self.actions_frame = ctk.CTkFrame(self.ctrl_frame, fg_color="transparent")
+        self.actions_frame.grid(row=0, column=4, rowspan=2, padx=(15, 15), pady=10, sticky="ns")
+        
         self.btn_run = ctk.CTkButton(
-            self.ctrl_frame, 
-            text="▶ Сверить данные", 
+            self.actions_frame, 
+            text="▶ Запустить анализ", 
             fg_color="#2E7D32", 
             hover_color="#1B5E20",
-            command=self.start_analysis
+            command=self.start_analysis,
+            width=150
         )
-        self.btn_run.grid(row=0, column=3, padx=5, pady=10)
+        self.btn_run.pack(side="top", pady=2)
         
         self.btn_export_xls = ctk.CTkButton(
-            self.ctrl_frame, 
+            self.actions_frame, 
             text="📊 Экспорт Excel", 
             state="disabled",
-            command=self.export_excel
+            command=self.export_excel,
+            width=150
         )
-        self.btn_export_xls.grid(row=0, column=4, padx=5, pady=10)
+        self.btn_export_xls.pack(side="top", pady=2)
         
         self.btn_export_doc = ctk.CTkButton(
-            self.ctrl_frame, 
+            self.actions_frame, 
             text="📋 Экспорт Word", 
             state="disabled",
-            command=self.export_word
+            command=self.export_word,
+            width=150
         )
-        self.btn_export_doc.grid(row=0, column=5, padx=(5, 15), pady=10)
-        
-        # Переключатель темы
-        self.btn_theme = ctk.CTkButton(self.ctrl_frame, text="🌓 Тема", width=60, command=self.toggle_theme)
-        self.btn_theme.grid(row=0, column=6, padx=(0, 15), pady=10)
+        self.btn_export_doc.pack(side="top", pady=2)
         
         # ----------------------------------------------------
         # 2. Панель KPI показателей
@@ -130,13 +150,13 @@ class ReconciliationApp(ctk.CTk):
         self.kpi_total = KPICard(self.kpi_frame, "ВСЕГО ПОЗИЦИЙ", "0 (0 TP / 0 BT)")
         self.kpi_total.grid(row=0, column=0, padx=(0, 5), sticky="ew")
         
-        self.kpi_rate = KPICard(self.kpi_frame, "ПРОЦЕНТ СОВПАДЕНИЙ", "0.0%")
+        self.kpi_rate = KPICard(self.kpi_frame, "СТОИМОСТЬ УСЛУГ (TP)", "0.00 руб.")
         self.kpi_rate.grid(row=0, column=1, padx=5, sticky="ew")
         
-        self.kpi_profit = KPICard(self.kpi_frame, "ИТОГОВАЯ ПРИБЫЛЬ", "0.00 руб.", text_color="#A5D6A7")
+        self.kpi_profit = KPICard(self.kpi_frame, "ИТОГО В БАРСЕ (BT)", "0.00 руб.", text_color="#90CAF9")
         self.kpi_profit.grid(row=0, column=2, padx=5, sticky="ew")
         
-        self.kpi_discrepancy = KPICard(self.kpi_frame, "СУММА РАСХОЖДЕНИЙ", "0.00 руб.", text_color="#EF9A9A")
+        self.kpi_discrepancy = KPICard(self.kpi_frame, "ПРИБЫЛЬ", "0.00 руб.", text_color="#A5D6A7")
         self.kpi_discrepancy.grid(row=0, column=3, padx=(5, 0), sticky="ew")
         
         # ----------------------------------------------------
@@ -146,43 +166,46 @@ class ReconciliationApp(ctk.CTk):
         self.tab_view.grid(row=2, column=0, sticky="nsew", padx=15, pady=5)
         
         tab_all = self.tab_view.add("📊 Все сопоставления")
-        tab_un_tp = self.tab_view.add("❌ Только в TicketProf")
-        tab_un_bt = self.tab_view.add("❌ Только в Bars Tour")
+        tab_un_tp = self.tab_view.add("🟡 В Тикете, нет в Барсе")
+        tab_un_bt = self.tab_view.add("🟡 В Барсе, нет в Тикете")
         tab_links = self.tab_view.add("⛓ Ручное сопоставление")
+        tab_help = self.tab_view.add("❓ Справка")
         
         # Настройка сеток во вкладках
-        for tab in [tab_all, tab_un_tp, tab_un_bt, tab_links]:
+        for tab in [tab_all, tab_un_tp, tab_un_bt, tab_links, tab_help]:
             tab.grid_rowconfigure(0, weight=1)
             tab.grid_columnconfigure(0, weight=1)
             
-        # Стилизуем стандартный Treeview для темной темы
         self.style_treeviews()
         
         # Вкладка 1: Главная таблица сопоставлений
         self.tree_all = self.create_treeview(tab_all, [
-            ("ID", 100), ("Type", 80), 
-            ("TP Desc", 260), ("TP Amt", 110), 
-            ("BT Desc", 260), ("BT Amt", 110), 
-            ("Profit", 100), ("Method", 120), ("Status", 120)
+            ("ID", 100), ("Тип услуги", 85), 
+            ("Номенклатура TicketProf", 260), ("Стоимость услуг", 110), 
+            ("Номенклатура Bars Tour", 260), ("Итого в Барсе", 110), 
+            ("Прибыль", 100), ("Метод привязки", 130), ("Статус", 150)
         ])
         self.tree_all.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_all))
         
-        # Вкладка 2: Нераспределенные TicketProf
+        # Вкладка 2: В Тикете, нет в Барсе
         self.tree_tp = self.create_treeview(tab_un_tp, [
-            ("Row", 60), ("Date", 90), ("Doc", 180),
-            ("Nomenclature", 450), ("Type", 100), ("Amount", 120), ("ID", 120)
+            ("Строка", 60), ("Дата", 90), ("Документ", 180),
+            ("Номенклатура TicketProf", 450), ("Тип услуги", 100), ("Стоимость услуг", 120), ("ID", 120)
         ])
         self.tree_tp.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_tp))
         
-        # Вкладка 3: Нераспределенные Bars Tour
+        # Вкладка 3: В Барсе, нет в Тикете
         self.tree_bt = self.create_treeview(tab_un_bt, [
-            ("Row", 60), ("Date", 90), ("Doc", 180),
-            ("Nomenclature", 450), ("Type", 100), ("Amount", 120), ("ID", 120)
+            ("Строка", 60), ("Дата", 90), ("Документ", 180),
+            ("Номенклатура Bars Tour", 450), ("Тип услуги", 100), ("Итого в Барсе", 120), ("ID", 120)
         ])
         self.tree_bt.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_bt))
         
         # Вкладка 4: Ручной сопоставитель (Сплит на две таблицы)
         self.setup_manual_links_tab(tab_links)
+        
+        # Вкладка 5: Справка (Руководство пользователя)
+        self.setup_help_tab(tab_help)
         
         # ----------------------------------------------------
         # 4. Панель детальной информации
@@ -197,7 +220,7 @@ class ReconciliationApp(ctk.CTk):
         self.status_frame.grid(row=4, column=0, sticky="ew", padx=15, pady=(0, 10))
         self.status_frame.grid_columnconfigure(0, weight=1)
         
-        self.lbl_status = ctk.CTkLabel(self.status_frame, text="Готов к работе", font=ctk.CTkFont(size=10))
+        self.lbl_status = ctk.CTkLabel(self.status_frame, text="Ожидание загрузки файлов...", font=ctk.CTkFont(size=10))
         self.lbl_status.grid(row=0, column=0, sticky="w")
         
         self.progress_bar = ctk.CTkProgressBar(self.status_frame, height=8, width=200)
@@ -230,7 +253,6 @@ class ReconciliationApp(ctk.CTk):
         tree = ttk.Treeview(parent, columns=cols, show="headings", selectmode="browse")
         tree.grid(row=0, column=0, sticky="nsew")
         
-        # Добавляем скроллбары
         vsb = ttk.Scrollbar(parent, orient="vertical", command=tree.yview)
         vsb.grid(row=0, column=1, sticky="ns")
         hsb = ttk.Scrollbar(parent, orient="horizontal", command=tree.xview)
@@ -239,7 +261,7 @@ class ReconciliationApp(ctk.CTk):
         
         for col_name, width in columns_info:
             tree.heading(col_name, text=col_name)
-            tree.column(col_name, width=width, anchor="center" if col_name in ["ID", "Row", "Date", "Type", "Status", "Method"] else "w")
+            tree.column(col_name, width=width, anchor="center" if col_name in ["ID", "Строка", "Дата", "Тип услуги", "Статус", "Метод привязки"] else "w")
             
         return tree
         
@@ -254,18 +276,18 @@ class ReconciliationApp(ctk.CTk):
         lf.grid(row=0, column=0, sticky="nsew", padx=(0, 5))
         lf.grid_rowconfigure(1, weight=1)
         lf.grid_columnconfigure(0, weight=1)
-        ctk.CTkLabel(lf, text="Нераспределенный TicketProf", font=ctk.CTkFont(weight="bold")).grid(row=0, column=0, pady=5)
-        self.tree_manual_tp = self.create_treeview(lf, [("Row", 50), ("Nomenclature", 300), ("Amount", 90)])
+        ctk.CTkLabel(lf, text="В Тикете, нет в Барсе", font=ctk.CTkFont(weight="bold")).grid(row=0, column=0, pady=5)
+        self.tree_manual_tp = self.create_treeview(lf, [("Строка", 50), ("Номенклатура TicketProf", 300), ("Стоимость услуг", 90)])
         
         # Правая таблица: Несопоставленный Bars Tour
         rf = ctk.CTkFrame(tab)
         rf.grid(row=0, column=2, sticky="nsew", padx=(5, 0))
         rf.grid_rowconfigure(1, weight=1)
         rf.grid_columnconfigure(0, weight=1)
-        ctk.CTkLabel(rf, text="Нераспределенный Bars Tour", font=ctk.CTkFont(weight="bold")).grid(row=0, column=0, pady=5)
-        self.tree_manual_bt = self.create_treeview(rf, [("Row", 50), ("Nomenclature", 300), ("Amount", 90)])
+        ctk.CTkLabel(rf, text="В Барсе, нет в Тикете", font=ctk.CTkFont(weight="bold")).grid(row=0, column=0, pady=5)
+        self.tree_manual_bt = self.create_treeview(rf, [("Строка", 50), ("Номенклатура Bars Tour", 300), ("Итого в Барсе", 90)])
         
-        # Центральная колонка с кнопкой "Связать" и списком связей
+        # Центральная колонка
         center_frame = ctk.CTkFrame(tab)
         center_frame.grid(row=0, column=1, sticky="nsew", padx=5)
         center_frame.grid_columnconfigure(0, weight=1)
@@ -273,7 +295,7 @@ class ReconciliationApp(ctk.CTk):
         
         btn_link = ctk.CTkButton(
             center_frame, 
-            text="⛓ Связать", 
+            text="⛓ Связать вручную", 
             fg_color="#0D47A1", 
             hover_color="#1565C0",
             command=self.create_manual_link
@@ -288,56 +310,144 @@ class ReconciliationApp(ctk.CTk):
         
         btn_clear_link = ctk.CTkButton(
             center_frame, 
-            text="❌ Удалить связь", 
+            text="❌ Очистить связи", 
             fg_color="#B71C1C", 
             hover_color="#C62828",
             command=self.delete_selected_link
         )
         btn_clear_link.grid(row=3, column=0, pady=10, padx=10, sticky="ew")
+
+    def setup_help_tab(self, tab):
+        """
+        Создает вкладку интерактивной встроенной справки с разметкой
+        """
+        # Текстовое поле для справки
+        help_box = ctk.CTkTextbox(tab, font=ctk.CTkFont(family="Arial", size=11), fg_color="#1E1E1E")
+        help_box.grid(row=0, column=0, sticky="nsew", padx=15, pady=15)
         
-    def browse_input(self):
+        # Настройка тегов форматирования
+        help_box.tag_config("h1", font=("Arial", 14, "bold"), foreground="#90CAF9", spacing1=10, spacing3=5)
+        help_box.tag_config("h2", font=("Arial", 12, "bold"), foreground="#A5D6A7", spacing1=8, spacing3=4)
+        help_box.tag_config("body", font=("Arial", 10), foreground="#CCCCCC", spacing1=3, spacing3=3)
+        help_box.tag_config("bullet", font=("Arial", 10), foreground="#CCCCCC", lmargin1=20, lmargin2=30, spacing1=2, spacing3=2)
+        help_box.tag_config("bold", font=("Arial", 10, "bold"), foreground="#FFFFFF")
+        
+        # Текст справки
+        help_box.insert("end", "📊 Руководство пользователя программы «Умная сверка 3.0»\n\n", "h1")
+        
+        help_box.insert("end", "1. Описание программы\n", "h2")
+        help_box.insert("end", "Программа предназначена для автоматической сверки данных реализации авиабилетов/отелей из системы TicketProf и приходов/себестоимости из Bars Tour. Поиск соответствий идет на уровне номенклатурных позиций с использованием сквозных ID (номера билетов, MCO, заказов гостиниц) и текстового анализа.\n\n", "body")
+        
+        help_box.insert("end", "2. Глоссарий терминов\n", "h2")
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "Стоимость услуг", "bold")
+        help_box.insert("end", " — сумма продажи по данным выгрузки TicketProf.\n", "body")
+        
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "Итого в Барсе", "bold")
+        help_box.insert("end", " — сумма прихода или себестоимость услуги по выгрузке Bars Tour.\n", "body")
+        
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "Прибыль", "bold")
+        help_box.insert("end", " — разность (Итого в Барсе - Стоимость услуг) по сопоставленным позициям.\n", "body")
+        
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "Совпадение", "bold")
+        help_box.insert("end", " — услуга успешно привязана по ID или описанию, критических расхождений по суммам нет.\n", "body")
+        
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "В Тикете, нет в Барсе", "bold")
+        help_box.insert("end", " — услуга присутствует в TicketProf, но не найдена в приходе Bars Tour (желтая строка).\n", "body")
+        
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "В Барсе, нет в Тикете", "bold")
+        help_box.insert("end", " — приход по услуге занесен в Bars Tour, но реализация отсутствует (желтая строка).\n", "body")
+        
+        help_box.insert("end", "• ", "bullet")
+        help_box.insert("end", "Несовпадение по суммам", "bold")
+        help_box.insert("end", " — услуга сопоставлена, но маржа отрицательна или не сходится с ожиданиями (красная строка).\n\n", "body")
+        
+        help_box.insert("end", "3. Пошаговая инструкция\n", "h2")
+        help_box.insert("end", "Шаг 1. ", "bold")
+        help_box.insert("end", "Нажмите кнопку «Обзор...» напротив поля «Реестр TicketProf» и выберите соответствующий файл Excel.\n", "body")
+        help_box.insert("end", "Шаг 2. ", "bold")
+        help_box.insert("end", "Если у вас файлы разделены, нажмите кнопку «Обзор...» напротив «Реестр Bars Tour» и выберите второй файл. Если вы работаете с единым сводным файлом (где обе таблицы находятся рядом на одном листе), оставьте второе поле пустым.\n", "body")
+        help_box.insert("end", "Шаг 3. ", "bold")
+        help_box.insert("end", "Нажмите «▶ Запустить анализ». Программа выполнит расчет. Таблицы и KPI-карточки заполнятся автоматически.\n", "body")
+        help_box.insert("end", "Шаг 4. ", "bold")
+        help_box.insert("end", "Для сопоставления расхождений вручную перейдите на вкладку «Ручное сопоставление», выделите одну позицию слева, одну справа и нажмите «Связать вручную». Программа запомнит это правило и автоматически пересчитает сверку.\n\n", "body")
+        
+        help_box.insert("end", "4. Пояснения по маржинальности отелей\n", "h2")
+        help_box.insert("end", "Для отелей правильная наценка (прибыль) должна составлять ровно 10% от брутто-суммы. Если менеджеры допустили ошибку в формуле или округлении в Excel, строка получит статус «Нетипичная маржа» и окрасится в красный цвет для проверки бухгалтером.\n\n", "body")
+        
+        help_box.configure(state="disabled")
+        
+    def browse_tp(self):
         file = filedialog.askopenfilename(
             initialdir=self.default_folder,
-            title="Выберите исходный Excel-файл",
+            title="Выберите реестр TicketProf (или сводный файл)",
             filetypes=[("Excel Files", "*.xlsx *.xls")]
         )
         if file:
-            self.input_file.set(file)
-            # Запоминаем папку
+            self.input_file_tp.set(file)
             self.default_folder = os.path.dirname(file)
             save_settings(self.default_folder)
             
-            # Предлагаем дефолтные пути сохранения
+            # Показываем имя файла и галочку
+            fname = os.path.basename(file)
+            self.lbl_tp_check.configure(text=f"✅ {fname[:20]}...")
+            
+            # Предлагаем пути сохранения
             base = os.path.splitext(file)[0]
             self.output_excel.set(f"{base}_сопоставлено.xlsx")
             self.output_word.set(f"{base}_акт_сверки.docx")
+            self.check_ready_state()
             
-    def toggle_theme(self):
-        current = ctk.get_appearance_mode()
-        new_mode = "Light" if current == "Dark" else "Dark"
-        ctk.set_appearance_mode(new_mode)
-        
+    def browse_bt(self):
+        file = filedialog.askopenfilename(
+            initialdir=self.default_folder,
+            title="Выберите реестр Bars Tour (приходы)",
+            filetypes=[("Excel Files", "*.xlsx *.xls")]
+        )
+        if file:
+            self.input_file_bt.set(file)
+            self.default_folder = os.path.dirname(file)
+            save_settings(self.default_folder)
+            
+            # Показываем имя файла и галочку
+            fname = os.path.basename(file)
+            self.lbl_bt_check.configure(text=f"✅ {fname[:20]}...")
+            self.check_ready_state()
+            
+    def check_ready_state(self):
+        # Кнопка Запуск анализа активна, если выбран хотя бы TicketProf (сводный файл)
+        if self.input_file_tp.get():
+            self.btn_run.configure(state="normal")
+            
     def start_analysis(self):
-        file_path = self.input_file.get()
-        if not file_path or not os.path.exists(file_path):
-            messagebox.showerror("Ошибка", "Пожалуйста, выберите существующий файл Excel.")
+        tp_path = self.input_file_tp.get()
+        bt_path = self.input_file_bt.get()
+        
+        if not tp_path or not os.path.exists(tp_path):
+            messagebox.showerror("Ошибка", "Пожалуйста, выберите существующий файл TicketProf.")
             return
             
         self.btn_run.configure(state="disabled")
-        self.lbl_status.configure(text="Чтение файла Excel...")
+        self.lbl_status.configure(text="Чтение и парсинг файлов Excel...")
         self.progress_bar.set(0.2)
         
-        # Выполняем в отдельном потоке
-        threading.Thread(target=self.run_reconciliation_thread, args=(file_path,), daemon=True).start()
+        # Запуск сверки в фоне
+        threading.Thread(target=self.run_reconciliation_thread, args=(tp_path, bt_path), daemon=True).start()
         
-    def run_reconciliation_thread(self, file_path: str):
+    def run_reconciliation_thread(self, tp_path: str, bt_path: str):
         try:
             # 1. Загрузка
-            tp_items, bt_items = load_data(file_path)
+            path_bt_param = bt_path if bt_path and os.path.exists(bt_path) else None
+            tp_items, bt_items = load_data(tp_path, path_bt_param)
             self.tp_items = tp_items
             self.bt_items = bt_items
             
-            self.lbl_status.configure(text="Вычисление соответствий...")
+            self.lbl_status.configure(text="Запущен интеллектуальный поиск...")
             self.progress_bar.set(0.5)
             
             # 2. Сопоставление
@@ -348,7 +458,6 @@ class ReconciliationApp(ctk.CTk):
             # 3. Финансовый расчет
             self.summary = calculate_reconciliation(self.tp_items, self.bt_items, self.matches)
             
-            # Обновление графического интерфейса
             self.after(0, self.on_analysis_complete)
         except Exception as e:
             self.after(0, self.on_analysis_error, str(e))
@@ -365,80 +474,75 @@ class ReconciliationApp(ctk.CTk):
         total_str = f"{len(self.tp_items) + len(self.bt_items)} ({len(self.tp_items)} TP / {len(self.bt_items)} BT)"
         self.kpi_total.update_value(total_str)
         
-        # Вычисляем процент совпадений для TicketProf
-        rate_val = (self.summary.matched_tp_count / self.summary.total_tp_count * 100) if self.summary.total_tp_count else 0.0
-        self.kpi_rate.update_value(f"{rate_val:.1f}%")
-        
-        self.kpi_profit.update_value(f"{self.summary.total_profit:,.2f} руб.")
-        self.kpi_discrepancy.update_value(f"{self.summary.unmatched_tp_sum + self.summary.unmatched_bt_sum:,.2f} руб.")
+        # Стоимость услуг
+        self.kpi_rate.update_value(f"{self.summary.total_tp_sum:,.2f} руб.")
+        # Итого в Барсе
+        self.kpi_profit.update_value(f"{self.summary.total_bt_sum:,.2f} руб.")
+        # Прибыль
+        self.kpi_discrepancy.update_value(f"{self.summary.total_profit:,.2f} руб.")
         
         # Заполняем таблицы
         self.populate_grids()
         
     def populate_grids(self):
-        # 1. Сбрасываем старые значения
+        # Очистка
         for tree in [self.tree_all, self.tree_tp, self.tree_bt, self.tree_manual_tp, self.tree_manual_bt]:
             for row in tree.get_children():
                 tree.delete(row)
                 
-        # 2. Вкладка "Все сопоставления"
         # Настройка тегов строк для раскраски
         self.tree_all.tag_configure("matched", background="#1E3E20", foreground="#A5D6A7")
         self.tree_all.tag_configure("unmatched", background="#3E2723", foreground="#FFAB91")
         self.tree_all.tag_configure("discrepancy", background="#4A148C", foreground="#E1BEE7")
         
+        # 1. Заполняем совпадения
         for tp, bt, method, score in self.matches:
-            # Для отелей проверяем аномалию
-            is_anomaly = False
-            if tp.service_type == "Hotel":
-                expected_profit = 0.1 * bt.amount
-                if abs((bt.amount - tp.allocated_amount) - expected_profit) > 0.01:
-                    is_anomaly = True
-                    
-            tag = "discrepancy" if is_anomaly else "matched"
+            status_text = tp.get_status_text(bt)
+            tag = "discrepancy" if status_text in ["Нетипичная маржа", "Несовпадение по суммам"] else "matched"
             tp_id = list(tp.ids)[0] if tp.ids else "N/A"
             self.tree_all.insert("", "end", values=(
                 tp_id, tp.service_type,
                 tp.desc, f"{tp.allocated_amount:,.2f}",
                 bt.desc, f"{bt.amount:,.2f}",
                 f"{(bt.amount - tp.allocated_amount):,.2f}",
-                method, "Сверка успешна" if not is_anomaly else "Проверьте маржу"
+                method, status_text
             ), tags=(tag,))
             
         # Добавляем нераспределенные в общую таблицу
         for tp in self.unmatched_tp:
             tp_id = list(tp.ids)[0] if tp.ids else "N/A"
+            status_text = tp.get_status_text(None)
             self.tree_all.insert("", "end", values=(
                 tp_id, tp.service_type,
                 tp.desc, f"{tp.allocated_amount:,.2f}",
                 "Отсутствует в Bars Tour", "0.00", "0.00",
-                "Не сопоставлено", "Только в TicketProf"
+                "Не сопоставлено", status_text
             ), tags=("unmatched",))
             
         for bt in self.unmatched_bt:
             bt_id = list(bt.ids)[0] if bt.ids else "N/A"
+            status_text = bt.get_status_text(None)
             self.tree_all.insert("", "end", values=(
                 bt_id, bt.service_type,
                 "Отсутствует в TicketProf", "0.00",
                 bt.desc, f"{bt.amount:,.2f}", "0.00",
-                "Не сопоставлено", "Только в Bars Tour"
+                "Не сопоставлено", status_text
             ), tags=("unmatched",))
             
-        # 3. Вкладки "Только TicketProf" и "Только Bars Tour"
+        # 2. Вкладки "В Тикете, нет в Барсе"
         for tp in self.unmatched_tp:
             tp_id = list(tp.ids)[0] if tp.ids else "N/A"
             self.tree_tp.insert("", "end", values=(
                 tp.row, tp.date, tp.doc, tp.desc, tp.service_type, f"{tp.allocated_amount:,.2f}", tp_id
             ))
-            # Заполняем также левую часть ручного сопоставителя
             self.tree_manual_tp.insert("", "end", values=(tp.row, tp.desc, f"{tp.allocated_amount:,.2f}"))
             
+        # 3. Вкладка "В Барсе, нет в Тикете"
         for bt in self.unmatched_bt:
             bt_id = list(bt.ids)[0] if bt.ids else "N/A"
             self.tree_bt.insert("", "end", values=(
                 bt.row, bt.date, bt.doc, bt.desc, bt.service_type, f"{bt.amount:,.2f}", bt_id
             ))
-            # Заполняем также правую часть ручного сопоставителя
             self.tree_manual_bt.insert("", "end", values=(bt.row, bt.desc, f"{bt.amount:,.2f}"))
             
         # Обновляем текстовый блок активных связей
@@ -449,10 +553,10 @@ class ReconciliationApp(ctk.CTk):
         self.lst_links.delete("1.0", "end")
         
         if not self.manual_links:
-            self.lst_links.insert("end", "Нет сохраненных ручных связей.\n")
+            self.lst_links.insert("end", "Нет ручных связей.\n")
         else:
             for tp_clean, bt_clean in self.manual_links.items():
-                self.lst_links.insert("end", f"TP: «{tp_clean[:30]}...»\n ➔ BT: «{bt_clean[:30]}...»\n\n")
+                self.lst_links.insert("end", f"TP: «{tp_clean[:25]}...»\n ➔ BT: «{bt_clean[:25]}...»\n\n")
                 
         self.lst_links.configure(state="disabled")
         
@@ -471,25 +575,24 @@ class ReconciliationApp(ctk.CTk):
         item = tree.item(selected[0])
         values = item["values"]
         
-        # Составляем детальный текст
         details = []
-        if len(values) == 9: # Из таблицы "Все сопоставления"
+        if len(values) == 9:
             details.append(f"Код идентификации: {values[0]}")
             details.append(f"Категория услуги: {values[1]}")
             details.append(f"--- TicketProf ---")
             details.append(f"Описание: {values[2]}")
-            details.append(f"Стоимость (нетто): {values[3]}")
+            details.append(f"Стоимость услуг: {values[3]}")
             details.append(f"--- Bars Tour ---")
             details.append(f"Описание: {values[4]}")
-            details.append(f"Сумма (брутто): {values[5]}")
+            details.append(f"Итого в Барсе: {values[5]}")
             details.append(f"Прибыль: {values[6]} руб.")
             details.append(f"Метод привязки: {values[7]}")
             details.append(f"Статус: {values[8]}")
-        else: # Из таблиц расхождений
+        else:
             details.append(f"Строка в Excel: {values[0]}")
             details.append(f"Дата транзакции: {values[1]}")
             details.append(f"Документ: {values[2]}")
-            details.append(f"Номенклатура (описание): {values[3]}")
+            details.append(f"Номенклатура: {values[3]}")
             details.append(f"Тип услуги: {values[4]}")
             details.append(f"Сумма: {values[5]} руб.")
             details.append(f"ID: {values[6]}")
@@ -501,38 +604,36 @@ class ReconciliationApp(ctk.CTk):
         sel_bt = self.tree_manual_bt.selection()
         
         if not sel_tp or not sel_bt:
-            messagebox.showwarning("Внимание", "Пожалуйста, выберите по одной записи в левой и правой таблицах для связывания.")
+            messagebox.showwarning("Внимание", "Выберите по одной записи в левой и правой таблицах.")
             return
             
         tp_vals = self.tree_manual_tp.item(sel_tp[0])["values"]
         bt_vals = self.tree_manual_bt.item(sel_bt[0])["values"]
         
-        # Находим исходные ServiceItem
         tp_row = int(tp_vals[0])
         bt_row = int(bt_vals[0])
         
         tp_item = next(item for item in self.tp_items if item.row == tp_row)
         bt_item = next(item for item in self.bt_items if item.row == bt_row)
         
-        # Добавляем в словарь
+        # Добавляем в словарь связей
         self.manual_links[tp_item.clean_desc] = bt_item.clean_desc
         self.save_manual_links()
         
-        # Перезапускаем сверку
+        # Перезапуск анализа
         self.start_analysis()
-        messagebox.showinfo("Готово", f"Связь успешно создана!\nПересчет завершен.")
+        messagebox.showinfo("Готово", "Связь успешно создана!")
         
     def delete_selected_link(self):
         if not self.manual_links:
             return
             
-        # Запрашиваем подтверждение
-        confirm = messagebox.askyesno("Удаление ручных связей", "Вы действительно хотите удалить ВСЕ ручные связи и вернуть исходное состояние?")
+        confirm = messagebox.askyesno("Очистить связи", "Вы действительно хотите удалить ВСЕ ручные связи?")
         if confirm:
             self.manual_links.clear()
             self.save_manual_links()
             self.start_analysis()
-            messagebox.showinfo("Готово", "Все ручные связи очищены.")
+            messagebox.showinfo("Готово", "Все ручные связи удалены.")
             
     def export_excel(self):
         out_path = self.output_excel.get()
@@ -559,6 +660,6 @@ class ReconciliationApp(ctk.CTk):
                 self.unmatched_tp, self.unmatched_bt, self.summary, 
                 out_path
             )
-            messagebox.showinfo("Готово", f"Официальный Акт сверки успешно сохранен:\n{out_path}")
+            messagebox.showinfo("Готово", f"Акт сверки успешно сохранен:\n{out_path}")
         except Exception as e:
             messagebox.showerror("Ошибка сохранения", f"Не удалось создать Акт сверки:\n{e}")
