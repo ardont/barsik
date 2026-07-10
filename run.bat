@@ -5,8 +5,7 @@ if not exist .venv (
     echo Запускаем установку через setup.bat...
     call setup.bat
 )
-call .venv\Scripts\activate
-python main.py
+.venv\Scripts\python.exe main.py
 if %errorlevel% neq 0 (
     echo Ошибка во время выполнения программы.
     pause

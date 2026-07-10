@@ -9,11 +9,10 @@ if %errorlevel% neq 0 (
 )
 
 echo [Умная сверка 3.0] Обновление pip и установка зависимостей...
-call .venv\Scripts\activate
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+.venv\Scripts\python.exe -m pip install --upgrade pip
+.venv\Scripts\python.exe -m pip install -r requirements.txt
 if %errorlevel% neq 0 (
-    echo Ошибка при установке библиотек! Проверьте подключение к сети.
+    echo Ошибка при установке библиотек! Проверьте подключение к интернету.
     pause
     exit /b %errorlevel%
 )

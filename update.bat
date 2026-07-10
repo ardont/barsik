@@ -5,8 +5,12 @@ if not exist .venv (
     pause
     exit /b 1
 )
-call .venv\Scripts\activate
 echo [Умная сверка 3.0] Обновление библиотек...
-pip install -r requirements.txt --upgrade
+.venv\Scripts\python.exe -m pip install -r requirements.txt --upgrade
+if %errorlevel% neq 0 (
+    echo Ошибка при обновлении библиотек!
+    pause
+    exit /b %errorlevel%
+)
 echo Обновление завершено!
 pause
