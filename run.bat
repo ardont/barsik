@@ -47,9 +47,6 @@ if %errorlevel% neq 0 (
 :: 4. Запуск программы
 echo [ИНФО] Запуск «Умной сверки»...
 .venv\Scripts\python.exe main.py
-if %errorlevel% neq 0 (
-    echo.
-    echo [ОШИБКА] Программа завершилась с ошибкой.
-    echo.
-    pause
-)
+echo.
+echo [ИНФО] Программа завершила работу с кодом %errorlevel%.
+pause
