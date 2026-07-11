@@ -2,15 +2,15 @@
 chcp 65001 > nul
 echo [Умная сверка 3.0] Запуск диагностики окружения...
 
-if exist .venv\Scripts\python.exe (
-    echo Запуск через виртуальное окружение .venv...
-    .venv\Scripts\python.exe check_setup.py
-) else (
-    echo Виртуальное окружение не найдено. Запуск через глобальный Python...
-    python check_setup.py
+if not exist .venv\Scripts\python.exe (
+    echo Виртуальное окружение не найдено. Запуск настройки...
+    call run.bat
 )
 
-if %errorlevel% neq 0 (
-    echo Критическая ошибка при работе скрипта диагностики!
+if exist .venv\Scripts\python.exe (
+    echo Запуск диагностики через .venv...
+    .venv\Scripts\python.exe check_setup.py
+) else (
+    echo [ОШИБКА] Не удалось запустить диагностику.
 )
 pause

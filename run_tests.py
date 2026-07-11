@@ -14,7 +14,7 @@ from reports.word_export import export_to_word
 def run_tests():
     print("=== ЗАПУСК ТЕСТОВ СВЕРКИ (ГИБРИДНЫЙ РЕЖИМ) ===")
     
-    file_path = r"C:\Users\Maxim\Downloads\08.07_1.xlsx"
+    file_path = r"C:\Users\Maxim\Downloads\11 июля.xlsx"
     if not os.path.exists(file_path):
         print(f"Ошибка: Исходный файл не найден по пути: {file_path}")
         return

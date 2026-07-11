@@ -2,20 +2,20 @@
 chcp 65001 > nul
 echo [Умная сверка 3.0] Создание ярлыка программы...
 
-:: Проверяем наличие виртуального окружения
-if not exist .venv (
-    echo Виртуальное окружение .venv не найдено. Запустите сначала setup.bat.
-    pause
-    exit /b 1
+:: Проверяем наличие Python и Pillow для генерации иконки
+.venv\Scripts\python.exe -c "import PIL" >nul 2>nul
+if %errorlevel% neq 0 (
+    echo [ИНФО] Настройка окружения для генерации иконки...
+    if not exist .venv (
+        python -m venv .venv
+    )
+    .venv\Scripts\python.exe -m pip install Pillow
 )
 
 :: Конвертируем логотип в формат ICO
-echo Создаем файл иконки...
-.venv\Scripts\python.exe -c "from PIL import Image; Image.open('assets/barsik_logo.png').save('assets/barsik_logo.ico', format='ICO', sizes=[(256, 256), (128, 128), (64, 64), (32, 32), (16, 16)])"
-if %errorlevel% neq 0 (
-    echo Ошибка при конвертации иконки. Проверьте Pillow в .venv.
-    pause
-    exit /b 1
+if not exist assets\barsik_logo.ico (
+    echo Создаем файл иконки...
+    .venv\Scripts\python.exe -c "from PIL import Image; Image.open('assets/barsik_logo.png').save('assets/barsik_logo.ico', format='ICO', sizes=[(256, 256), (128, 128), (64, 64), (32, 32), (16, 16)])"
 )
 
 :: Запускаем PowerShell скрипт для создания ярлыка

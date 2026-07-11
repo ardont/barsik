@@ -40,8 +40,11 @@ class ReconciliationApp(ctk.CTk):
             except Exception:
                 pass
                 
-        # Загружаем настройки папки по умолчанию
-        self.default_folder = load_settings()
+        # Загружаем настройки
+        self.settings = load_settings()
+        self.default_folder = self.settings['default_folder']
+        from models import ServiceItem
+        ServiceItem.hotel_margin = self.settings.get('hotel_margin', 10.0)
         
         # Переменные путей файлов
         self.input_file_tp = ctk.StringVar()
@@ -107,40 +110,27 @@ class ReconciliationApp(ctk.CTk):
         logo_img = self.get_asset_image("barsik_logo.png", (48, 48))
         if logo_img:
             self.lbl_logo = ctk.CTkLabel(self.ctrl_frame, image=logo_img, text="")
-            self.lbl_logo.grid(row=0, column=0, rowspan=2, padx=(15, 5), pady=10)
+            self.lbl_logo.grid(row=0, column=0, padx=(15, 5), pady=15)
             col_offset = 1
         else:
             col_offset = 0
             
-        # Строка 1: Реестр TicketProf (продажи)
-        lbl_file_tp = ctk.CTkLabel(self.ctrl_frame, text="Реестр TicketProf (продажи):")
-        lbl_file_tp.grid(row=0, column=col_offset, padx=(15, 5), pady=(10, 5), sticky="w")
+        # Строка 1: Сводный файл сверки (Excel)
+        lbl_file_tp = ctk.CTkLabel(self.ctrl_frame, text="Сводный файл сверки (Excel):")
+        lbl_file_tp.grid(row=0, column=col_offset, padx=(15, 5), pady=15, sticky="w")
         
-        self.ent_file_tp = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_tp, placeholder_text="Выберите файл TicketProf (или сводный файл)...")
-        self.ent_file_tp.grid(row=0, column=col_offset + 1, padx=5, pady=(10, 5), sticky="ew")
+        self.ent_file_tp = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_tp, placeholder_text="Выберите единый файл сверки (например, 08.07_1.xlsx)...")
+        self.ent_file_tp.grid(row=0, column=col_offset + 1, padx=5, pady=15, sticky="ew")
         
         btn_browse_tp = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_tp, width=90)
-        btn_browse_tp.grid(row=0, column=col_offset + 2, padx=(5, 5), pady=(10, 5))
+        btn_browse_tp.grid(row=0, column=col_offset + 2, padx=(5, 5), pady=15)
         
         self.lbl_tp_check = ctk.CTkLabel(self.ctrl_frame, text="", text_color="#A5D6A7")
-        self.lbl_tp_check.grid(row=0, column=col_offset + 3, padx=(5, 15), pady=(10, 5), sticky="w")
-        
-        # Строка 2: Реестр Bars Tour (приходы)
-        lbl_file_bt = ctk.CTkLabel(self.ctrl_frame, text="Реестр Bars Tour (приходы):")
-        lbl_file_bt.grid(row=1, column=col_offset, padx=(15, 5), pady=(5, 10), sticky="w")
-        
-        self.ent_file_bt = ctk.CTkEntry(self.ctrl_frame, textvariable=self.input_file_bt, placeholder_text="Оставьте пустым для единого сводного файла...")
-        self.ent_file_bt.grid(row=1, column=col_offset + 1, padx=5, pady=(5, 10), sticky="ew")
-        
-        btn_browse_bt = ctk.CTkButton(self.ctrl_frame, text="Обзор...", command=self.browse_bt, width=90)
-        btn_browse_bt.grid(row=1, column=col_offset + 2, padx=(5, 5), pady=(5, 10))
-        
-        self.lbl_bt_check = ctk.CTkLabel(self.ctrl_frame, text="", text_color="#A5D6A7")
-        self.lbl_bt_check.grid(row=1, column=col_offset + 3, padx=(5, 15), pady=(5, 10), sticky="w")
+        self.lbl_tp_check.grid(row=0, column=col_offset + 3, padx=(5, 15), pady=15, sticky="w")
         
         # Действия и Кнопки
         self.actions_frame = ctk.CTkFrame(self.ctrl_frame, fg_color="transparent")
-        self.actions_frame.grid(row=0, column=col_offset + 4, rowspan=2, padx=(15, 15), pady=10, sticky="ns")
+        self.actions_frame.grid(row=0, column=col_offset + 4, padx=(15, 15), pady=10, sticky="ns")
         
         self.btn_run = ctk.CTkButton(
             self.actions_frame, 
@@ -201,9 +191,10 @@ class ReconciliationApp(ctk.CTk):
         tab_un_bt = self.tab_view.add("🟡 В Барсе, нет в Тикете")
         tab_links = self.tab_view.add("⛓ Ручное сопоставление")
         tab_help = self.tab_view.add("❓ Справка")
+        tab_settings = self.tab_view.add("🔧 Настройки сверки")
         
         # Настройка сеток во вкладках
-        for tab in [self.tab_all, tab_un_tp, tab_un_bt, tab_links, tab_help]:
+        for tab in [self.tab_all, tab_un_tp, tab_un_bt, tab_links, tab_help, tab_settings]:
             tab.grid_rowconfigure(0, weight=1)
             tab.grid_columnconfigure(0, weight=1)
             
@@ -240,6 +231,9 @@ class ReconciliationApp(ctk.CTk):
         
         # Вкладка 5: Справка (Руководство пользователя)
         self.setup_help_tab(tab_help)
+        
+        # Вкладка 6: Настройки сверки
+        self.setup_settings_tab(tab_settings)
         
         # ----------------------------------------------------
         # 4. Панель детальной информации
@@ -452,12 +446,10 @@ class ReconciliationApp(ctk.CTk):
         
         help_box.insert("end", "3. Пошаговая инструкция\n", "h2")
         help_box.insert("end", "Шаг 1. ", "bold")
-        help_box.insert("end", "Нажмите кнопку «Обзор...» напротив поля «Реестр TicketProf» и выберите соответствующий файл Excel.\n", "body")
+        help_box.insert("end", "Нажмите кнопку «Обзор...» напротив поля «Сводный файл сверки» и выберите ваш файл Excel.\n", "body")
         help_box.insert("end", "Шаг 2. ", "bold")
-        help_box.insert("end", "Если у вас файлы разделены, нажмите кнопку «Обзор...» напротив «Реестр Bars Tour» и выберите второй файл. Если вы работаете с единым сводным файлом (где обе таблицы находятся рядом на одном листе), оставьте второе поле пустым.\n", "body")
-        help_box.insert("end", "Шаг 3. ", "bold")
         help_box.insert("end", "Нажмите «▶ Запустить анализ». Программа выполнит расчет. Таблицы и KPI-карточки заполнятся автоматически.\n", "body")
-        help_box.insert("end", "Шаг 4. ", "bold")
+        help_box.insert("end", "Шаг 3. ", "bold")
         help_box.insert("end", "Для сопоставления расхождений вручную перейдите на вкладку «Ручное сопоставление», выделите одну позицию слева, одну справа и нажмите «Связать вручную». Программа запомнит это правило и автоматически пересчитает сверку.\n\n", "body")
         
         help_box.insert("end", "4. Пояснения по маржинальности отелей\n", "h2")
@@ -487,6 +479,107 @@ class ReconciliationApp(ctk.CTk):
         )
         self.lbl_pilot_caption.grid(row=1, column=0, sticky="n", pady=5)
         
+    def setup_settings_tab(self, tab):
+        tab.grid_columnconfigure(0, weight=1)
+        tab.grid_rowconfigure(0, weight=1)
+        
+        scroll_frame = ctk.CTkScrollableFrame(tab, fg_color="transparent")
+        scroll_frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+        scroll_frame.grid_columnconfigure(0, weight=1)
+        
+        # --- Блок 1: Настройки отелей ---
+        hotel_frame = ctk.CTkFrame(scroll_frame)
+        hotel_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
+        hotel_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(hotel_frame, text="🏨 Настройки маржи отелей", font=ctk.CTkFont(size=14, weight="bold"), text_color="#A5D6A7").grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
+        
+        ctk.CTkLabel(hotel_frame, text="Ожидаемая наценка отеля (в %):").grid(row=1, column=0, padx=15, pady=10, sticky="w")
+        
+        self.var_hotel_margin = tk.DoubleVar(value=self.settings.get('hotel_margin', 10.0))
+        self.spn_hotel_margin = ctk.CTkEntry(hotel_frame, textvariable=self.var_hotel_margin, width=80)
+        self.spn_hotel_margin.grid(row=1, column=1, padx=15, pady=10, sticky="w")
+        
+        lbl_hotel_hint = ctk.CTkLabel(
+            hotel_frame, 
+            text="Используется для проверки статуса отелей. Если прибыль / стоимость в Барсе\nне совпадает с этим процентом, строка будет помечена красным.", 
+            font=ctk.CTkFont(size=11), 
+            text_color="#8A8A8A",
+            justify="left"
+        )
+        lbl_hotel_hint.grid(row=2, column=0, columnspan=2, padx=15, pady=(0, 15), sticky="w")
+        
+        # --- Блок 2: Алгоритмы сопоставления ---
+        algo_frame = ctk.CTkFrame(scroll_frame)
+        algo_frame.grid(row=1, column=0, sticky="ew", padx=10, pady=10)
+        algo_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(algo_frame, text="⚙️ Алгоритмы сопоставления", font=ctk.CTkFont(size=14, weight="bold"), text_color="#90CAF9").grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
+        
+        self.var_enable_id = tk.BooleanVar(value=self.settings.get('enable_id_match', True))
+        self.chk_enable_id = ctk.CTkCheckBox(algo_frame, text="Включить сопоставление по уникальным ID (билеты/заказы)", variable=self.var_enable_id)
+        self.chk_enable_id.grid(row=1, column=0, columnspan=2, padx=15, pady=5, sticky="w")
+        
+        self.var_enable_exact = tk.BooleanVar(value=self.settings.get('enable_exact_match', True))
+        self.chk_enable_exact = ctk.CTkCheckBox(algo_frame, text="Включить точное сопоставление по очищенным названиям", variable=self.var_enable_exact)
+        self.chk_enable_exact.grid(row=2, column=0, columnspan=2, padx=15, pady=5, sticky="w")
+        
+        self.var_enable_fuzzy = tk.BooleanVar(value=self.settings.get('enable_fuzzy_match', True))
+        self.chk_enable_fuzzy = ctk.CTkCheckBox(algo_frame, text="Включить нечеткое (Fuzzy) сопоставление названий", variable=self.var_enable_fuzzy)
+        self.chk_enable_fuzzy.grid(row=3, column=0, columnspan=2, padx=15, pady=5, sticky="w")
+        
+        ctk.CTkLabel(algo_frame, text="Порог схожести текста (в %):").grid(row=4, column=0, padx=15, pady=10, sticky="w")
+        
+        self.var_fuzzy_threshold = tk.DoubleVar(value=self.settings.get('fuzzy_threshold', 75.0))
+        self.spn_fuzzy_threshold = ctk.CTkEntry(algo_frame, textvariable=self.var_fuzzy_threshold, width=80)
+        self.spn_fuzzy_threshold.grid(row=4, column=1, padx=15, pady=10, sticky="w")
+        
+        lbl_fuzzy_hint = ctk.CTkLabel(
+            algo_frame, 
+            text="Используется при нечетком поиске. Чем ниже порог, тем больше совпадений будет найдено,\nно выше вероятность ошибочных связей.", 
+            font=ctk.CTkFont(size=11), 
+            text_color="#8A8A8A",
+            justify="left"
+        )
+        lbl_fuzzy_hint.grid(row=5, column=0, columnspan=2, padx=15, pady=(0, 15), sticky="w")
+        
+        # --- Кнопка Сохранить ---
+        btn_save = ctk.CTkButton(
+            scroll_frame, 
+            text="💾 Сохранить настройки", 
+            fg_color="#0D47A1", 
+            hover_color="#1565C0",
+            command=self.save_custom_settings,
+            width=200
+        )
+        btn_save.grid(row=2, column=0, pady=20, padx=10)
+        
+    def save_custom_settings(self):
+        try:
+            margin = float(self.var_hotel_margin.get())
+            threshold = float(self.var_fuzzy_threshold.get())
+            
+            if not (0 <= margin <= 100):
+                messagebox.showerror("Ошибка", "Процент маржи отелей должен быть от 0 до 100.")
+                return
+            if not (0 <= threshold <= 100):
+                messagebox.showerror("Ошибка", "Порог нечеткого поиска должен быть от 0 до 100.")
+                return
+                
+            self.settings['hotel_margin'] = margin
+            self.settings['fuzzy_threshold'] = threshold
+            self.settings['enable_id_match'] = bool(self.var_enable_id.get())
+            self.settings['enable_exact_match'] = bool(self.var_enable_exact.get())
+            self.settings['enable_fuzzy_match'] = bool(self.var_enable_fuzzy.get())
+            
+            save_settings(self.settings)
+            from models import ServiceItem
+            ServiceItem.hotel_margin = margin
+            
+            messagebox.showinfo("Успешно", "Настройки сверки сохранены и будут применены при следующем расчете!")
+        except ValueError:
+            messagebox.showerror("Ошибка", "Пожалуйста, введите корректные числовые значения для маржи и порога.")
+        
     def browse_tp(self):
         file = filedialog.askopenfilename(
             initialdir=self.default_folder,
@@ -496,7 +589,8 @@ class ReconciliationApp(ctk.CTk):
         if file:
             self.input_file_tp.set(file)
             self.default_folder = os.path.dirname(file)
-            save_settings(self.default_folder)
+            self.settings['default_folder'] = self.default_folder
+            save_settings(self.settings)
             
             fname = os.path.basename(file)
             self.lbl_tp_check.configure(text=f"✅ {fname[:20]}...")
@@ -515,7 +609,8 @@ class ReconciliationApp(ctk.CTk):
         if file:
             self.input_file_bt.set(file)
             self.default_folder = os.path.dirname(file)
-            save_settings(self.default_folder)
+            self.settings['default_folder'] = self.default_folder
+            save_settings(self.settings)
             
             fname = os.path.basename(file)
             self.lbl_bt_check.configure(text=f"✅ {fname[:20]}...")
@@ -527,22 +622,23 @@ class ReconciliationApp(ctk.CTk):
             
     def start_analysis(self):
         tp_path = self.input_file_tp.get()
-        bt_path = self.input_file_bt.get()
         
         if not tp_path or not os.path.exists(tp_path):
-            messagebox.showerror("Ошибка", "Пожалуйста, выберите существующий файл TicketProf.")
+            messagebox.showerror("Ошибка", "Пожалуйста, выберите существующий файл сверки.")
             return
             
         self.btn_run.configure(state="disabled")
         self.lbl_status.configure(text="Чтение и парсинг файлов Excel...")
         self.progress_bar.set(0.2)
         
-        threading.Thread(target=self.run_reconciliation_thread, args=(tp_path, bt_path), daemon=True).start()
+        threading.Thread(target=self.run_reconciliation_thread, args=(tp_path, None), daemon=True).start()
         
-    def run_reconciliation_thread(self, tp_path: str, bt_path: str):
+    def run_reconciliation_thread(self, tp_path: str, bt_path: str = None):
         try:
-            path_bt_param = bt_path if bt_path and os.path.exists(bt_path) else None
-            tp_items, bt_items = load_data(tp_path, path_bt_param)
+            from models import ServiceItem
+            ServiceItem.hotel_margin = self.settings.get('hotel_margin', 10.0)
+            
+            tp_items, bt_items = load_data(tp_path, None)
             self.tp_items = tp_items
             self.bt_items = bt_items
             
@@ -550,7 +646,7 @@ class ReconciliationApp(ctk.CTk):
             self.progress_bar.set(0.5)
             
             self.matches, self.unmatched_tp, self.unmatched_bt = match_records(
-                tp_items, bt_items, self.manual_links
+                tp_items, bt_items, self.manual_links, self.settings
             )
             
             self.summary = calculate_reconciliation(self.tp_items, self.bt_items, self.matches)

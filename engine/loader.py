@@ -206,4 +206,42 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
                     source="BT"
                 ))
                 
-    return bt_items
+    # Группировка элементов Bars Tour (схлопывание строк с одинаковым описанием под одним документом)
+    from collections import defaultdict
+    grouped_bt = defaultdict(list)
+    for item in bt_items:
+        key = (item.doc, item.clean_desc, item.service_type)
+        grouped_bt[key].append(item)
+        
+    final_bt_items = []
+    for key, items in grouped_bt.items():
+        if len(items) == 1:
+            final_bt_items.append(items[0])
+        else:
+            # Сортируем элементы по модулю суммы для правильной классификации (Profit < Net < Total)
+            sorted_items = sorted(items, key=lambda x: abs(x.amount))
+            best_item = sorted_items[-1]  # Элемент с максимальной суммой (Total)
+            
+            # Объединяем все извлеченные ID
+            merged_ids = set()
+            for x in items:
+                merged_ids.update(x.ids)
+            best_item.ids = merged_ids
+            
+            if len(sorted_items) == 2:
+                # Если 2 элемента: меньший - profit, больший - net
+                best_item.profit = sorted_items[0].amount
+                best_item.net = sorted_items[1].amount
+                best_item.amount = sorted_items[0].amount + sorted_items[1].amount
+                best_item.allocated_amount = best_item.amount
+            elif len(sorted_items) >= 3:
+                # Если 3 элемента: меньший - profit, средний - net, максимальный - total (amount)
+                best_item.profit = sorted_items[0].amount
+                best_item.net = sorted_items[1].amount
+                best_item.amount = sorted_items[2].amount
+                best_item.allocated_amount = best_item.amount
+                
+            best_item.row = items[0].row
+            final_bt_items.append(best_item)
+            
+    return final_bt_items

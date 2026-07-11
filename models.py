@@ -45,9 +45,10 @@ class ServiceItem:
             bt_amt = other.amount if self.source == "TP" else self.amount
             profit = bt_amt - tp_amt
             
-            # Логика для отелей: прибыль должна быть ровно 10%
+            # Логика для отелей: прибыль должна соответствовать настроенному проценту маржи
             if (self.service_type == "Hotel" or other.service_type == "Hotel"):
-                expected_profit = 0.1 * bt_amt
+                margin_pct = getattr(ServiceItem, 'hotel_margin', 10.0)
+                expected_profit = (margin_pct / 100.0) * bt_amt
                 if abs(profit - expected_profit) > 0.01:
                     return "Нетипичная маржа"
             else:
