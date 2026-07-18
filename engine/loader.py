@@ -210,7 +210,7 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
     from collections import defaultdict
     grouped_bt = defaultdict(list)
     for item in bt_items:
-        key = (item.doc, item.clean_desc, item.service_type)
+        key = (item.doc, item.clean_desc, item.service_type, frozenset(item.ids))
         grouped_bt[key].append(item)
         
     final_bt_items = []

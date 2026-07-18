@@ -15,7 +15,9 @@ DEFAULT_SETTINGS = {
     'fuzzy_threshold': 75.0,
     'enable_id_match': True,
     'enable_exact_match': True,
-    'enable_fuzzy_match': True
+    'enable_fuzzy_match': True,
+    'simple_mode': True,
+    'theme': 'Dark'
 }
 
 def load_settings() -> dict:

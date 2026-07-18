@@ -10,7 +10,7 @@ class KPICard(ctk.CTkFrame):
     """
     Карточка KPI для отображения финансовых метрик
     """
-    def __init__(self, parent, title: str, value: str, color: str = "#2B2B2B", text_color: str = "#FFFFFF"):
+    def __init__(self, parent, title: str, value: str, color: tuple = ("#EAEAEA", "#2B2B2B"), text_color: tuple = ("#000000", "#FFFFFF")):
         super().__init__(parent, fg_color=color, corner_radius=10)
         
         # Заголовок карточки
@@ -18,7 +18,7 @@ class KPICard(ctk.CTkFrame):
             self, 
             text=title, 
             font=ctk.CTkFont(family="Arial", size=11, weight="bold"), 
-            text_color="#8A8A8A"
+            text_color=("#666666", "#8A8A8A")
         )
         self.title_label.pack(anchor="w", padx=15, pady=(12, 2))
         
@@ -41,14 +41,14 @@ class DetailsPanel(ctk.CTkFrame):
     Интерактивная панель деталей выбранной операции
     """
     def __init__(self, parent):
-        super().__init__(parent, corner_radius=10, fg_color="#2B2B2B")
+        super().__init__(parent, corner_radius=10, fg_color=("#EAEAEA", "#2B2B2B"))
         
         # Заголовок панели
         title_lbl = ctk.CTkLabel(
             self, 
             text="🔍 Детализированная информация по выбранной позиции", 
             font=ctk.CTkFont(family="Arial", size=12, weight="bold"),
-            text_color="#FFFFFF"
+            text_color=("#000000", "#FFFFFF")
         )
         title_lbl.pack(anchor="w", padx=15, pady=(10, 5))
         
@@ -56,8 +56,8 @@ class DetailsPanel(ctk.CTkFrame):
         self.info_text = ctk.CTkTextbox(
             self, 
             font=ctk.CTkFont(family="Arial", size=10),
-            fg_color="#1E1E1E",
-            text_color="#CCCCCC",
+            fg_color=("#FFFFFF", "#1E1E1E"),
+            text_color=("#333333", "#CCCCCC"),
             height=80
         )
         self.info_text.pack(fill="both", expand=True, padx=15, pady=(0, 10))

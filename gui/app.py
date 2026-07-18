@@ -22,7 +22,6 @@ from reports.word_export import export_to_word
 from gui.widgets import KPICard, DetailsPanel
 
 # Настройка внешнего вида customtkinter
-ctk.set_appearance_mode("Dark")
 ctk.set_default_color_theme("blue")
 
 class ReconciliationApp(ctk.CTk):
@@ -45,6 +44,9 @@ class ReconciliationApp(ctk.CTk):
         self.default_folder = self.settings['default_folder']
         from models import ServiceItem
         ServiceItem.hotel_margin = self.settings.get('hotel_margin', 10.0)
+        
+        # Устанавливаем сохраненную тему оформления
+        ctk.set_appearance_mode(self.settings.get('theme', 'Dark'))
         
         # Переменные путей файлов
         self.input_file_tp = ctk.StringVar()
@@ -100,7 +102,7 @@ class ReconciliationApp(ctk.CTk):
         self.grid_columnconfigure(0, weight=1)
         
         # ----------------------------------------------------
-        # 1. Верхняя панель управления (Выбор файлов)
+        # 1. Вверхняя панель управления (Выбор файлов)
         # ----------------------------------------------------
         self.ctrl_frame = ctk.CTkFrame(self)
         self.ctrl_frame.grid(row=0, column=0, sticky="ew", padx=15, pady=(15, 5))
@@ -174,10 +176,10 @@ class ReconciliationApp(ctk.CTk):
         self.kpi_rate = KPICard(self.kpi_frame, "СТОИМОСТЬ УСЛУГ (TP)", "0.00 руб.")
         self.kpi_rate.grid(row=0, column=1, padx=5, sticky="ew")
         
-        self.kpi_profit = KPICard(self.kpi_frame, "ИТОГО В БАРСЕ (BT)", "0.00 руб.", text_color="#90CAF9")
+        self.kpi_profit = KPICard(self.kpi_frame, "ИТОГО В БАРСЕ (BT)", "0.00 руб.", text_color=("#0A5F9E", "#90CAF9"))
         self.kpi_profit.grid(row=0, column=2, padx=5, sticky="ew")
         
-        self.kpi_discrepancy = KPICard(self.kpi_frame, "ПРИБЫЛЬ", "0.00 руб.", text_color="#A5D6A7")
+        self.kpi_discrepancy = KPICard(self.kpi_frame, "ПРИБЫЛЬ", "0.00 руб.", text_color=("#2E7D32", "#A5D6A7"))
         self.kpi_discrepancy.grid(row=0, column=3, padx=(5, 0), sticky="ew")
         
         # ----------------------------------------------------
@@ -187,6 +189,7 @@ class ReconciliationApp(ctk.CTk):
         self.tab_view.grid(row=2, column=0, sticky="nsew", padx=15, pady=5)
         
         self.tab_all = self.tab_view.add("📊 Все сопоставления")
+        self.tab_mismatches = self.tab_view.add("⚠ Несоответствия")
         tab_un_tp = self.tab_view.add("🟡 В Тикете, нет в Барсе")
         tab_un_bt = self.tab_view.add("🟡 В Барсе, нет в Тикете")
         tab_links = self.tab_view.add("⛓ Ручное сопоставление")
@@ -194,7 +197,7 @@ class ReconciliationApp(ctk.CTk):
         tab_settings = self.tab_view.add("🔧 Настройки сверки")
         
         # Настройка сеток во вкладках
-        for tab in [self.tab_all, tab_un_tp, tab_un_bt, tab_links, tab_help, tab_settings]:
+        for tab in [self.tab_all, self.tab_mismatches, tab_un_tp, tab_un_bt, tab_links, tab_help, tab_settings]:
             tab.grid_rowconfigure(0, weight=1)
             tab.grid_columnconfigure(0, weight=1)
             
@@ -203,11 +206,20 @@ class ReconciliationApp(ctk.CTk):
         # Вкладка 1: Главная таблица сопоставлений
         self.tree_all = self.create_treeview(self.tab_all, [
             ("ID", 100), ("Тип услуги", 85), 
-            ("Номенклатура TicketProf", 260), ("Стоимость услуг", 110), 
-            ("Номенклатура Bars Tour", 260), ("Итого в Барсе", 110), 
+            ("Документ TicketProf", 130), ("Номенклатура TicketProf", 230), ("Стоимость услуг", 110), 
+            ("Документ Bars Tour", 130), ("Номенклатура Bars Tour", 230), ("Итого в Барсе", 110), 
             ("Прибыль", 100), ("Метод привязки", 130), ("Статус", 150)
         ])
         self.tree_all.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_all))
+        
+        # Вкладка Несоответствия
+        self.tree_mismatches = self.create_treeview(self.tab_mismatches, [
+            ("ID", 100), ("Тип услуги", 85), 
+            ("Документ TicketProf", 130), ("Номенклатура TicketProf", 230), ("Стоимость услуг", 110), 
+            ("Документ Bars Tour", 130), ("Номенклатура Bars Tour", 230), ("Итого в Барсе", 110), 
+            ("Прибыль", 100), ("Метод привязки", 130), ("Статус", 150)
+        ])
+        self.tree_mismatches.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_mismatches))
         
         # Инициализируем пустое состояние (Empty State) в центре таблицы "Все сопоставления"
         self.setup_empty_state()
@@ -259,7 +271,7 @@ class ReconciliationApp(ctk.CTk):
         """
         Создает красивое состояние приветствия в центре главной таблицы
         """
-        self.empty_state_frame = ctk.CTkFrame(self.tab_all, fg_color="#1E1E1E", corner_radius=0)
+        self.empty_state_frame = ctk.CTkFrame(self.tab_all, fg_color=("#F9F9F9", "#1E1E1E"), corner_radius=0)
         self.empty_state_frame.grid(row=0, column=0, sticky="nsew")
         
         self.empty_state_frame.grid_rowconfigure(0, weight=1)
@@ -276,7 +288,7 @@ class ReconciliationApp(ctk.CTk):
             self.empty_state_frame, 
             text="Привет! Я Барсик, хранитель финансов туркомпании 🐾\nЗагрузите реестры продаж и приходов, чтобы начать автоматическую сверку!", 
             font=ctk.CTkFont(family="Arial", size=13, weight="bold"),
-            text_color="#8A8A8A",
+            text_color=("#555555", "#8A8A8A"),
             justify="center"
         )
         self.lbl_empty_text.grid(row=2, column=0, pady=10)
@@ -288,22 +300,40 @@ class ReconciliationApp(ctk.CTk):
         style = ttk.Style()
         style.theme_use("clam")
         
-        # Стилизация таблицы для темной темы
+        is_dark = (self.settings.get('theme', 'Dark') == 'Dark')
+        
+        if is_dark:
+            bg_color = "#1E1E1E"
+            fg_color = "#D4D4D4"
+            heading_bg = "#2D2D2D"
+            heading_fg = "#FFFFFF"
+            active_heading = "#3E3E3E"
+            select_bg = "#0A5F9E"
+            select_fg = "#FFFFFF"
+        else:
+            bg_color = "#FFFFFF"
+            fg_color = "#000000"
+            heading_bg = "#EAEAEA"
+            heading_fg = "#000000"
+            active_heading = "#D6D6D6"
+            select_bg = "#B0D0F0"
+            select_fg = "#000000"
+            
         style.configure("Treeview",
-            background="#1E1E1E",
-            foreground="#D4D4D4",
-            fieldbackground="#1E1E1E",
+            background=bg_color,
+            foreground=fg_color,
+            fieldbackground=bg_color,
             font=("Arial", 9),
             rowheight=24
         )
         style.configure("Treeview.Heading",
-            background="#2D2D2D",
-            foreground="#FFFFFF",
+            background=heading_bg,
+            foreground=heading_fg,
             font=("Arial", 9, "bold"),
             borderwidth=1
         )
-        style.map("Treeview.Heading", background=[('active', '#3E3E3E')])
-        style.map("Treeview", background=[('selected', '#0A5F9E')], foreground=[('selected', '#FFFFFF')])
+        style.map("Treeview.Heading", background=[('active', active_heading)])
+        style.map("Treeview", background=[('selected', select_bg)], foreground=[('selected', select_fg)])
         
     def create_treeview(self, parent, columns_info) -> ttk.Treeview:
         cols = [info[0] for info in columns_info]
@@ -386,8 +416,6 @@ class ReconciliationApp(ctk.CTk):
         help_box = tk.Text(
             tab, 
             font=("Arial", 10), 
-            bg="#1E1E1E", 
-            fg="#CCCCCC", 
             insertbackground="#FFFFFF",
             relief="flat", 
             bd=0, 
@@ -395,6 +423,7 @@ class ReconciliationApp(ctk.CTk):
             padx=15,
             pady=15
         )
+        self.help_box = help_box
         help_box.grid(row=0, column=0, sticky="nsew", padx=(15, 0), pady=15)
         
         # Добавляем скроллбар
@@ -456,6 +485,7 @@ class ReconciliationApp(ctk.CTk):
         help_box.insert("end", "Для отелей правильная наценка (прибыль) должна составлять ровно 10% от брутто-суммы. Если менеджеры допустили ошибку в формуле или округлении в Excel, строка получит статус «Нетипичная маржа» и окрасится в красный цвет для проверки бухгалтером.\n\n", "body")
         
         help_box.configure(state="disabled")
+        self.update_help_box_colors()
         
         # Правая часть: Маскот Барсик-пилот
         pilot_frame = ctk.CTkFrame(tab, fg_color="transparent")
@@ -487,21 +517,37 @@ class ReconciliationApp(ctk.CTk):
         scroll_frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
         scroll_frame.grid_columnconfigure(0, weight=1)
         
+        # --- Блок 0: Режим работы и Тема ---
+        mode_frame = ctk.CTkFrame(scroll_frame)
+        mode_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
+        mode_frame.grid_columnconfigure(1, weight=1)
+        
+        ctk.CTkLabel(mode_frame, text="⚙️ Общие настройки", font=ctk.CTkFont(size=14, weight="bold"), text_color=("#0D47A1", "#90CAF9")).grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
+        
+        self.var_simple_mode = tk.BooleanVar(value=self.settings.get('simple_mode', True))
+        self.chk_simple_mode = ctk.CTkCheckBox(mode_frame, text="Простой и безопасный режим (включен по умолчанию)", variable=self.var_simple_mode, command=self.toggle_simple_mode_ui)
+        self.chk_simple_mode.grid(row=1, column=0, columnspan=2, padx=15, pady=10, sticky="w")
+        
+        ctk.CTkLabel(mode_frame, text="Цветовая тема оформления:").grid(row=2, column=0, padx=15, pady=10, sticky="w")
+        self.var_theme = ctk.StringVar(value=self.settings.get('theme', 'Dark'))
+        self.opt_theme = ctk.CTkOptionMenu(mode_frame, values=["Dark", "Light"], variable=self.var_theme, command=self.change_theme)
+        self.opt_theme.grid(row=2, column=1, padx=15, pady=10, sticky="w")
+        
         # --- Блок 1: Настройки отелей ---
-        hotel_frame = ctk.CTkFrame(scroll_frame)
-        hotel_frame.grid(row=0, column=0, sticky="ew", padx=10, pady=10)
-        hotel_frame.grid_columnconfigure(1, weight=1)
+        self.hotel_frame = ctk.CTkFrame(scroll_frame)
+        self.hotel_frame.grid(row=1, column=0, sticky="ew", padx=10, pady=10)
+        self.hotel_frame.grid_columnconfigure(1, weight=1)
         
-        ctk.CTkLabel(hotel_frame, text="🏨 Настройки маржи отелей", font=ctk.CTkFont(size=14, weight="bold"), text_color="#A5D6A7").grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
+        ctk.CTkLabel(self.hotel_frame, text="🏨 Настройки маржи отелей", font=ctk.CTkFont(size=14, weight="bold"), text_color=("#2E7D32", "#A5D6A7")).grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
         
-        ctk.CTkLabel(hotel_frame, text="Ожидаемая наценка отеля (в %):").grid(row=1, column=0, padx=15, pady=10, sticky="w")
+        ctk.CTkLabel(self.hotel_frame, text="Ожидаемая наценка отеля (в %):").grid(row=1, column=0, padx=15, pady=10, sticky="w")
         
         self.var_hotel_margin = tk.DoubleVar(value=self.settings.get('hotel_margin', 10.0))
-        self.spn_hotel_margin = ctk.CTkEntry(hotel_frame, textvariable=self.var_hotel_margin, width=80)
+        self.spn_hotel_margin = ctk.CTkEntry(self.hotel_frame, textvariable=self.var_hotel_margin, width=80)
         self.spn_hotel_margin.grid(row=1, column=1, padx=15, pady=10, sticky="w")
         
         lbl_hotel_hint = ctk.CTkLabel(
-            hotel_frame, 
+            self.hotel_frame, 
             text="Используется для проверки статуса отелей. Если прибыль / стоимость в Барсе\nне совпадает с этим процентом, строка будет помечена красным.", 
             font=ctk.CTkFont(size=11), 
             text_color="#8A8A8A",
@@ -510,32 +556,32 @@ class ReconciliationApp(ctk.CTk):
         lbl_hotel_hint.grid(row=2, column=0, columnspan=2, padx=15, pady=(0, 15), sticky="w")
         
         # --- Блок 2: Алгоритмы сопоставления ---
-        algo_frame = ctk.CTkFrame(scroll_frame)
-        algo_frame.grid(row=1, column=0, sticky="ew", padx=10, pady=10)
-        algo_frame.grid_columnconfigure(1, weight=1)
+        self.algo_frame = ctk.CTkFrame(scroll_frame)
+        self.algo_frame.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
+        self.algo_frame.grid_columnconfigure(1, weight=1)
         
-        ctk.CTkLabel(algo_frame, text="⚙️ Алгоритмы сопоставления", font=ctk.CTkFont(size=14, weight="bold"), text_color="#90CAF9").grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
+        ctk.CTkLabel(self.algo_frame, text="⚙️ Алгоритмы сопоставления", font=ctk.CTkFont(size=14, weight="bold"), text_color=("#0D47A1", "#90CAF9")).grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
         
         self.var_enable_id = tk.BooleanVar(value=self.settings.get('enable_id_match', True))
-        self.chk_enable_id = ctk.CTkCheckBox(algo_frame, text="Включить сопоставление по уникальным ID (билеты/заказы)", variable=self.var_enable_id)
+        self.chk_enable_id = ctk.CTkCheckBox(self.algo_frame, text="Включить сопоставление по уникальным ID (билеты/заказы)", variable=self.var_enable_id)
         self.chk_enable_id.grid(row=1, column=0, columnspan=2, padx=15, pady=5, sticky="w")
         
         self.var_enable_exact = tk.BooleanVar(value=self.settings.get('enable_exact_match', True))
-        self.chk_enable_exact = ctk.CTkCheckBox(algo_frame, text="Включить точное сопоставление по очищенным названиям", variable=self.var_enable_exact)
+        self.chk_enable_exact = ctk.CTkCheckBox(self.algo_frame, text="Включить точное сопоставление по очищенным названиям", variable=self.var_enable_exact)
         self.chk_enable_exact.grid(row=2, column=0, columnspan=2, padx=15, pady=5, sticky="w")
         
         self.var_enable_fuzzy = tk.BooleanVar(value=self.settings.get('enable_fuzzy_match', True))
-        self.chk_enable_fuzzy = ctk.CTkCheckBox(algo_frame, text="Включить нечеткое (Fuzzy) сопоставление названий", variable=self.var_enable_fuzzy)
+        self.chk_enable_fuzzy = ctk.CTkCheckBox(self.algo_frame, text="Включить нечеткое (Fuzzy) сопоставление названий", variable=self.var_enable_fuzzy)
         self.chk_enable_fuzzy.grid(row=3, column=0, columnspan=2, padx=15, pady=5, sticky="w")
         
-        ctk.CTkLabel(algo_frame, text="Порог схожести текста (в %):").grid(row=4, column=0, padx=15, pady=10, sticky="w")
+        ctk.CTkLabel(self.algo_frame, text="Порог схожести текста (в %):").grid(row=4, column=0, padx=15, pady=10, sticky="w")
         
         self.var_fuzzy_threshold = tk.DoubleVar(value=self.settings.get('fuzzy_threshold', 75.0))
-        self.spn_fuzzy_threshold = ctk.CTkEntry(algo_frame, textvariable=self.var_fuzzy_threshold, width=80)
+        self.spn_fuzzy_threshold = ctk.CTkEntry(self.algo_frame, textvariable=self.var_fuzzy_threshold, width=80)
         self.spn_fuzzy_threshold.grid(row=4, column=1, padx=15, pady=10, sticky="w")
         
         lbl_fuzzy_hint = ctk.CTkLabel(
-            algo_frame, 
+            self.algo_frame, 
             text="Используется при нечетком поиске. Чем ниже порог, тем больше совпадений будет найдено,\nно выше вероятность ошибочных связей.", 
             font=ctk.CTkFont(size=11), 
             text_color="#8A8A8A",
@@ -552,7 +598,60 @@ class ReconciliationApp(ctk.CTk):
             command=self.save_custom_settings,
             width=200
         )
-        btn_save.grid(row=2, column=0, pady=20, padx=10)
+        btn_save.grid(row=3, column=0, pady=20, padx=10)
+        
+        # Переключаем доступность полей согласно простому режиму
+        self.toggle_simple_mode_ui()
+        
+    def toggle_simple_mode_ui(self):
+        is_simple = self.var_simple_mode.get()
+        state = "disabled" if is_simple else "normal"
+        
+        self.spn_hotel_margin.configure(state=state)
+        self.chk_enable_id.configure(state=state)
+        self.chk_enable_exact.configure(state=state)
+        self.chk_enable_fuzzy.configure(state=state)
+        self.spn_fuzzy_threshold.configure(state=state)
+        
+    def change_theme(self, new_theme: str):
+        self.settings['theme'] = new_theme
+        save_settings(self.settings)
+        ctk.set_appearance_mode(new_theme)
+        
+        # Обновляем стили Treeview под новую тему
+        self.style_treeviews()
+        
+        # Обновляем цвета текстового поля справки
+        self.update_help_box_colors()
+        
+        # Обновляем сетки, если данные уже загружены
+        if self.matches or self.unmatched_tp or self.unmatched_bt:
+            self.populate_grids()
+            
+    def update_help_box_colors(self):
+        if not hasattr(self, 'help_box') or not self.help_box:
+            return
+            
+        is_dark = (self.settings.get('theme', 'Dark') == 'Dark')
+        if is_dark:
+            bg_color = "#1E1E1E"
+            fg_color = "#CCCCCC"
+            h1_color = "#90CAF9"
+            h2_color = "#A5D6A7"
+            bold_color = "#FFFFFF"
+        else:
+            bg_color = "#FFFFFF"
+            fg_color = "#333333"
+            h1_color = "#0D47A1"
+            h2_color = "#2E7D32"
+            bold_color = "#000000"
+            
+        self.help_box.configure(bg=bg_color, fg=fg_color)
+        self.help_box.tag_config("h1", foreground=h1_color)
+        self.help_box.tag_config("h2", foreground=h2_color)
+        self.help_box.tag_config("bold", foreground=bold_color)
+        self.help_box.tag_config("body", foreground=fg_color)
+        self.help_box.tag_config("bullet", foreground=fg_color)
         
     def save_custom_settings(self):
         try:
@@ -571,6 +670,8 @@ class ReconciliationApp(ctk.CTk):
             self.settings['enable_id_match'] = bool(self.var_enable_id.get())
             self.settings['enable_exact_match'] = bool(self.var_enable_exact.get())
             self.settings['enable_fuzzy_match'] = bool(self.var_enable_fuzzy.get())
+            self.settings['simple_mode'] = bool(self.var_simple_mode.get())
+            self.settings['theme'] = self.var_theme.get()
             
             save_settings(self.settings)
             from models import ServiceItem
@@ -679,55 +780,99 @@ class ReconciliationApp(ctk.CTk):
         self.populate_grids()
         
     def populate_grids(self):
-        for tree in [self.tree_all, self.tree_tp, self.tree_bt, self.tree_manual_tp, self.tree_manual_bt]:
+        for tree in [self.tree_all, self.tree_mismatches, self.tree_tp, self.tree_bt, self.tree_manual_tp, self.tree_manual_bt]:
             for row in tree.get_children():
                 tree.delete(row)
                 
-        self.tree_all.tag_configure("matched", background="#1E3E20", foreground="#A5D6A7")
-        self.tree_all.tag_configure("unmatched", background="#3E2723", foreground="#FFAB91")
-        self.tree_all.tag_configure("discrepancy", background="#4A148C", foreground="#E1BEE7")
+        is_dark = (self.settings.get('theme', 'Dark') == 'Dark')
         
+        # Цвета выделения строк в зависимости от темы
+        if is_dark:
+            matched_bg, matched_fg = "#1E3E20", "#A5D6A7"
+            unmatched_bg, unmatched_fg = "#3E2723", "#FFAB91"
+            discrepancy_bg, discrepancy_fg = "#4A148C", "#E1BEE7"
+        else:
+            matched_bg, matched_fg = "#E2EFDA", "#225522"
+            unmatched_bg, unmatched_fg = "#FCE4D6", "#883311"
+            discrepancy_bg, discrepancy_fg = "#FFC7CE", "#9C0006"
+            
+        self.tree_all.tag_configure("matched", background=matched_bg, foreground=matched_fg)
+        self.tree_all.tag_configure("unmatched", background=unmatched_bg, foreground=unmatched_fg)
+        self.tree_all.tag_configure("discrepancy", background=discrepancy_bg, foreground=discrepancy_fg)
+        
+        self.tree_mismatches.tag_configure("matched", background=matched_bg, foreground=matched_fg)
+        self.tree_mismatches.tag_configure("unmatched", background=unmatched_bg, foreground=unmatched_fg)
+        self.tree_mismatches.tag_configure("discrepancy", background=discrepancy_bg, foreground=discrepancy_fg)
+        
+        # 1. Сначала заполняем сопоставления
         for tp, bt, method, score in self.matches:
             status_text = tp.get_status_text(bt)
             tag = "discrepancy" if status_text in ["Нетипичная маржа", "Несовпадение по суммам"] else "matched"
-            tp_id = list(tp.ids)[0] if tp.ids else "N/A"
-            self.tree_all.insert("", "end", values=(
+            
+            tp_ids = list(tp.ids) if tp.ids else []
+            bt_ids = list(bt.ids) if bt.ids else []
+            all_ids = sorted(list(set(tp_ids + bt_ids)))
+            tp_id = ", ".join(all_ids) if all_ids else "N/A"
+            
+            vals = (
                 tp_id, tp.service_type,
-                tp.desc, f"{tp.allocated_amount:,.2f}",
-                bt.desc, f"{bt.amount:,.2f}",
+                tp.doc, tp.desc, f"{tp.allocated_amount:,.2f}",
+                bt.doc, bt.desc, f"{bt.amount:,.2f}",
                 f"{(bt.amount - tp.allocated_amount):,.2f}",
                 method, status_text
-            ), tags=(tag,))
+            )
+            self.tree_all.insert("", "end", values=vals, tags=(tag,))
             
+            if tag == "discrepancy":
+                self.tree_mismatches.insert("", "end", values=vals, tags=(tag,))
+            
+        # 2. Затем нераспределенные из TicketProf
         for tp in self.unmatched_tp:
-            tp_id = list(tp.ids)[0] if tp.ids else "N/A"
+            tp_ids = sorted(list(tp.ids)) if tp.ids else []
+            tp_id = ", ".join(tp_ids) if tp_ids else "N/A"
             status_text = tp.get_status_text(None)
-            self.tree_all.insert("", "end", values=(
+            
+            vals = (
                 tp_id, tp.service_type,
-                tp.desc, f"{tp.allocated_amount:,.2f}",
-                "Отсутствует в Bars Tour", "0.00", "0.00",
+                tp.doc, tp.desc, f"{tp.allocated_amount:,.2f}",
+                "", "Отсутствует в Bars Tour", "0.00", "0.00",
                 "Не сопоставлено", status_text
-            ), tags=("unmatched",))
+            )
+            self.tree_all.insert("", "end", values=vals, tags=("unmatched",))
+            self.tree_mismatches.insert("", "end", values=vals, tags=("unmatched",))
             
+        # 3. Наконец, нераспределенные из Bars Tour
         for bt in self.unmatched_bt:
-            bt_id = list(bt.ids)[0] if bt.ids else "N/A"
+            bt_ids = sorted(list(bt.ids)) if bt.ids else []
+            bt_id = ", ".join(bt_ids) if bt_ids else "N/A"
             status_text = bt.get_status_text(None)
-            self.tree_all.insert("", "end", values=(
-                bt_id, bt.service_type,
-                "Отсутствует в TicketProf", "0.00",
-                bt.desc, f"{bt.amount:,.2f}", "0.00",
-                "Не сопоставлено", status_text
-            ), tags=("unmatched",))
             
+            vals = (
+                bt_id, bt.service_type,
+                "", "Отсутствует в TicketProf", "0.00",
+                bt.doc, bt.desc, f"{bt.amount:,.2f}", "0.00",
+                "Не сопоставлено", status_text
+            )
+            
+            if status_text == "Норма (Сбор в БТ)":
+                self.tree_all.insert("", "end", values=vals, tags=("matched",))
+            else:
+                self.tree_all.insert("", "end", values=vals, tags=("unmatched",))
+                self.tree_mismatches.insert("", "end", values=vals, tags=("unmatched",))
+            
+        # 4. Вкладка "В Тикете, нет в Барсе"
         for tp in self.unmatched_tp:
-            tp_id = list(tp.ids)[0] if tp.ids else "N/A"
+            tp_ids = sorted(list(tp.ids)) if tp.ids else []
+            tp_id = ", ".join(tp_ids) if tp_ids else "N/A"
             self.tree_tp.insert("", "end", values=(
                 tp.row, tp.date, tp.doc, tp.desc, tp.service_type, f"{tp.allocated_amount:,.2f}", tp_id
             ))
             self.tree_manual_tp.insert("", "end", values=(tp.row, tp.desc, f"{tp.allocated_amount:,.2f}"))
             
+        # 5. Вкладка "В Барсе, нет в Тикете"
         for bt in self.unmatched_bt:
-            bt_id = list(bt.ids)[0] if bt.ids else "N/A"
+            bt_ids = sorted(list(bt.ids)) if bt.ids else []
+            bt_id = ", ".join(bt_ids) if bt_ids else "N/A"
             self.tree_bt.insert("", "end", values=(
                 bt.row, bt.date, bt.doc, bt.desc, bt.service_type, f"{bt.amount:,.2f}", bt_id
             ))
@@ -763,18 +908,21 @@ class ReconciliationApp(ctk.CTk):
         values = item["values"]
         
         details = []
-        if len(values) == 9:
+        if len(values) == 11:
             details.append(f"Код идентификации: {values[0]}")
             details.append(f"Категория услуги: {values[1]}")
             details.append(f"--- TicketProf ---")
-            details.append(f"Описание: {values[2]}")
-            details.append(f"Стоимость услуг: {values[3]}")
+            details.append(f"Документ: {values[2]}")
+            details.append(f"Описание: {values[3]}")
+            details.append(f"Стоимость услуг: {values[4]} руб.")
             details.append(f"--- Bars Tour ---")
-            details.append(f"Описание: {values[4]}")
-            details.append(f"Итого в Барсе: {values[5]}")
-            details.append(f"Прибыль: {values[6]} руб.")
-            details.append(f"Метод привязки: {values[7]}")
-            details.append(f"Статус: {values[8]}")
+            details.append(f"Документ: {values[5]}")
+            details.append(f"Описание: {values[6]}")
+            details.append(f"Итого в Барсе: {values[7]} руб.")
+            details.append(f"------------------")
+            details.append(f"Прибыль: {values[8]} руб.")
+            details.append(f"Метод привязки: {values[9]}")
+            details.append(f"Статус: {values[10]}")
         else:
             details.append(f"Строка в Excel: {values[0]}")
             details.append(f"Дата транзакции: {values[1]}")

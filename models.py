@@ -37,6 +37,8 @@ class ServiceItem:
             if self.source == "TP":
                 return "В Тикете, нет в Барсе"
             else:
+                if self.service_type == "Fee":
+                    return "Норма (Сбор в БТ)"
                 return "В Барсе, нет в Тикете"
         
         if other is not None:
@@ -45,12 +47,17 @@ class ServiceItem:
             bt_amt = other.amount if self.source == "TP" else self.amount
             profit = bt_amt - tp_amt
             
-            # Логика для отелей: прибыль должна соответствовать настроенному проценту маржи
+            # Логика для отелей: прибыль должна соответствовать настроенному проценту маржи (только для продаж, т.е. bt_amt > 0)
             if (self.service_type == "Hotel" or other.service_type == "Hotel"):
-                margin_pct = getattr(ServiceItem, 'hotel_margin', 10.0)
-                expected_profit = (margin_pct / 100.0) * bt_amt
-                if abs(profit - expected_profit) > 0.01:
-                    return "Нетипичная маржа"
+                if bt_amt > 0:
+                    margin_pct = getattr(ServiceItem, 'hotel_margin', 10.0)
+                    expected_profit = (margin_pct / 100.0) * bt_amt
+                    if abs(profit - expected_profit) > 0.01:
+                        return "Нетипичная маржа"
+                else:
+                    # При возврате/корректировке отеля прибыль должна быть 0.0
+                    if abs(profit) > 0.01:
+                        return "Несовпадение по суммам"
             else:
                 # Для остальных услуг, если прибыль отрицательная - это ошибка (убыток)
                 if profit < 0:

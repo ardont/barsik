@@ -102,8 +102,8 @@ def export_to_excel(
     
     headers = [
         "Сквозной ID", "Тип услуги",
-        "Описание TicketProf", "Стоимость услуг",
-        "Описание Bars Tour", "Итого в Барсе",
+        "Документ TicketProf", "Описание TicketProf", "Стоимость услуг",
+        "Документ Bars Tour", "Описание Bars Tour", "Итого в Барсе",
         "Прибыль", "Метод сопоставления", "Статус"
     ]
     
@@ -118,7 +118,7 @@ def export_to_excel(
     # Собираем данные
     row_idx = 2
     
-    # Добавляем сначала совпадения
+    # Добавляем сначала сопоставления
     for tp, bt, method, score in matches:
         profit = bt.amount - tp.allocated_amount
         status_text = tp.get_status_text(bt)
@@ -127,12 +127,15 @@ def export_to_excel(
         if status_text in ["Нетипичная маржа", "Несовпадение по суммам"]:
             row_fill = discrepancy_fill
             
-        tp_id = list(tp.ids)[0] if tp.ids else "N/A"
+        tp_ids = list(tp.ids) if tp.ids else []
+        bt_ids = list(bt.ids) if bt.ids else []
+        all_ids = sorted(list(set(tp_ids + bt_ids)))
+        tp_id = ", ".join(all_ids) if all_ids else "N/A"
         
         row_data = [
             tp_id, tp.service_type,
-            tp.desc, tp.allocated_amount,
-            bt.desc, bt.amount,
+            tp.doc, tp.desc, tp.allocated_amount,
+            bt.doc, bt.desc, bt.amount,
             profit, method, status_text
         ]
         
@@ -143,9 +146,9 @@ def export_to_excel(
             cell.font = Font(name=font_family, size=9)
             
             # Выравнивание
-            if col_idx in [1, 2, 8, 9]:
+            if col_idx in [1, 2, 3, 6, 10, 11]:
                 cell.alignment = align_center
-            elif col_idx in [3, 5]:
+            elif col_idx in [4, 7]:
                 cell.alignment = align_left
             else:
                 cell.alignment = align_right
@@ -156,13 +159,14 @@ def export_to_excel(
         
     # Добавляем нераспределенные TP
     for tp in unmatched_tp:
-        tp_id = list(tp.ids)[0] if tp.ids else "N/A"
+        tp_ids = sorted(list(tp.ids)) if tp.ids else []
+        tp_id = ", ".join(tp_ids) if tp_ids else "N/A"
         status_text = tp.get_status_text(None)
         
         row_data = [
             tp_id, tp.service_type,
-            tp.desc, tp.allocated_amount,
-            "Отсутствует в Bars Tour", 0.0,
+            tp.doc, tp.desc, tp.allocated_amount,
+            "", "Отсутствует в Bars Tour", 0.0,
             0.0, "Не сопоставлено", status_text
         ]
         for col_idx, val in enumerate(row_data, 1):
@@ -171,9 +175,9 @@ def export_to_excel(
             cell.fill = unmatched_fill
             cell.font = Font(name=font_family, size=9)
             
-            if col_idx in [1, 2, 8, 9]:
+            if col_idx in [1, 2, 3, 6, 10, 11]:
                 cell.alignment = align_center
-            elif col_idx in [3, 5]:
+            elif col_idx in [4, 7]:
                 cell.alignment = align_left
             else:
                 cell.alignment = align_right
@@ -183,24 +187,27 @@ def export_to_excel(
         
     # Добавляем нераспределенные BT
     for bt in unmatched_bt:
-        bt_id = list(bt.ids)[0] if bt.ids else "N/A"
+        bt_ids = sorted(list(bt.ids)) if bt.ids else []
+        bt_id = ", ".join(bt_ids) if bt_ids else "N/A"
         status_text = bt.get_status_text(None)
+        
+        row_fill = matched_fill if status_text == "Норма (Сбор в БТ)" else unmatched_fill
         
         row_data = [
             bt_id, bt.service_type,
-            "Отсутствует в TicketProf", 0.0,
-            bt.desc, bt.amount,
+            "", "Отсутствует в TicketProf", 0.0,
+            bt.doc, bt.desc, bt.amount,
             0.0, "Не сопоставлено", status_text
         ]
         for col_idx, val in enumerate(row_data, 1):
             cell = ws_all.cell(row=row_idx, column=col_idx, value=val)
             cell.border = thin_border
-            cell.fill = unmatched_fill
+            cell.fill = row_fill
             cell.font = Font(name=font_family, size=9)
             
-            if col_idx in [1, 2, 8, 9]:
+            if col_idx in [1, 2, 3, 6, 10, 11]:
                 cell.alignment = align_center
-            elif col_idx in [3, 5]:
+            elif col_idx in [4, 7]:
                 cell.alignment = align_left
             else:
                 cell.alignment = align_right
@@ -225,19 +232,19 @@ def export_to_excel(
     
     # Копируем красные и желтые строки с основного листа
     for r in range(2, row_idx):
-        status_val = ws_all.cell(row=r, column=9).value
+        status_val = ws_all.cell(row=r, column=11).value
         if status_val in ["Нетипичная маржа", "В Тикете, нет в Барсе", "В Барсе, нет в Тикете", "Несовпадение по суммам"]:
             row_fill = discrepancy_fill if status_val in ["Нетипичная маржа", "Несовпадение по суммам"] else unmatched_fill
-            for col_idx in range(1, 10):
+            for col_idx in range(1, 12):
                 cell_src = ws_all.cell(row=r, column=col_idx)
                 cell_dst = ws_mismatches.cell(row=m_row_idx, column=col_idx, value=cell_src.value)
                 cell_dst.border = thin_border
                 cell_dst.fill = row_fill
                 cell_dst.font = Font(name=font_family, size=9)
                 
-                if col_idx in [1, 2, 8, 9]:
+                if col_idx in [1, 2, 3, 6, 10, 11]:
                     cell_dst.alignment = align_center
-                elif col_idx in [3, 5]:
+                elif col_idx in [4, 7]:
                     cell_dst.alignment = align_left
                 else:
                     cell_dst.alignment = align_right

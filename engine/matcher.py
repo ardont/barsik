@@ -28,10 +28,16 @@ def match_records(
     if settings is None:
         settings = {}
         
-    enable_id_match = settings.get('enable_id_match', True)
-    enable_exact_match = settings.get('enable_exact_match', True)
-    enable_fuzzy_match = settings.get('enable_fuzzy_match', True)
-    fuzzy_threshold = settings.get('fuzzy_threshold', 75.0) / 100.0
+    if settings.get('simple_mode', True):
+        enable_id_match = True
+        enable_exact_match = True
+        enable_fuzzy_match = False
+        fuzzy_threshold = 0.75
+    else:
+        enable_id_match = settings.get('enable_id_match', True)
+        enable_exact_match = settings.get('enable_exact_match', True)
+        enable_fuzzy_match = settings.get('enable_fuzzy_match', True)
+        fuzzy_threshold = settings.get('fuzzy_threshold', 75.0) / 100.0
     
     matches = []
     
@@ -51,7 +57,7 @@ def match_records(
     for tp in tp_items:
         if not tp.matched and tp.clean_desc in manual_links:
             target_clean_bt = manual_links[tp.clean_desc]
-            bt_matches = [b for b in bt_items if b.clean_desc == target_clean_bt and not b.matched and b.service_type == tp.service_type]
+            bt_matches = [b for b in bt_items if b.clean_desc == target_clean_bt and not b.matched and b.service_type == tp.service_type and ((tp.allocated_amount >= 0 and b.amount >= 0) or (tp.allocated_amount < 0 and b.amount < 0))]
             if bt_matches:
                 best_bt = min(bt_matches, key=lambda b: abs(get_compare_amount(b, tp.service_type) - tp.allocated_amount))
                 tp.matched = True
@@ -68,7 +74,7 @@ def match_records(
     if enable_id_match:
         for tp in tp_items:
             if not tp.matched and tp.ids:
-                bt_matches = [b for b in bt_items if b.ids.intersection(tp.ids) and b.service_type == tp.service_type and not b.matched]
+                bt_matches = [b for b in bt_items if b.ids.intersection(tp.ids) and b.service_type == tp.service_type and not b.matched and ((tp.allocated_amount >= 0 and b.amount >= 0) or (tp.allocated_amount < 0 and b.amount < 0))]
                 if bt_matches:
                     best_bt = min(bt_matches, key=lambda b: abs(get_compare_amount(b, tp.service_type) - tp.allocated_amount))
                     tp.matched = True
@@ -85,7 +91,7 @@ def match_records(
     if enable_exact_match:
         for tp in tp_items:
             if not tp.matched:
-                bt_matches = [b for b in bt_items if b.clean_desc == tp.clean_desc and b.service_type == tp.service_type and not b.matched]
+                bt_matches = [b for b in bt_items if b.clean_desc == tp.clean_desc and b.service_type == tp.service_type and not b.matched and ((tp.allocated_amount >= 0 and b.amount >= 0) or (tp.allocated_amount < 0 and b.amount < 0))]
                 if bt_matches:
                     best_bt = min(bt_matches, key=lambda b: abs(get_compare_amount(b, tp.service_type) - tp.allocated_amount))
                     tp.matched = True
@@ -102,7 +108,7 @@ def match_records(
     if enable_fuzzy_match:
         for tp in tp_items:
             if not tp.matched:
-                unmatched_bt = [b for b in bt_items if not b.matched and b.service_type == tp.service_type]
+                unmatched_bt = [b for b in bt_items if not b.matched and b.service_type == tp.service_type and ((tp.allocated_amount >= 0 and b.amount >= 0) or (tp.allocated_amount < 0 and b.amount < 0))]
                 best_bt = None
                 best_score = 0.0
                 
