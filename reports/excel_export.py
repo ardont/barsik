@@ -10,6 +10,7 @@ from openpyxl.styles import PatternFill, Font, Border, Side, Alignment
 from openpyxl.utils import get_column_letter
 from models import ServiceItem, ReconciliationSummary
 from config import EXCEL_STYLES
+from engine.normalizer import get_primary_id
 
 def export_to_excel(
     tp_items: list,
@@ -127,10 +128,7 @@ def export_to_excel(
         if status_text in ["Нетипичная маржа", "Несовпадение по суммам"]:
             row_fill = discrepancy_fill
             
-        tp_ids = list(tp.ids) if tp.ids else []
-        bt_ids = list(bt.ids) if bt.ids else []
-        all_ids = sorted(list(set(tp_ids + bt_ids)))
-        tp_id = ", ".join(all_ids) if all_ids else "N/A"
+        tp_id = get_primary_id(tp.ids.union(bt.ids))
         
         row_data = [
             tp_id, tp.service_type,
@@ -159,10 +157,9 @@ def export_to_excel(
         
     # Добавляем нераспределенные TP
     for tp in unmatched_tp:
-        tp_ids = sorted(list(tp.ids)) if tp.ids else []
-        tp_id = ", ".join(tp_ids) if tp_ids else "N/A"
+        tp_id = get_primary_id(tp.ids)
         status_text = tp.get_status_text(None)
-        
+
         row_data = [
             tp_id, tp.service_type,
             tp.doc, tp.desc, tp.allocated_amount,
@@ -187,8 +184,7 @@ def export_to_excel(
         
     # Добавляем нераспределенные BT
     for bt in unmatched_bt:
-        bt_ids = sorted(list(bt.ids)) if bt.ids else []
-        bt_id = ", ".join(bt_ids) if bt_ids else "N/A"
+        bt_id = get_primary_id(bt.ids)
         status_text = bt.get_status_text(None)
         
         row_fill = matched_fill if status_text == "Норма (Сбор в БТ)" else unmatched_fill
