@@ -47,7 +47,16 @@ class ServiceItem:
             bt_amt = other.amount if self.source == "TP" else self.amount
             profit = bt_amt - tp_amt
             
-            # Проверка маржи отелей выполняется только при явном флаге enable_margin_check
+            # Для отелей выделяем маржинальную прибыль
+            if self.service_type == "Hotel" or other.service_type == "Hotel":
+                if profit > 0.01:
+                    return f"Прибыль (отель): +{profit:,.2f} руб."
+                elif profit < -0.01:
+                    return "Несовпадение по суммам"
+                else:
+                    return "Совпадение (отель)"
+            
+            # Проверка маржи отелей при включенном флаге
             enable_margin_check = getattr(ServiceItem, 'enable_margin_check', False)
             if enable_margin_check and (self.service_type == "Hotel" or other.service_type == "Hotel"):
                 if bt_amt > 0:
@@ -83,3 +92,4 @@ class ReconciliationSummary:
     unmatched_bt_sum: float = 0.0
     
     total_profit: float = 0.0
+    hotel_profit: float = 0.0

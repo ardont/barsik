@@ -42,6 +42,9 @@ def calculate_reconciliation(
         bt_item.net = tp_item.allocated_amount
         
         summary.total_profit += profit
+        if tp_item.service_type == "Hotel" or bt_item.service_type == "Hotel":
+            if profit > 0:
+                summary.hotel_profit += profit
         
     summary.matched_tp_count = len(matched_tp_rows)
     summary.matched_tp_sum = sum(item.allocated_amount for item in tp_items if item.row in matched_tp_rows)

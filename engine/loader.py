@@ -125,8 +125,10 @@ def parse_tp_sheet(ws: Any, col_map: dict) -> Tuple[List[ServiceItem], dict]:
         
         is_header = False
         if val_date is not None and val_doc is not None:
-            if any(kw in str(val_doc) for kw in ["Продажа", "Оплата", "Возврат", "Корректировка"]):
-                is_header = True
+            v_doc_str = str(val_doc).strip()
+            if any(kw in v_doc_str for kw in ["Продажа", "Возврат", "Корректировка"]):
+                if not any(skip in v_doc_str for skip in ["Оплата", "Сальдо", "Банк", "Выписка"]):
+                    is_header = True
                 
         if is_header:
             current_date = str(val_date).strip()
@@ -137,22 +139,24 @@ def parse_tp_sheet(ws: Any, col_map: dict) -> Tuple[List[ServiceItem], dict]:
             doc_sums[(current_date, current_doc)] = current_doc_amt
         elif val_date is not None and val_doc is None:
             desc = str(val_date).strip()
-            if not any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Итого"]):
-                c_val = to_float(val_debit)
-                d_val = to_float(val_credit)
-                amt = c_val if c_val is not None else (-d_val if d_val is not None else 0.0)
-                tp_items.append(ServiceItem(
-                    row=r,
-                    date=current_date or "",
-                    doc=current_doc or "",
-                    desc=desc,
-                    clean_desc=clean_text(desc),
-                    service_type=classify_service(desc),
-                    amount=amt,
-                    allocated_amount=amt,
-                    ids=extract_identifiers(desc),
-                    source="TP"
-                ))
+            if any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Сальдо начальное", "Сальдо", "Итого", "Оплата", "Оплата по счету"]):
+                continue
+                
+            c_val = to_float(val_debit)
+            d_val = to_float(val_credit)
+            amt = c_val if c_val is not None else (-d_val if d_val is not None else 0.0)
+            tp_items.append(ServiceItem(
+                row=r,
+                date=current_date or "",
+                doc=current_doc or "",
+                desc=desc,
+                clean_desc=clean_text(desc),
+                service_type=classify_service(desc),
+                amount=amt,
+                allocated_amount=amt,
+                ids=extract_identifiers(desc),
+                source="TP"
+            ))
                 
     return tp_items, doc_sums
 
@@ -174,39 +178,43 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
         
         is_header = False
         if val_date is not None and val_doc is not None:
-            if any(kw in str(val_doc) for kw in ["Приход", "Оплата", "Возврат", "Принято"]):
-                is_header = True
+            v_doc_str = str(val_doc).strip()
+            if any(kw in v_doc_str for kw in ["Приход", "Возврат", "Принято"]):
+                if not any(skip in v_doc_str for skip in ["Оплата", "Сальдо", "Банк", "Выписка"]):
+                    is_header = True
                 
         if is_header:
             current_date = str(val_date).strip()
             current_doc = str(val_doc).strip()
         elif val_date is not None and val_doc is None:
             desc = str(val_date).strip()
-            if not any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Итого"]):
-                j_val = to_float(val_amt)
-                amt = j_val if j_val is not None else 0.0
-                if amt == 0.0 and not extract_identifiers(desc):
-                    continue
-                    
-                profit_val = to_float(val_profit)
-                net_val = to_float(val_net)
+            if any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Сальдо начальное", "Сальдо", "Итого", "Оплата", "Оплата по счету"]):
+                continue
                 
-                bt_items.append(ServiceItem(
-                    row=r,
-                    date=current_date or "",
-                    doc=current_doc or "",
-                    desc=desc,
-                    clean_desc=clean_text(desc),
-                    service_type=classify_service(desc),
-                    amount=amt,
-                    allocated_amount=amt,
-                    ids=extract_identifiers(desc),
-                    profit=profit_val,
-                    net=net_val,
-                    source="BT"
-                ))
+            j_val = to_float(val_amt)
+            amt = j_val if j_val is not None else 0.0
+            if amt == 0.0 and not extract_identifiers(desc):
+                continue
                 
-    # Группировка элементов Bars Tour (схлопывание строк с одинаковым описанием под одним документом)
+            profit_val = to_float(val_profit)
+            net_val = to_float(val_net)
+            
+            bt_items.append(ServiceItem(
+                row=r,
+                date=current_date or "",
+                doc=current_doc or "",
+                desc=desc,
+                clean_desc=clean_text(desc),
+                service_type=classify_service(desc),
+                amount=amt,
+                allocated_amount=amt,
+                ids=extract_identifiers(desc),
+                profit=profit_val,
+                net=net_val,
+                source="BT"
+            ))
+                
+    # Группировка элементов Bars Tour (схлопывание подстрок / подпозиций под одним документом)
     from collections import defaultdict
     grouped_bt = defaultdict(list)
     for item in bt_items:
@@ -218,27 +226,36 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
         if len(items) == 1:
             final_bt_items.append(items[0])
         else:
-            # Сортируем элементы по модулю суммы для правильной классификации (Profit < Net < Total)
             sorted_items = sorted(items, key=lambda x: abs(x.amount))
-            best_item = sorted_items[-1]  # Элемент с максимальной суммой (Total)
+            best_item = sorted_items[-1]
             
-            # Объединяем все извлеченные ID
             merged_ids = set()
             for x in items:
                 merged_ids.update(x.ids)
             best_item.ids = merged_ids
             
-            if len(sorted_items) == 2:
-                # Если 2 элемента: меньший - profit, больший - net
-                best_item.profit = sorted_items[0].amount
-                best_item.net = sorted_items[1].amount
-                best_item.amount = sorted_items[0].amount + sorted_items[1].amount
-                best_item.allocated_amount = best_item.amount
-            elif len(sorted_items) >= 3:
-                # Если 3 элемента: меньший - profit, средний - net, максимальный - total (amount)
-                best_item.profit = sorted_items[0].amount
-                best_item.net = sorted_items[1].amount
-                best_item.amount = sorted_items[2].amount
+            # Проверяем, есть ли явные колонки profit/net (двухфайловый режим)
+            has_explicit_net_profit = any(x.profit is not None or x.net is not None for x in items)
+            
+            if has_explicit_net_profit:
+                if len(sorted_items) == 2:
+                    best_item.profit = sorted_items[0].amount
+                    best_item.net = sorted_items[1].amount
+                    best_item.amount = sorted_items[0].amount + sorted_items[1].amount
+                    best_item.allocated_amount = best_item.amount
+                elif len(sorted_items) >= 3:
+                    best_item.profit = sorted_items[0].amount
+                    best_item.net = sorted_items[1].amount
+                    best_item.amount = sorted_items[2].amount
+                    best_item.allocated_amount = best_item.amount
+            else:
+                # В режиме единого файла суммируем уникальные строки-составляющие (например, 14462 + 30 = 14492)
+                amounts = [x.amount for x in items]
+                unique_positive_amounts = list(set(amounts))
+                if len(unique_positive_amounts) > 1:
+                    best_item.amount = sum(unique_positive_amounts)
+                else:
+                    best_item.amount = sorted_items[-1].amount
                 best_item.allocated_amount = best_item.amount
                 
             best_item.row = items[0].row

@@ -69,7 +69,8 @@ def export_to_excel(
         ("Успешно сопоставлено (Итого в Барсе)", summary.matched_bt_count, summary.matched_bt_sum),
         ("В Тикете, нет в Барсе", summary.unmatched_tp_count, summary.unmatched_tp_sum),
         ("В Барсе, нет в Тикете", summary.unmatched_bt_count, summary.unmatched_bt_sum),
-        ("Прибыль (Итого в Барсе - Стоимость услуг)", "", summary.total_profit)
+        ("В т.ч. маржа/прибыль по отелям (гостиницам)", "", summary.hotel_profit),
+        ("Прибыль итоговая (Итого в Барсе - Стоимость услуг)", "", summary.total_profit)
     ]
     
     start_row = 5
