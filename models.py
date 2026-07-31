@@ -47,30 +47,18 @@ class ServiceItem:
             bt_amt = other.amount if self.source == "TP" else self.amount
             profit = bt_amt - tp_amt
             
-            # Для отелей выделяем маржинальную прибыль
             if self.service_type == "Hotel" or other.service_type == "Hotel":
                 if profit > 0.01:
-                    return f"Прибыль (отель): +{profit:,.2f} руб."
+                    return f"Расхождение / Прибыль (отель): +{profit:,.2f} руб."
                 elif profit < -0.01:
-                    return "Несовпадение по суммам"
+                    return f"Несовпадение по суммам ({profit:,.2f} руб.)"
                 else:
                     return "Совпадение (отель)"
             
-            # Проверка маржи отелей при включенном флаге
-            enable_margin_check = getattr(ServiceItem, 'enable_margin_check', False)
-            if enable_margin_check and (self.service_type == "Hotel" or other.service_type == "Hotel"):
-                if bt_amt > 0:
-                    margin_pct = getattr(ServiceItem, 'hotel_margin', 10.0)
-                    expected_profit = (margin_pct / 100.0) * bt_amt
-                    if abs(profit - expected_profit) > 0.01:
-                        return "Нетипичная маржа"
-                else:
-                    if abs(profit) > 0.01:
-                        return "Несовпадение по суммам"
-            else:
-                # Если прибыль отрицательная (продажа в убыток), то фиксируем расхождение
-                if profit < -0.01:
-                    return "Несовпадение по суммам"
+            if profit > 0.01:
+                return f"Расхождение / Прибыль: +{profit:,.2f} руб."
+            elif profit < -0.01:
+                return f"Несовпадение по суммам ({profit:,.2f} руб.)"
                     
         return "Совпадение"
 

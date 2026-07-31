@@ -125,9 +125,9 @@ def export_to_excel(
         profit = bt.amount - tp.allocated_amount
         status_text = tp.get_status_text(bt)
         
-        row_fill = matched_fill
-        if status_text in ["Нетипичная маржа", "Несовпадение по суммам"]:
-            row_fill = discrepancy_fill
+        diff = abs(profit)
+        is_disc = (diff > 0.01 or status_text in ["Нетипичная маржа", "Несовпадение по суммам"] or "Прибыль" in status_text or "Расхождение" in status_text)
+        row_fill = discrepancy_fill if is_disc else matched_fill
             
         tp_id = get_primary_id(tp.ids.union(bt.ids))
         
@@ -229,9 +229,17 @@ def export_to_excel(
     
     # Копируем красные и желтые строки с основного листа
     for r in range(2, row_idx):
-        status_val = ws_all.cell(row=r, column=11).value
-        if status_val in ["Нетипичная маржа", "В Тикете, нет в Барсе", "В Барсе, нет в Тикете", "Несовпадение по суммам"]:
-            row_fill = discrepancy_fill if status_val in ["Нетипичная маржа", "Несовпадение по суммам"] else unmatched_fill
+        status_val = str(ws_all.cell(row=r, column=11).value or '')
+        profit_val = ws_all.cell(row=r, column=9).value
+        try:
+            p_abs = abs(float(profit_val)) if profit_val is not None else 0.0
+        except (ValueError, TypeError):
+            p_abs = 0.0
+            
+        is_disc = (p_abs > 0.01 or status_val in ["Нетипичная маржа", "Несовпадение по суммам", "В Тикете, нет в Барсе", "В Барсе, нет в Тикете"] or "Прибыль" in status_val or "Расхождение" in status_val)
+        if is_disc:
+            is_red = (p_abs > 0.01 or status_val in ["Нетипичная маржа", "Несовпадение по суммам"] or "Прибыль" in status_val or "Расхождение" in status_val)
+            row_fill = discrepancy_fill if is_red else unmatched_fill
             for col_idx in range(1, 12):
                 cell_src = ws_all.cell(row=r, column=col_idx)
                 cell_dst = ws_mismatches.cell(row=m_row_idx, column=col_idx, value=cell_src.value)

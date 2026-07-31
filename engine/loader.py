@@ -248,17 +248,10 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
                     best_item.net = sorted_items[1].amount
                     best_item.amount = sorted_items[2].amount
                     best_item.allocated_amount = best_item.amount
+                best_item.row = items[0].row
+                final_bt_items.append(best_item)
             else:
-                # В режиме единого файла суммируем уникальные строки-составляющие (например, 14462 + 30 = 14492)
-                amounts = [x.amount for x in items]
-                unique_positive_amounts = list(set(amounts))
-                if len(unique_positive_amounts) > 1:
-                    best_item.amount = sum(unique_positive_amounts)
-                else:
-                    best_item.amount = sorted_items[-1].amount
-                best_item.allocated_amount = best_item.amount
+                # В режиме единого файла сохраняем строки без принудительного суммирования
+                final_bt_items.extend(items)
                 
-            best_item.row = items[0].row
-            final_bt_items.append(best_item)
-            
     return final_bt_items

@@ -524,8 +524,8 @@ class ReconciliationApp(ctk.CTk):
         
         ctk.CTkLabel(mode_frame, text="⚙️ Общие настройки", font=ctk.CTkFont(size=14, weight="bold"), text_color=("#0D47A1", "#90CAF9")).grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
         
-        self.var_simple_mode = tk.BooleanVar(value=self.settings.get('simple_mode', True))
-        self.chk_simple_mode = ctk.CTkCheckBox(mode_frame, text="Простой и безопасный режим (включен по умолчанию)", variable=self.var_simple_mode, command=self.toggle_simple_mode_ui)
+        self.var_simple_mode = tk.BooleanVar(value=True)
+        self.chk_simple_mode = ctk.CTkCheckBox(mode_frame, text="Стандартный режим сверки (включен по умолчанию)", variable=self.var_simple_mode, state="disabled")
         self.chk_simple_mode.grid(row=1, column=0, columnspan=2, padx=15, pady=10, sticky="w")
         
         ctk.CTkLabel(mode_frame, text="Цветовая тема оформления:").grid(row=2, column=0, padx=15, pady=10, sticky="w")
@@ -548,46 +548,12 @@ class ReconciliationApp(ctk.CTk):
         
         lbl_hotel_hint = ctk.CTkLabel(
             self.hotel_frame, 
-            text="Используется для проверки статуса отелей. Если прибыль / стоимость в Барсе\nне совпадает с этим процентом, строка будет помечена красным.", 
+            text="Используется для расчетов маржи отелей.", 
             font=ctk.CTkFont(size=11), 
             text_color="#8A8A8A",
             justify="left"
         )
         lbl_hotel_hint.grid(row=2, column=0, columnspan=2, padx=15, pady=(0, 15), sticky="w")
-        
-        # --- Блок 2: Алгоритмы сопоставления ---
-        self.algo_frame = ctk.CTkFrame(scroll_frame)
-        self.algo_frame.grid(row=2, column=0, sticky="ew", padx=10, pady=10)
-        self.algo_frame.grid_columnconfigure(1, weight=1)
-        
-        ctk.CTkLabel(self.algo_frame, text="⚙️ Алгоритмы сопоставления", font=ctk.CTkFont(size=14, weight="bold"), text_color=("#0D47A1", "#90CAF9")).grid(row=0, column=0, columnspan=2, padx=15, pady=(15, 5), sticky="w")
-        
-        self.var_enable_id = tk.BooleanVar(value=self.settings.get('enable_id_match', True))
-        self.chk_enable_id = ctk.CTkCheckBox(self.algo_frame, text="Включить сопоставление по уникальным ID (билеты/заказы)", variable=self.var_enable_id)
-        self.chk_enable_id.grid(row=1, column=0, columnspan=2, padx=15, pady=5, sticky="w")
-        
-        self.var_enable_exact = tk.BooleanVar(value=self.settings.get('enable_exact_match', True))
-        self.chk_enable_exact = ctk.CTkCheckBox(self.algo_frame, text="Включить точное сопоставление по очищенным названиям", variable=self.var_enable_exact)
-        self.chk_enable_exact.grid(row=2, column=0, columnspan=2, padx=15, pady=5, sticky="w")
-        
-        self.var_enable_fuzzy = tk.BooleanVar(value=self.settings.get('enable_fuzzy_match', True))
-        self.chk_enable_fuzzy = ctk.CTkCheckBox(self.algo_frame, text="Включить нечеткое (Fuzzy) сопоставление названий", variable=self.var_enable_fuzzy)
-        self.chk_enable_fuzzy.grid(row=3, column=0, columnspan=2, padx=15, pady=5, sticky="w")
-        
-        ctk.CTkLabel(self.algo_frame, text="Порог схожести текста (в %):").grid(row=4, column=0, padx=15, pady=10, sticky="w")
-        
-        self.var_fuzzy_threshold = tk.DoubleVar(value=self.settings.get('fuzzy_threshold', 75.0))
-        self.spn_fuzzy_threshold = ctk.CTkEntry(self.algo_frame, textvariable=self.var_fuzzy_threshold, width=80)
-        self.spn_fuzzy_threshold.grid(row=4, column=1, padx=15, pady=10, sticky="w")
-        
-        lbl_fuzzy_hint = ctk.CTkLabel(
-            self.algo_frame, 
-            text="Используется при нечетком поиске. Чем ниже порог, тем больше совпадений будет найдено,\nно выше вероятность ошибочных связей.", 
-            font=ctk.CTkFont(size=11), 
-            text_color="#8A8A8A",
-            justify="left"
-        )
-        lbl_fuzzy_hint.grid(row=5, column=0, columnspan=2, padx=15, pady=(0, 15), sticky="w")
         
         # --- Кнопка Сохранить ---
         btn_save = ctk.CTkButton(
@@ -598,20 +564,10 @@ class ReconciliationApp(ctk.CTk):
             command=self.save_custom_settings,
             width=200
         )
-        btn_save.grid(row=3, column=0, pady=20, padx=10)
-        
-        # Переключаем доступность полей согласно простому режиму
-        self.toggle_simple_mode_ui()
+        btn_save.grid(row=2, column=0, pady=20, padx=10)
         
     def toggle_simple_mode_ui(self):
-        is_simple = self.var_simple_mode.get()
-        state = "disabled" if is_simple else "normal"
-        
-        self.spn_hotel_margin.configure(state=state)
-        self.chk_enable_id.configure(state=state)
-        self.chk_enable_exact.configure(state=state)
-        self.chk_enable_fuzzy.configure(state=state)
-        self.spn_fuzzy_threshold.configure(state=state)
+        pass
         
     def change_theme(self, new_theme: str):
         self.settings['theme'] = new_theme
@@ -656,30 +612,26 @@ class ReconciliationApp(ctk.CTk):
     def save_custom_settings(self):
         try:
             margin = float(self.var_hotel_margin.get())
-            threshold = float(self.var_fuzzy_threshold.get())
             
             if not (0 <= margin <= 100):
                 messagebox.showerror("Ошибка", "Процент маржи отелей должен быть от 0 до 100.")
                 return
-            if not (0 <= threshold <= 100):
-                messagebox.showerror("Ошибка", "Порог нечеткого поиска должен быть от 0 до 100.")
-                return
                 
             self.settings['hotel_margin'] = margin
-            self.settings['fuzzy_threshold'] = threshold
-            self.settings['enable_id_match'] = bool(self.var_enable_id.get())
-            self.settings['enable_exact_match'] = bool(self.var_enable_exact.get())
-            self.settings['enable_fuzzy_match'] = bool(self.var_enable_fuzzy.get())
-            self.settings['simple_mode'] = bool(self.var_simple_mode.get())
+            self.settings['fuzzy_threshold'] = 75.0
+            self.settings['enable_id_match'] = True
+            self.settings['enable_exact_match'] = True
+            self.settings['enable_fuzzy_match'] = False
+            self.settings['simple_mode'] = True
             self.settings['theme'] = self.var_theme.get()
             
             save_settings(self.settings)
             from models import ServiceItem
             ServiceItem.hotel_margin = margin
             
-            messagebox.showinfo("Успешно", "Настройки сверки сохранены и будут применены при следующем расчете!")
+            messagebox.showinfo("Успешно", "Настройки сохранены!")
         except ValueError:
-            messagebox.showerror("Ошибка", "Пожалуйста, введите корректные числовые значения для маржи и порога.")
+            messagebox.showerror("Ошибка", "Пожалуйста, введите корректное числовое значение для маржи.")
         
     def browse_tp(self):
         file = filedialog.askopenfilename(
@@ -807,7 +759,9 @@ class ReconciliationApp(ctk.CTk):
         # 1. Сначала заполняем сопоставления
         for tp, bt, method, score in self.matches:
             status_text = tp.get_status_text(bt)
-            tag = "discrepancy" if status_text in ["Нетипичная маржа", "Несовпадение по суммам"] else "matched"
+            diff = abs(bt.amount - tp.allocated_amount)
+            is_disc = (diff > 0.01 or status_text in ["Нетипичная маржа", "Несовпадение по суммам"] or "Прибыль" in status_text or "Расхождение" in status_text)
+            tag = "discrepancy" if is_disc else "matched"
             
             tp_ids = list(tp.ids) if tp.ids else []
             bt_ids = list(bt.ids) if bt.ids else []
