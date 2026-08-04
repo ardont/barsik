@@ -251,7 +251,13 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
                 best_item.row = items[0].row
                 final_bt_items.append(best_item)
             else:
-                # В режиме единого файла сохраняем строки без принудительного суммирования
-                final_bt_items.extend(items)
+                # В режиме единого файла сохраняем уникальные строки (дедупликация)
+                seen_amounts = set()
+                unique_items = []
+                for x in items:
+                    if x.amount not in seen_amounts:
+                        seen_amounts.add(x.amount)
+                        unique_items.append(x)
+                final_bt_items.extend(unique_items)
                 
     return final_bt_items

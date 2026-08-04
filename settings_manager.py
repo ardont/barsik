@@ -12,10 +12,6 @@ from config import SETTINGS_FILE
 DEFAULT_SETTINGS = {
     'default_folder': str(Path.home() / "Downloads"),
     'hotel_margin': 10.0,
-    'fuzzy_threshold': 75.0,
-    'enable_id_match': True,
-    'enable_exact_match': True,
-    'enable_fuzzy_match': True,
     'simple_mode': True,
     'theme': 'Dark'
 }

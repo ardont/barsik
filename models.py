@@ -48,15 +48,16 @@ class ServiceItem:
             profit = bt_amt - tp_amt
             
             if self.service_type == "Hotel" or other.service_type == "Hotel":
-                if profit > 0.01:
-                    return f"Расхождение / Прибыль (отель): +{profit:,.2f} руб."
-                elif profit < -0.01:
-                    return f"Несовпадение по суммам ({profit:,.2f} руб.)"
+                expected_margin_pct = getattr(ServiceItem, 'hotel_margin', 10.0)
+                # Расчет ожидаемой маржи
+                expected_profit = (tp_amt * (expected_margin_pct / 100.0)) if tp_amt != 0 else 0.0
+                if abs(profit - expected_profit) > 0.01:
+                    return f"Нетипичная маржа / Расхождение (отель): +{profit:,.2f} руб."
                 else:
                     return "Совпадение (отель)"
             
             if profit > 0.01:
-                return f"Расхождение / Прибыль: +{profit:,.2f} руб."
+                return f"Расхождение / Несовпадение по суммам: +{profit:,.2f} руб."
             elif profit < -0.01:
                 return f"Несовпадение по суммам ({profit:,.2f} руб.)"
                     

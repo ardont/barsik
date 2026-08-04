@@ -618,10 +618,6 @@ class ReconciliationApp(ctk.CTk):
                 return
                 
             self.settings['hotel_margin'] = margin
-            self.settings['fuzzy_threshold'] = 75.0
-            self.settings['enable_id_match'] = True
-            self.settings['enable_exact_match'] = True
-            self.settings['enable_fuzzy_match'] = False
             self.settings['simple_mode'] = True
             self.settings['theme'] = self.var_theme.get()
             
@@ -760,7 +756,7 @@ class ReconciliationApp(ctk.CTk):
         for tp, bt, method, score in self.matches:
             status_text = tp.get_status_text(bt)
             diff = abs(bt.amount - tp.allocated_amount)
-            is_disc = (diff > 0.01 or status_text in ["Нетипичная маржа", "Несовпадение по суммам"] or "Прибыль" in status_text or "Расхождение" in status_text)
+            is_disc = (diff > 0.01 or "Нетипичная маржа" in status_text or "Несовпадение" in status_text or "Прибыль" in status_text or "Расхождение" in status_text)
             tag = "discrepancy" if is_disc else "matched"
             
             tp_ids = list(tp.ids) if tp.ids else []
@@ -792,8 +788,8 @@ class ReconciliationApp(ctk.CTk):
                 "", "Отсутствует в Bars Tour", "0.00", "0.00",
                 "Не сопоставлено", status_text
             )
-            self.tree_all.insert("", "end", values=vals, tags=("unmatched",))
-            self.tree_mismatches.insert("", "end", values=vals, tags=("unmatched",))
+            self.tree_all.insert("", "end", values=vals, tags=("discrepancy",))
+            self.tree_mismatches.insert("", "end", values=vals, tags=("discrepancy",))
             
         # 3. Наконец, нераспределенные из Bars Tour
         for bt in self.unmatched_bt:
@@ -811,8 +807,8 @@ class ReconciliationApp(ctk.CTk):
             if status_text == "Норма (Сбор в БТ)":
                 self.tree_all.insert("", "end", values=vals, tags=("matched",))
             else:
-                self.tree_all.insert("", "end", values=vals, tags=("unmatched",))
-                self.tree_mismatches.insert("", "end", values=vals, tags=("unmatched",))
+                self.tree_all.insert("", "end", values=vals, tags=("discrepancy",))
+                self.tree_mismatches.insert("", "end", values=vals, tags=("discrepancy",))
             
         # 4. Вкладка "В Тикете, нет в Барсе"
         for tp in self.unmatched_tp:

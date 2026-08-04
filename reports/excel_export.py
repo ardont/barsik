@@ -126,7 +126,7 @@ def export_to_excel(
         status_text = tp.get_status_text(bt)
         
         diff = abs(profit)
-        is_disc = (diff > 0.01 or status_text in ["Нетипичная маржа", "Несовпадение по суммам"] or "Прибыль" in status_text or "Расхождение" in status_text)
+        is_disc = (diff > 0.01 or "Нетипичная маржа" in status_text or "Несовпадение" in status_text or "Прибыль" in status_text or "Расхождение" in status_text)
         row_fill = discrepancy_fill if is_disc else matched_fill
             
         tp_id = get_primary_id(tp.ids.union(bt.ids))
@@ -170,7 +170,7 @@ def export_to_excel(
         for col_idx, val in enumerate(row_data, 1):
             cell = ws_all.cell(row=row_idx, column=col_idx, value=val)
             cell.border = thin_border
-            cell.fill = unmatched_fill
+            cell.fill = discrepancy_fill
             cell.font = Font(name=font_family, size=9)
             
             if col_idx in [1, 2, 3, 6, 10, 11]:
@@ -188,7 +188,7 @@ def export_to_excel(
         bt_id = get_primary_id(bt.ids)
         status_text = bt.get_status_text(None)
         
-        row_fill = matched_fill if status_text == "Норма (Сбор в БТ)" else unmatched_fill
+        row_fill = matched_fill if status_text == "Норма (Сбор в БТ)" else discrepancy_fill
         
         row_data = [
             bt_id, bt.service_type,
@@ -236,9 +236,9 @@ def export_to_excel(
         except (ValueError, TypeError):
             p_abs = 0.0
             
-        is_disc = (p_abs > 0.01 or status_val in ["Нетипичная маржа", "Несовпадение по суммам", "В Тикете, нет в Барсе", "В Барсе, нет в Тикете"] or "Прибыль" in status_val or "Расхождение" in status_val)
+        is_disc = (p_abs > 0.01 or "Нетипичная маржа" in status_val or "Несовпадение" in status_val or "В Тикете" in status_val or "В Барсе" in status_val or "Прибыль" in status_val or "Расхождение" in status_val)
         if is_disc:
-            is_red = (p_abs > 0.01 or status_val in ["Нетипичная маржа", "Несовпадение по суммам"] or "Прибыль" in status_val or "Расхождение" in status_val)
+            is_red = (p_abs > 0.01 or "Нетипичная маржа" in status_val or "Несовпадение" in status_val or "Расхождение" in status_val or status_val in ["В Тикете, нет в Барсе", "В Барсе, нет в Тикете"])
             row_fill = discrepancy_fill if is_red else unmatched_fill
             for col_idx in range(1, 12):
                 cell_src = ws_all.cell(row=r, column=col_idx)
