@@ -162,6 +162,16 @@ class ReconciliationApp(ctk.CTk):
         )
         self.btn_export_doc.pack(side="top", pady=2)
         
+        # Масштаб шрифта
+        self.zoom_frame = ctk.CTkFrame(self.actions_frame, fg_color="transparent")
+        self.zoom_frame.pack(side="top", pady=4)
+        
+        btn_zoom_out = ctk.CTkButton(self.zoom_frame, text="A-", width=30, command=self.zoom_out)
+        btn_zoom_out.pack(side="left", padx=2)
+        
+        btn_zoom_in = ctk.CTkButton(self.zoom_frame, text="A+", width=30, command=self.zoom_in)
+        btn_zoom_in.pack(side="left", padx=2)
+        
         # ----------------------------------------------------
         # 2. Панель KPI показателей
         # ----------------------------------------------------
@@ -220,6 +230,8 @@ class ReconciliationApp(ctk.CTk):
             ("Прибыль", 100), ("Метод привязки", 130), ("Статус", 150)
         ])
         self.tree_mismatches.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_mismatches))
+        self.tree_all.bind("<Double-1>", lambda e: self.show_detailed_popup(self.tree_all))
+        self.tree_mismatches.bind("<Double-1>", lambda e: self.show_detailed_popup(self.tree_mismatches))
         
         # Инициализируем пустое состояние (Empty State) в центре таблицы "Все сопоставления"
         self.setup_empty_state()
@@ -230,6 +242,7 @@ class ReconciliationApp(ctk.CTk):
             ("Номенклатура TicketProf", 450), ("Тип услуги", 100), ("Стоимость услуг", 120), ("ID", 120)
         ])
         self.tree_tp.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_tp))
+        self.tree_tp.bind("<Double-1>", lambda e: self.show_detailed_popup(self.tree_tp))
         
         # Вкладка 3: В Барсе, нет в Тикете
         self.tree_bt = self.create_treeview(tab_un_bt, [
@@ -237,6 +250,7 @@ class ReconciliationApp(ctk.CTk):
             ("Номенклатура Bars Tour", 450), ("Тип услуги", 100), ("Итого в Барсе", 120), ("ID", 120)
         ])
         self.tree_bt.bind("<<TreeviewSelect>>", lambda e: self.on_row_select(self.tree_bt))
+        self.tree_bt.bind("<Double-1>", lambda e: self.show_detailed_popup(self.tree_bt))
         
         # Вкладка 4: Ручной сопоставитель (Сплит на две таблицы)
         self.setup_manual_links_tab(tab_links)
@@ -264,7 +278,6 @@ class ReconciliationApp(ctk.CTk):
         self.lbl_status.grid(row=0, column=0, sticky="w")
         
         self.progress_bar = ctk.CTkProgressBar(self.status_frame, height=8, width=200)
-        self.progress_bar.grid(row=0, column=1, sticky="e")
         self.progress_bar.set(0)
         
     def setup_empty_state(self):
@@ -301,6 +314,10 @@ class ReconciliationApp(ctk.CTk):
         style.theme_use("clam")
         
         is_dark = (self.settings.get('theme', 'Dark') == 'Dark')
+        font_scale = self.settings.get('font_scale', 1.0)
+        base_size = max(6, int(9 * font_scale))
+        head_size = max(6, int(9 * font_scale))
+        row_height = max(18, int(24 * font_scale))
         
         if is_dark:
             bg_color = "#1E1E1E"
@@ -323,18 +340,32 @@ class ReconciliationApp(ctk.CTk):
             background=bg_color,
             foreground=fg_color,
             fieldbackground=bg_color,
-            font=("Arial", 9),
-            rowheight=24
+            font=("Arial", base_size),
+            rowheight=row_height
         )
         style.configure("Treeview.Heading",
             background=heading_bg,
             foreground=heading_fg,
-            font=("Arial", 9, "bold"),
+            font=("Arial", head_size, "bold"),
             borderwidth=1
         )
         style.map("Treeview.Heading", background=[('active', active_heading)])
         style.map("Treeview", background=[('selected', select_bg)], foreground=[('selected', select_fg)])
         
+    def zoom_in(self):
+        scale = self.settings.get('font_scale', 1.0)
+        if scale < 2.0:
+            self.settings['font_scale'] = scale + 0.1
+            save_settings(self.settings)
+            self.style_treeviews()
+            
+    def zoom_out(self):
+        scale = self.settings.get('font_scale', 1.0)
+        if scale > 0.6:
+            self.settings['font_scale'] = scale - 0.1
+            save_settings(self.settings)
+            self.style_treeviews()
+
     def create_treeview(self, parent, columns_info) -> ttk.Treeview:
         cols = [info[0] for info in columns_info]
         tree = ttk.Treeview(parent, columns=cols, show="headings", selectmode="browse")
@@ -373,6 +404,8 @@ class ReconciliationApp(ctk.CTk):
         rf.grid_columnconfigure(0, weight=1)
         ctk.CTkLabel(rf, text="В Барсе, нет в Тикете", font=ctk.CTkFont(weight="bold")).grid(row=0, column=0, pady=5)
         self.tree_manual_bt = self.create_treeview(rf, [("Строка", 50), ("Номенклатура Bars Tour", 300), ("Итого в Барсе", 90)])
+        self.tree_manual_tp.bind("<Double-1>", lambda e: self.show_detailed_popup(self.tree_manual_tp))
+        self.tree_manual_bt.bind("<Double-1>", lambda e: self.show_detailed_popup(self.tree_manual_bt))
         
         # Центральная колонка
         center_frame = ctk.CTkFrame(tab)
@@ -678,6 +711,7 @@ class ReconciliationApp(ctk.CTk):
             
         self.btn_run.configure(state="disabled")
         self.lbl_status.configure(text="Чтение и парсинг файлов Excel...")
+        self.progress_bar.grid(row=0, column=1, sticky="e")
         self.progress_bar.set(0.2)
         
         threading.Thread(target=self.run_reconciliation_thread, args=(tp_path, None), daemon=True).start()
@@ -711,6 +745,7 @@ class ReconciliationApp(ctk.CTk):
         
         self.lbl_status.configure(text="Сверка успешно завершена!")
         self.progress_bar.set(1.0)
+        self.progress_bar.grid_forget()
         
         # Обновляем KPI
         total_str = f"{len(self.tp_items) + len(self.bt_items)} ({len(self.tp_items)} TP / {len(self.bt_items)} BT)"
@@ -846,6 +881,7 @@ class ReconciliationApp(ctk.CTk):
         self.btn_run.configure(state="normal")
         self.lbl_status.configure(text="Произошла ошибка при анализе")
         self.progress_bar.set(0)
+        self.progress_bar.grid_forget()
         messagebox.showerror("Ошибка сверки", f"Во время анализа возникла критическая ошибка:\n{error_str}")
         
     def on_row_select(self, tree: ttk.Treeview):
@@ -906,6 +942,73 @@ class ReconciliationApp(ctk.CTk):
         
         self.start_analysis()
         messagebox.showinfo("Готово", "Связь успешно создана!")
+        
+    def show_detailed_popup(self, tree: ttk.Treeview):
+        selected = tree.selection()
+        if not selected:
+            return
+            
+        item = tree.item(selected[0])
+        values = item["values"]
+        if not values:
+            return
+            
+        popup = ctk.CTkToplevel(self)
+        popup.title("Детальная информация")
+        popup.geometry("650x550")
+        popup.transient(self)
+        popup.grab_set()
+        
+        scroll_frame = ctk.CTkScrollableFrame(popup, fg_color="transparent")
+        scroll_frame.pack(fill="both", expand=True, padx=20, pady=20)
+        
+        lbl_title = ctk.CTkLabel(scroll_frame, text="Детальный разбор позиции", font=ctk.CTkFont(size=18, weight="bold"))
+        lbl_title.pack(anchor="w", pady=(0, 15))
+        
+        def add_section(title, content_list, color="#0D47A1"):
+            sec = ctk.CTkFrame(scroll_frame)
+            sec.pack(fill="x", pady=5)
+            ctk.CTkLabel(sec, text=title, font=ctk.CTkFont(weight="bold", size=14), text_color=color).pack(anchor="w", padx=10, pady=(10, 5))
+            for txt in content_list:
+                ctk.CTkLabel(sec, text=txt, justify="left", font=ctk.CTkFont(size=13), wraplength=550).pack(anchor="w", padx=15, pady=2)
+                
+        if len(values) == 11:
+            add_section("Общая информация", [
+                f"Идентификаторы (ID): {values[0]}",
+                f"Тип услуги: {values[1]}"
+            ])
+            add_section("Данные TicketProf (Реализация)", [
+                f"Документ: {values[2]}",
+                f"Номенклатура: {values[3]}",
+                f"Стоимость услуг: {values[4]} руб."
+            ], color="#2E7D32")
+            add_section("Данные Bars Tour (Приход)", [
+                f"Документ: {values[5]}",
+                f"Номенклатура: {values[6]}",
+                f"Итого в Барсе: {values[7]} руб."
+            ], color="#1565C0")
+            
+            is_error = values[10] != "Норма (Сбор в БТ)" and "Совпадение" not in values[10]
+            res_color = "#C62828" if is_error else "#2E7D32"
+            
+            add_section("Результат сопоставления", [
+                f"Прибыль (Разница): {values[8]} руб.",
+                f"Метод привязки: {values[9]}",
+                f"Статус: {values[10]}"
+            ], color=res_color)
+        else:
+            add_section("Сведения о позиции", [
+                f"Строка в Excel: {values[0]}" if len(values)>0 else "",
+                f"Дата транзакции: {values[1]}" if len(values)>1 else "",
+                f"Документ: {values[2]}" if len(values)>2 else "",
+                f"Номенклатура: {values[3]}" if len(values)>3 else "",
+                f"Тип услуги: {values[4]}" if len(values)>4 else "",
+                f"Сумма: {values[5]} руб." if len(values)>5 else "",
+                f"Идентификаторы (ID): {values[6]}" if len(values)>6 else ""
+            ])
+            
+        btn_close = ctk.CTkButton(scroll_frame, text="Закрыть", command=popup.destroy, width=150)
+        btn_close.pack(pady=20)
         
     def delete_selected_link(self):
         if not self.manual_links:

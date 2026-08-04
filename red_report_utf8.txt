@@ -1,0 +1,1189 @@
+Sheet name: Лист1, Rows: 108, Cols: 11
+Row   1, Col  1 (A1): val='По данным ООО "ТИКЕТПРОФИ", руб.' | fill=00000000 | font= | comment=None
+Row   1, Col  2 (B1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col  3 (C1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col  4 (D1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col  5 (E1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col  6 (F1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col  7 (G1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col  8 (H1): val='По данным ООО "БАРС ТУР", руб.' | fill=00000000 | font= | comment=None
+Row   1, Col  9 (I1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col 10 (J1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   1, Col 11 (K1): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   2, Col  1 (A2): val='Дата' | fill=00000000 | font= | comment=None
+Row   2, Col  2 (B2): val='Документ' | fill=00000000 | font= | comment=None
+Row   2, Col  3 (C2): val='Дебет' | fill=00000000 | font= | comment=None
+Row   2, Col  4 (D2): val='Кредит' | fill=00000000 | font= | comment=None
+Row   2, Col  5 (E2): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   2, Col  6 (F2): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   2, Col  7 (G2): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   2, Col  8 (H2): val='Дата' | fill=00000000 | font= | comment=None
+Row   2, Col  9 (I2): val='Документ' | fill=00000000 | font= | comment=None
+Row   2, Col 10 (J2): val='Дебет' | fill=00000000 | font= | comment=None
+Row   2, Col 11 (K2): val='Кредит' | fill=00000000 | font= | comment=None
+Row   3, Col  1 (A3): val='Сальдо начальное' | fill=00000000 | font= | comment=None
+Row   3, Col  2 (B3): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   3, Col  3 (C3): val=164643.7 | fill=00000000 | font= | comment=None
+Row   3, Col  4 (D3): val=None | fill=00000000 | font= | comment=None
+Row   3, Col  5 (E3): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   3, Col  6 (F3): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   3, Col  7 (G3): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   3, Col  8 (H3): val='Сальдо начальное' | fill=00000000 | font= | comment=None
+Row   3, Col  9 (I3): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   3, Col 10 (J3): val=None | fill=00000000 | font= | comment=None
+Row   3, Col 11 (K3): val=164643.7 | fill=00000000 | font= | comment=None
+Row   4, Col  1 (A4): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col  2 (B4): val='Оплата (20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col  3 (C4): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col  4 (D4): val=175000 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col  5 (E4): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   4, Col  6 (F4): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   4, Col  7 (G4): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   4, Col  8 (H4): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col  9 (I4): val='Приход (343/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col 10 (J4): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   4, Col 11 (K4): val=53595 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   5, Col  1 (A5): val='Оплата по счету 2026/07/20 за билеты за период с 13.07-19.07.26 г.  Сумма 175000-00 Без налога (НДС)' | fill=00000000 | font= | comment=None
+Row   5, Col  2 (B5): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   5, Col  3 (C5): val=None | fill=00000000 | font= | comment=None
+Row   5, Col  4 (D5): val=None | fill=00000000 | font= | comment=None
+Row   5, Col  5 (E5): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   5, Col  6 (F5): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   5, Col  7 (G5): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   5, Col  8 (H5): val='Сервисный сбор за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SHARAPOV/TIMUR M MR CHD05АПР23: № 555-2396709816)' | fill=00000000 | font= | comment=None
+Row   5, Col  9 (I5): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   5, Col 10 (J5): val=5338 | fill=00000000 | font= | comment=None
+Row   5, Col 11 (K5): val=None | fill=00000000 | font= | comment=None
+Row   6, Col  1 (A6): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   6, Col  2 (B6): val='Продажа (6113/1 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   6, Col  3 (C6): val=1110 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   6, Col  4 (D6): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   6, Col  5 (E6): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   6, Col  6 (F6): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   6, Col  7 (G6): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   6, Col  8 (H6): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SHARAPOV/TIMUR M MR CHD05АПР23: № 555-2396709816)' | fill=00000000 | font= | comment=None
+Row   6, Col  9 (I6): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   6, Col 10 (J6): val=53373 | fill=00000000 | font= | comment=None
+Row   6, Col 11 (K6): val=None | fill=00000000 | font= | comment=None
+Row   7, Col  1 (A7): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F MR: № 555-2396663631)' | fill=00000000 | font= | comment=None
+Row   7, Col  2 (B7): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   7, Col  3 (C7): val=222 | fill=00000000 | font= | comment=None
+Row   7, Col  4 (D7): val=None | fill=00000000 | font= | comment=None
+Row   7, Col  5 (E7): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   7, Col  6 (F7): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   7, Col  7 (G7): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   7, Col  8 (H7): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SHARAPOV/TIMUR M MR CHD05АПР23: № 555-2396709816)' | fill=00000000 | font= | comment=None
+Row   7, Col  9 (I7): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   7, Col 10 (J7): val=222 | fill=00000000 | font= | comment=None
+Row   7, Col 11 (K7): val=None | fill=00000000 | font= | comment=None
+Row   8, Col  1 (A8): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M MR: № 555-2396663632)' | fill=00000000 | font= | comment=None
+Row   8, Col  2 (B8): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   8, Col  3 (C8): val=222 | fill=00000000 | font= | comment=None
+Row   8, Col  4 (D8): val=None | fill=00000000 | font= | comment=None
+Row   8, Col  5 (E8): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   8, Col  6 (F8): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   8, Col  7 (G8): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   8, Col  8 (H8): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   8, Col  9 (I8): val='Приход (345/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   8, Col 10 (J8): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   8, Col 11 (K8): val=13164 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row   9, Col  1 (A9): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M MR: № 555-2396663633)' | fill=00000000 | font= | comment=None
+Row   9, Col  2 (B9): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   9, Col  3 (C9): val=222 | fill=00000000 | font= | comment=None
+Row   9, Col  4 (D9): val=None | fill=00000000 | font= | comment=None
+Row   9, Col  5 (E9): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   9, Col  6 (F9): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   9, Col  7 (G9): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   9, Col  8 (H9): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F MR: № 555-2396663631)' | fill=00000000 | font= | comment=None
+Row   9, Col  9 (I9): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row   9, Col 10 (J9): val=1078 | fill=00000000 | font= | comment=None
+Row   9, Col 11 (K9): val=None | fill=00000000 | font= | comment=None
+Row  10, Col  1 (A10): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K MR: № 555-2396663634)' | fill=00000000 | font= | comment=None
+Row  10, Col  2 (B10): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  10, Col  3 (C10): val=222 | fill=00000000 | font= | comment=None
+Row  10, Col  4 (D10): val=None | fill=00000000 | font= | comment=None
+Row  10, Col  5 (E10): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  10, Col  6 (F10): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  10, Col  7 (G10): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  10, Col  8 (H10): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F MR: № 555-2396663631)' | fill=00000000 | font= | comment=None
+Row  10, Col  9 (I10): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  10, Col 10 (J10): val=10782 | fill=00000000 | font= | comment=None
+Row  10, Col 11 (K10): val=None | fill=00000000 | font= | comment=None
+Row  11, Col  1 (A11): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M MR: № 555-2396663635)' | fill=00000000 | font= | comment=None
+Row  11, Col  2 (B11): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  11, Col  3 (C11): val=222 | fill=00000000 | font= | comment=None
+Row  11, Col  4 (D11): val=None | fill=00000000 | font= | comment=None
+Row  11, Col  5 (E11): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  11, Col  6 (F11): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  11, Col  7 (G11): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  11, Col  8 (H11): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F MR: № 555-2396663631)' | fill=00000000 | font= | comment=None
+Row  11, Col  9 (I11): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  11, Col 10 (J11): val=222 | fill=00000000 | font= | comment=None
+Row  11, Col 11 (K11): val=None | fill=00000000 | font= | comment=None
+Row  12, Col  1 (A12): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  12, Col  2 (B12): val='Продажа (6113/2 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  12, Col  3 (C12): val=66870 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  12, Col  4 (D12): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  12, Col  5 (E12): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  12, Col  6 (F12): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  12, Col  7 (G12): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  12, Col  8 (H12): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663631, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F Г-Н: MCO № 555-4597100383)' | fill=00000000 | font= | comment=None
+Row  12, Col  9 (I12): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  12, Col 10 (J12): val=2160 | fill=00000000 | font= | comment=None
+Row  12, Col 11 (K12): val=None | fill=00000000 | font= | comment=None
+Row  13, Col  1 (A13): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663631, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F Г-Н: MCO № 555-4597100383)' | fill=00000000 | font= | comment=None
+Row  13, Col  2 (B13): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  13, Col  3 (C13): val=2160 | fill=00000000 | font= | comment=None
+Row  13, Col  4 (D13): val=None | fill=00000000 | font= | comment=None
+Row  13, Col  5 (E13): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  13, Col  6 (F13): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  13, Col  7 (G13): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  13, Col  8 (H13): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  13, Col  9 (I13): val='Приход (346/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  13, Col 10 (J13): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  13, Col 11 (K13): val=13704 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  14, Col  1 (A14): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663632, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M Г-Н: MCO № 555-4597100384)' | fill=00000000 | font= | comment=None
+Row  14, Col  2 (B14): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  14, Col  3 (C14): val=2700 | fill=00000000 | font= | comment=None
+Row  14, Col  4 (D14): val=None | fill=00000000 | font= | comment=None
+Row  14, Col  5 (E14): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  14, Col  6 (F14): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  14, Col  7 (G14): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  14, Col  8 (H14): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M MR: № 555-2396663632)' | fill=00000000 | font= | comment=None
+Row  14, Col  9 (I14): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  14, Col 10 (J14): val=1078 | fill=00000000 | font= | comment=None
+Row  14, Col 11 (K14): val=None | fill=00000000 | font= | comment=None
+Row  15, Col  1 (A15): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663633, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M Г-Н: MCO № 555-4597100385)' | fill=00000000 | font= | comment=None
+Row  15, Col  2 (B15): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  15, Col  3 (C15): val=2700 | fill=00000000 | font= | comment=None
+Row  15, Col  4 (D15): val=None | fill=00000000 | font= | comment=None
+Row  15, Col  5 (E15): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  15, Col  6 (F15): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  15, Col  7 (G15): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  15, Col  8 (H15): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M MR: № 555-2396663632)' | fill=00000000 | font= | comment=None
+Row  15, Col  9 (I15): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  15, Col 10 (J15): val=10782 | fill=00000000 | font= | comment=None
+Row  15, Col 11 (K15): val=None | fill=00000000 | font= | comment=None
+Row  16, Col  1 (A16): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663634, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K Г-Н: MCO № 555-4597100386)' | fill=00000000 | font= | comment=None
+Row  16, Col  2 (B16): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  16, Col  3 (C16): val=2700 | fill=00000000 | font= | comment=None
+Row  16, Col  4 (D16): val=None | fill=00000000 | font= | comment=None
+Row  16, Col  5 (E16): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  16, Col  6 (F16): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  16, Col  7 (G16): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  16, Col  8 (H16): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M MR: № 555-2396663632)' | fill=00000000 | font= | comment=None
+Row  16, Col  9 (I16): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  16, Col 10 (J16): val=222 | fill=00000000 | font= | comment=None
+Row  16, Col 11 (K16): val=None | fill=00000000 | font= | comment=None
+Row  17, Col  1 (A17): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663635, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M Г-Н: MCO № 555-4597100387)' | fill=00000000 | font= | comment=None
+Row  17, Col  2 (B17): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  17, Col  3 (C17): val=2700 | fill=00000000 | font= | comment=None
+Row  17, Col  4 (D17): val=None | fill=00000000 | font= | comment=None
+Row  17, Col  5 (E17): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  17, Col  6 (F17): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  17, Col  7 (G17): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  17, Col  8 (H17): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663632, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M Г-Н: MCO № 555-4597100384)' | fill=00000000 | font= | comment=None
+Row  17, Col  9 (I17): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  17, Col 10 (J17): val=2700 | fill=00000000 | font= | comment=None
+Row  17, Col 11 (K17): val=None | fill=00000000 | font= | comment=None
+Row  18, Col  1 (A18): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (KHISAMOV/ILNAR F MR: № 555-2396663631)' | fill=00000000 | font= | comment=None
+Row  18, Col  2 (B18): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  18, Col  3 (C18): val=10782 | fill=00000000 | font= | comment=None
+Row  18, Col  4 (D18): val=None | fill=00000000 | font= | comment=None
+Row  18, Col  5 (E18): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  18, Col  6 (F18): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  18, Col  7 (G18): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  18, Col  8 (H18): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  18, Col  9 (I18): val='Приход (347/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  18, Col 10 (J18): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  18, Col 11 (K18): val=13704 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  19, Col  1 (A19): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/AMIR M MR: № 555-2396663632)' | fill=00000000 | font= | comment=None
+Row  19, Col  2 (B19): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  19, Col  3 (C19): val=10782 | fill=00000000 | font= | comment=None
+Row  19, Col  4 (D19): val=None | fill=00000000 | font= | comment=None
+Row  19, Col  5 (E19): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  19, Col  6 (F19): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  19, Col  7 (G19): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  19, Col  8 (H19): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M MR: № 555-2396663633)' | fill=00000000 | font= | comment=None
+Row  19, Col  9 (I19): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  19, Col 10 (J19): val=1078 | fill=00000000 | font= | comment=None
+Row  19, Col 11 (K19): val=None | fill=00000000 | font= | comment=None
+Row  20, Col  1 (A20): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M MR: № 555-2396663633)' | fill=00000000 | font= | comment=None
+Row  20, Col  2 (B20): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  20, Col  3 (C20): val=10782 | fill=00000000 | font= | comment=None
+Row  20, Col  4 (D20): val=None | fill=00000000 | font= | comment=None
+Row  20, Col  5 (E20): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  20, Col  6 (F20): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  20, Col  7 (G20): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  20, Col  8 (H20): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M MR: № 555-2396663633)' | fill=00000000 | font= | comment=None
+Row  20, Col  9 (I20): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  20, Col 10 (J20): val=10782 | fill=00000000 | font= | comment=None
+Row  20, Col 11 (K20): val=None | fill=00000000 | font= | comment=None
+Row  21, Col  1 (A21): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K MR: № 555-2396663634)' | fill=00000000 | font= | comment=None
+Row  21, Col  2 (B21): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  21, Col  3 (C21): val=10782 | fill=00000000 | font= | comment=None
+Row  21, Col  4 (D21): val=None | fill=00000000 | font= | comment=None
+Row  21, Col  5 (E21): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  21, Col  6 (F21): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  21, Col  7 (G21): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  21, Col  8 (H21): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M MR: № 555-2396663633)' | fill=00000000 | font= | comment=None
+Row  21, Col  9 (I21): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  21, Col 10 (J21): val=222 | fill=00000000 | font= | comment=None
+Row  21, Col 11 (K21): val=None | fill=00000000 | font= | comment=None
+Row  22, Col  1 (A22): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M MR: № 555-2396663635)' | fill=00000000 | font= | comment=None
+Row  22, Col  2 (B22): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  22, Col  3 (C22): val=10782 | fill=00000000 | font= | comment=None
+Row  22, Col  4 (D22): val=None | fill=00000000 | font= | comment=None
+Row  22, Col  5 (E22): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  22, Col  6 (F22): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  22, Col  7 (G22): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  22, Col  8 (H22): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663633, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AIZATULLIN/KAMIL M Г-Н: MCO № 555-4597100385)' | fill=00000000 | font= | comment=None
+Row  22, Col  9 (I22): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  22, Col 10 (J22): val=2700 | fill=00000000 | font= | comment=None
+Row  22, Col 11 (K22): val=None | fill=00000000 | font= | comment=None
+Row  23, Col  1 (A23): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col  2 (B23): val='Продажа (6122/1 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col  3 (C23): val=222 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col  4 (D23): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col  5 (E23): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  23, Col  6 (F23): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  23, Col  7 (G23): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  23, Col  8 (H23): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col  9 (I23): val='Приход (348/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col 10 (J23): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  23, Col 11 (K23): val=13704 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  24, Col  1 (A24): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SHARAPOV/TIMUR M MR CHD05АПР23: № 555-2396709816)' | fill=00000000 | font= | comment=None
+Row  24, Col  2 (B24): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  24, Col  3 (C24): val=222 | fill=00000000 | font= | comment=None
+Row  24, Col  4 (D24): val=None | fill=00000000 | font= | comment=None
+Row  24, Col  5 (E24): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  24, Col  6 (F24): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  24, Col  7 (G24): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  24, Col  8 (H24): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K MR: № 555-2396663634)' | fill=00000000 | font= | comment=None
+Row  24, Col  9 (I24): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  24, Col 10 (J24): val=1078 | fill=00000000 | font= | comment=None
+Row  24, Col 11 (K24): val=None | fill=00000000 | font= | comment=None
+Row  25, Col  1 (A25): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  25, Col  2 (B25): val='Продажа (6122/2 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  25, Col  3 (C25): val=53373 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  25, Col  4 (D25): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  25, Col  5 (E25): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  25, Col  6 (F25): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  25, Col  7 (G25): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  25, Col  8 (H25): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K MR: № 555-2396663634)' | fill=00000000 | font= | comment=None
+Row  25, Col  9 (I25): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  25, Col 10 (J25): val=10782 | fill=00000000 | font= | comment=None
+Row  25, Col 11 (K25): val=None | fill=00000000 | font= | comment=None
+Row  26, Col  1 (A26): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SHARAPOV/TIMUR M MR CHD05АПР23: № 555-2396709816)' | fill=00000000 | font= | comment=None
+Row  26, Col  2 (B26): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  26, Col  3 (C26): val=53373 | fill=00000000 | font= | comment=None
+Row  26, Col  4 (D26): val=None | fill=00000000 | font= | comment=None
+Row  26, Col  5 (E26): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  26, Col  6 (F26): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  26, Col  7 (G26): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  26, Col  8 (H26): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K MR: № 555-2396663634)' | fill=00000000 | font= | comment=None
+Row  26, Col  9 (I26): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  26, Col 10 (J26): val=222 | fill=00000000 | font= | comment=None
+Row  26, Col 11 (K26): val=None | fill=00000000 | font= | comment=None
+Row  27, Col  1 (A27): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  27, Col  2 (B27): val='Продажа (6149/1 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  27, Col  3 (C27): val=222 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  27, Col  4 (D27): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  27, Col  5 (E27): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  27, Col  6 (F27): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  27, Col  7 (G27): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  27, Col  8 (H27): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663634, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (SAIFUTDINOV/IREK K Г-Н: MCO № 555-4597100386)' | fill=00000000 | font= | comment=None
+Row  27, Col  9 (I27): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  27, Col 10 (J27): val=2700 | fill=00000000 | font= | comment=None
+Row  27, Col 11 (K27): val=None | fill=00000000 | font= | comment=None
+Row  28, Col  1 (A28): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396787420)' | fill=00000000 | font= | comment=None
+Row  28, Col  2 (B28): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  28, Col  3 (C28): val=222 | fill=00000000 | font= | comment=None
+Row  28, Col  4 (D28): val=None | fill=00000000 | font= | comment=None
+Row  28, Col  5 (E28): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  28, Col  6 (F28): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  28, Col  7 (G28): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  28, Col  8 (H28): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  28, Col  9 (I28): val='Приход (349/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  28, Col 10 (J28): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  28, Col 11 (K28): val=13704 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  29, Col  1 (A29): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  29, Col  2 (B29): val='Продажа (6149/2 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  29, Col  3 (C29): val=17679.3 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  29, Col  4 (D29): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  29, Col  5 (E29): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  29, Col  6 (F29): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  29, Col  7 (G29): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  29, Col  8 (H29): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M MR: № 555-2396663635)' | fill=00000000 | font= | comment=None
+Row  29, Col  9 (I29): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  29, Col 10 (J29): val=1078 | fill=00000000 | font= | comment=None
+Row  29, Col 11 (K29): val=None | fill=00000000 | font= | comment=None
+Row  30, Col  1 (A30): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396787420)' | fill=00000000 | font= | comment=None
+Row  30, Col  2 (B30): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  30, Col  3 (C30): val=5202 | fill=00000000 | font= | comment=None
+Row  30, Col  4 (D30): val=None | fill=00000000 | font= | comment=None
+Row  30, Col  5 (E30): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  30, Col  6 (F30): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  30, Col  7 (G30): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  30, Col  8 (H30): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M MR: № 555-2396663635)' | fill=00000000 | font= | comment=None
+Row  30, Col  9 (I30): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  30, Col 10 (J30): val=10782 | fill=00000000 | font= | comment=None
+Row  30, Col 11 (K30): val=None | fill=00000000 | font= | comment=None
+Row  31, Col  1 (A31): val='Ж.Д. билет (электронный) по маршруту КАЗАНЬ ПАСС - МОСКВА КАЗАНСКАЯ, поезд № 001ГА 27 Июл 2026г., (КУДРЯШЕВ ВЛАДИМИР НИКОЛАЕВИЧ: № ЭЖБ-75214947583185)' | fill=00000000 | font= | comment=None
+Row  31, Col  2 (B31): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  31, Col  3 (C31): val=12477.3 | fill=00000000 | font= | comment=None
+Row  31, Col  4 (D31): val=None | fill=00000000 | font= | comment=None
+Row  31, Col  5 (E31): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  31, Col  6 (F31): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  31, Col  7 (G31): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  31, Col  8 (H31): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M MR: № 555-2396663635)' | fill=00000000 | font= | comment=None
+Row  31, Col  9 (I31): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  31, Col 10 (J31): val=222 | fill=00000000 | font= | comment=None
+Row  31, Col 11 (K31): val=None | fill=00000000 | font= | comment=None
+Row  32, Col  1 (A32): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  32, Col  2 (B32): val='Продажа (6121/1 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  32, Col  3 (C32): val=222 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  32, Col  4 (D32): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  32, Col  5 (E32): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  32, Col  6 (F32): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  32, Col  7 (G32): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  32, Col  8 (H32): val='ВЫБОР МЕСТА, к авиабилету № 555-2396663635, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 25 Июл 2026г., (AYZATULLIN/MARAT M Г-Н: MCO № 555-4597100387)' | fill=00000000 | font= | comment=None
+Row  32, Col  9 (I32): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  32, Col 10 (J32): val=2700 | fill=00000000 | font= | comment=None
+Row  32, Col 11 (K32): val=None | fill=00000000 | font= | comment=None
+Row  33, Col  1 (A33): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SOLOVEVA/ELIZAVETA S MS: № 555-2396709815)' | fill=00000000 | font= | comment=None
+Row  33, Col  2 (B33): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  33, Col  3 (C33): val=222 | fill=00000000 | font= | comment=None
+Row  33, Col  4 (D33): val=None | fill=00000000 | font= | comment=None
+Row  33, Col  5 (E33): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  33, Col  6 (F33): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  33, Col  7 (G33): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  33, Col  8 (H33): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  33, Col  9 (I33): val='Приход (350/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  33, Col 10 (J33): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  33, Col 11 (K33): val=17901.3 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  34, Col  1 (A34): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  34, Col  2 (B34): val='Продажа (6121/2 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  34, Col  3 (C34): val=59492 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  34, Col  4 (D34): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  34, Col  5 (E34): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  34, Col  6 (F34): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  34, Col  7 (G34): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  34, Col  8 (H34): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396787420)' | fill=00000000 | font= | comment=None
+Row  34, Col  9 (I34): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  34, Col 10 (J34): val=520 | fill=00000000 | font= | comment=None
+Row  34, Col 11 (K34): val=None | fill=00000000 | font= | comment=None
+Row  35, Col  1 (A35): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SOLOVEVA/ELIZAVETA S MS: № 555-2396709815)' | fill=00000000 | font= | comment=None
+Row  35, Col  2 (B35): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  35, Col  3 (C35): val=59492 | fill=00000000 | font= | comment=None
+Row  35, Col  4 (D35): val=None | fill=00000000 | font= | comment=None
+Row  35, Col  5 (E35): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  35, Col  6 (F35): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  35, Col  7 (G35): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  35, Col  8 (H35): val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту КАЗАНЬ ПАСС - МОСКВА КАЗАНСКАЯ, поезд № 001ГА 27 Июл 2026г., (КУДРЯШЕВ ВЛАДИМИР НИКОЛАЕВИЧ: № ЭЖБ-75214947583185)' | fill=00000000 | font= | comment=None
+Row  35, Col  9 (I35): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  35, Col 10 (J35): val=1248 | fill=00000000 | font= | comment=None
+Row  35, Col 11 (K35): val=None | fill=00000000 | font= | comment=None
+Row  36, Col  1 (A36): val='21.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  36, Col  2 (B36): val='Продажа (6186/1 от 21.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  36, Col  3 (C36): val=222 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  36, Col  4 (D36): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  36, Col  5 (E36): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  36, Col  6 (F36): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  36, Col  7 (G36): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  36, Col  8 (H36): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396787420)' | fill=00000000 | font= | comment=None
+Row  36, Col  9 (I36): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  36, Col 10 (J36): val=5202 | fill=00000000 | font= | comment=None
+Row  36, Col 11 (K36): val=None | fill=00000000 | font= | comment=None
+Row  37, Col  1 (A37): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 28 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396853074) (С учетом стоимости принятого к обмену авиабилета № 555-2396787420, счет № 6149)' | fill=00000000 | font= | comment=None
+Row  37, Col  2 (B37): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  37, Col  3 (C37): val=222 | fill=00000000 | font= | comment=None
+Row  37, Col  4 (D37): val=None | fill=00000000 | font= | comment=None
+Row  37, Col  5 (E37): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  37, Col  6 (F37): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  37, Col  7 (G37): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  37, Col  8 (H37): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396787420)' | fill=00000000 | font= | comment=None
+Row  37, Col  9 (I37): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  37, Col 10 (J37): val=222 | fill=00000000 | font= | comment=None
+Row  37, Col 11 (K37): val=None | fill=00000000 | font= | comment=None
+Row  38, Col  1 (A38): val='21.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  38, Col  2 (B38): val='Продажа (6186/2 от 21.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  38, Col  3 (C38): val=5270 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  38, Col  4 (D38): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  38, Col  5 (E38): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  38, Col  6 (F38): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  38, Col  7 (G38): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  38, Col  8 (H38): val='Ж.Д. билет (электронный) по маршруту КАЗАНЬ ПАСС - МОСКВА КАЗАНСКАЯ, поезд № 001ГА 27 Июл 2026г., (КУДРЯШЕВ ВЛАДИМИР НИКОЛАЕВИЧ: № ЭЖБ-75214947583185)' | fill=00000000 | font= | comment=None
+Row  38, Col  9 (I38): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  38, Col 10 (J38): val=12477.3 | fill=00000000 | font= | comment=None
+Row  38, Col 11 (K38): val=None | fill=00000000 | font= | comment=None
+Row  39, Col  1 (A39): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 28 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396853074) (С учетом стоимости принятого к обмену авиабилета № 555-2396787420, счет № 6149)' | fill=00000000 | font= | comment=None
+Row  39, Col  2 (B39): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  39, Col  3 (C39): val=5270 | fill=00000000 | font= | comment=None
+Row  39, Col  4 (D39): val=None | fill=00000000 | font= | comment=None
+Row  39, Col  5 (E39): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  39, Col  6 (F39): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  39, Col  7 (G39): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  39, Col  8 (H39): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  39, Col  9 (I39): val='Приход (360/0 от 20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  39, Col 10 (J39): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  39, Col 11 (K39): val=59714 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  40, Col  1 (A40): val='21.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  40, Col  2 (B40): val='Продажа (6193/1 от 21.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  40, Col  3 (C40): val=444 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  40, Col  4 (D40): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  40, Col  5 (E40): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  40, Col  6 (F40): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  40, Col  7 (G40): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  40, Col  8 (H40): val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SOLOVEVA/ELIZAVETA S MS: № 555-2396709815)' | fill=00000000 | font= | comment=None
+Row  40, Col  9 (I40): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  40, Col 10 (J40): val=5949 | fill=00000000 | font= | comment=None
+Row  40, Col 11 (K40): val=None | fill=00000000 | font= | comment=None
+Row  41, Col  1 (A41): val='Услуга ИТО за авиабилет (электронный) по маршруту ХАБАРОВСК - МОСКВА - КАЗАНЬ, перевозчик:SU, 23 Июл 2026г., (ISLAMOV/DINAR A MR: № 555-2396899064)' | fill=00000000 | font= | comment=None
+Row  41, Col  2 (B41): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  41, Col  3 (C41): val=444 | fill=00000000 | font= | comment=None
+Row  41, Col  4 (D41): val=None | fill=00000000 | font= | comment=None
+Row  41, Col  5 (E41): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  41, Col  6 (F41): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  41, Col  7 (G41): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  41, Col  8 (H41): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SOLOVEVA/ELIZAVETA S MS: № 555-2396709815)' | fill=00000000 | font= | comment=None
+Row  41, Col  9 (I41): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  41, Col 10 (J41): val=222 | fill=00000000 | font= | comment=None
+Row  41, Col 11 (K41): val=None | fill=00000000 | font= | comment=None
+Row  42, Col  1 (A42): val='21.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  42, Col  2 (B42): val='Продажа (6193/2 от 21.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  42, Col  3 (C42): val=33669 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  42, Col  4 (D42): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  42, Col  5 (E42): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  42, Col  6 (F42): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  42, Col  7 (G42): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  42, Col  8 (H42): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 20 Июл 2026г., (SOLOVEVA/ELIZAVETA S MS: № 555-2396709815)' | fill=00000000 | font= | comment=None
+Row  42, Col  9 (I42): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  42, Col 10 (J42): val=59492 | fill=00000000 | font= | comment=None
+Row  42, Col 11 (K42): val=None | fill=00000000 | font= | comment=None
+Row  43, Col  1 (A43): val='Авиабилет (электронный) по маршруту ХАБАРОВСК - МОСКВА - КАЗАНЬ, перевозчик:SU, 23 Июл 2026г., (ISLAMOV/DINAR A MR: № 555-2396899064)' | fill=00000000 | font= | comment=None
+Row  43, Col  2 (B43): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  43, Col  3 (C43): val=33669 | fill=00000000 | font= | comment=None
+Row  43, Col  4 (D43): val=None | fill=00000000 | font= | comment=None
+Row  43, Col  5 (E43): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  43, Col  6 (F43): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  43, Col  7 (G43): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  43, Col  8 (H43): val='20.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  43, Col  9 (I43): val='Оплата (20.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  43, Col 10 (J43): val=175000 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  43, Col 11 (K43): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  44, Col  1 (A44): val='23.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  44, Col  2 (B44): val='Продажа (6247/2 от 23.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  44, Col  3 (C44): val=8581.2 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  44, Col  4 (D44): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  44, Col  5 (E44): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  44, Col  6 (F44): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  44, Col  7 (G44): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  44, Col  8 (H44): val='Оплата по счету 2026/07/20 за билеты за период с 13.07-19.07.26 г.  Сумма 175000-00 Без налога (НДС)' | fill=00000000 | font= | comment=None
+Row  44, Col  9 (I44): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  44, Col 10 (J44): val=None | fill=00000000 | font= | comment=None
+Row  44, Col 11 (K44): val=None | fill=00000000 | font= | comment=None
+Row  45, Col  1 (A45): val='Ж.Д. билет (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75114953157145)' | fill=00000000 | font= | comment=None
+Row  45, Col  2 (B45): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  45, Col  3 (C45): val=2860.4 | fill=00000000 | font= | comment=None
+Row  45, Col  4 (D45): val=None | fill=00000000 | font= | comment=None
+Row  45, Col  5 (E45): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  45, Col  6 (F45): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  45, Col  7 (G45): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  45, Col  8 (H45): val='21.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  45, Col  9 (I45): val='Приход (352/0 от 21.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  45, Col 10 (J45): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  45, Col 11 (K45): val=5492 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  46, Col  1 (A46): val='Ж.Д. билет (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75114953157156)' | fill=00000000 | font= | comment=None
+Row  46, Col  2 (B46): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  46, Col  3 (C46): val=2860.4 | fill=00000000 | font= | comment=None
+Row  46, Col  4 (D46): val=None | fill=00000000 | font= | comment=None
+Row  46, Col  5 (E46): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  46, Col  6 (F46): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  46, Col  7 (G46): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  46, Col  8 (H46): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 28 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396853074) (С учетом стоимости принятого к обмену авиабилета № 555-2396787420, счет № 6149)' | fill=00000000 | font= | comment=None
+Row  46, Col  9 (I46): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  46, Col 10 (J46): val=500 | fill=00000000 | font= | comment=None
+Row  46, Col 11 (K46): val=None | fill=00000000 | font= | comment=None
+Row  47, Col  1 (A47): val='Ж.Д. билет (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75114953164661)' | fill=00000000 | font= | comment=None
+Row  47, Col  2 (B47): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  47, Col  3 (C47): val=2860.4 | fill=00000000 | font= | comment=None
+Row  47, Col  4 (D47): val=None | fill=00000000 | font= | comment=None
+Row  47, Col  5 (E47): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  47, Col  6 (F47): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  47, Col  7 (G47): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  47, Col  8 (H47): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 28 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396853074) (С учетом стоимости принятого к обмену авиабилета № 555-2396787420, счет № 6149)' | fill=00000000 | font= | comment=None
+Row  47, Col  9 (I47): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  47, Col 10 (J47): val=5270 | fill=00000000 | font= | comment=None
+Row  47, Col 11 (K47): val=None | fill=00000000 | font= | comment=None
+Row  48, Col  1 (A48): val='23.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  48, Col  2 (B48): val='Продажа (6249/1 от 23.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  48, Col  3 (C48): val=666 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  48, Col  4 (D48): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  48, Col  5 (E48): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  48, Col  6 (F48): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  48, Col  7 (G48): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  48, Col  8 (H48): val='Услуга ИТО Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 28 Июл 2026г., (KUDRIASHEV/VLADIMIR N MR: № 555-2396853074) (С учетом стоимости принятого к обмену авиабилета № 555-2396787420, счет № 6149)' | fill=00000000 | font= | comment=None
+Row  48, Col  9 (I48): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  48, Col 10 (J48): val=222 | fill=00000000 | font= | comment=None
+Row  48, Col 11 (K48): val=None | fill=00000000 | font= | comment=None
+Row  49, Col  1 (A49): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  49, Col  2 (B49): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  49, Col  3 (C49): val=222 | fill=00000000 | font= | comment=None
+Row  49, Col  4 (D49): val=None | fill=00000000 | font= | comment=None
+Row  49, Col  5 (E49): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  49, Col  6 (F49): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  49, Col  7 (G49): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  49, Col  8 (H49): val='21.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  49, Col  9 (I49): val='Приход (353/0 от 21.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  49, Col 10 (J49): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  49, Col 11 (K49): val=34113 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  50, Col  1 (A50): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  50, Col  2 (B50): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  50, Col  3 (C50): val=222 | fill=00000000 | font= | comment=None
+Row  50, Col  4 (D50): val=None | fill=00000000 | font= | comment=None
+Row  50, Col  5 (E50): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  50, Col  6 (F50): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  50, Col  7 (G50): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  50, Col  8 (H50): val='Сервисный сбор за Авиабилет (электронный) по маршруту ХАБАРОВСК - МОСКВА - КАЗАНЬ, перевозчик:SU, 23 Июл 2026г., (ISLAMOV/DINAR A MR: № 555-2396899064)' | fill=00000000 | font= | comment=None
+Row  50, Col  9 (I50): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  50, Col 10 (J50): val=3370 | fill=00000000 | font= | comment=None
+Row  50, Col 11 (K50): val=None | fill=00000000 | font= | comment=None
+Row  51, Col  1 (A51): val='Услуга ИТО за авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  51, Col  2 (B51): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  51, Col  3 (C51): val=222 | fill=00000000 | font= | comment=None
+Row  51, Col  4 (D51): val=None | fill=00000000 | font= | comment=None
+Row  51, Col  5 (E51): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  51, Col  6 (F51): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  51, Col  7 (G51): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  51, Col  8 (H51): val='Авиабилет (электронный) по маршруту ХАБАРОВСК - МОСКВА - КАЗАНЬ, перевозчик:SU, 23 Июл 2026г., (ISLAMOV/DINAR A MR: № 555-2396899064)' | fill=00000000 | font= | comment=None
+Row  51, Col  9 (I51): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  51, Col 10 (J51): val=33669 | fill=00000000 | font= | comment=None
+Row  51, Col 11 (K51): val=None | fill=00000000 | font= | comment=None
+Row  52, Col  1 (A52): val='23.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  52, Col  2 (B52): val='Продажа (6249/2 от 23.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  52, Col  3 (C52): val=40756 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  52, Col  4 (D52): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  52, Col  5 (E52): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  52, Col  6 (F52): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  52, Col  7 (G52): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  52, Col  8 (H52): val='Услуга ИТО к Авиабилету (электронный) по маршруту ХАБАРОВСК - МОСКВА - КАЗАНЬ, перевозчик:SU, 23 Июл 2026г., (ISLAMOV/DINAR A MR: № 555-2396899064)' | fill=00000000 | font= | comment=None
+Row  52, Col  9 (I52): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  52, Col 10 (J52): val=444 | fill=00000000 | font= | comment=None
+Row  52, Col 11 (K52): val=None | fill=00000000 | font= | comment=None
+Row  53, Col  1 (A53): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  53, Col  2 (B53): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  53, Col  3 (C53): val=13132 | fill=00000000 | font= | comment=None
+Row  53, Col  4 (D53): val=None | fill=00000000 | font= | comment=None
+Row  53, Col  5 (E53): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  53, Col  6 (F53): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  53, Col  7 (G53): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  53, Col  8 (H53): val='23.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  53, Col  9 (I53): val='Приход (354/0 от 23.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  53, Col 10 (J53): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  53, Col 11 (K53): val=8581.2 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  54, Col  1 (A54): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  54, Col  2 (B54): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  54, Col  3 (C54): val=13132 | fill=00000000 | font= | comment=None
+Row  54, Col  4 (D54): val=None | fill=00000000 | font= | comment=None
+Row  54, Col  5 (E54): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  54, Col  6 (F54): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  54, Col  7 (G54): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  54, Col  8 (H54): val='Сервисный сбор за ЖД билет  (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75114953157145)' | fill=00000000 | font= | comment=None
+Row  54, Col  9 (I54): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  54, Col 10 (J54): val=300 | fill=00000000 | font= | comment=None
+Row  54, Col 11 (K54): val=None | fill=00000000 | font= | comment=None
+Row  55, Col  1 (A55): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  55, Col  2 (B55): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  55, Col  3 (C55): val=14492 | fill=00000000 | font= | comment=None
+Row  55, Col  4 (D55): val=None | fill=00000000 | font= | comment=None
+Row  55, Col  5 (E55): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  55, Col  6 (F55): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  55, Col  7 (G55): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  55, Col  8 (H55): val='Сервисный сбор за ЖД билет  (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75114953157156)' | fill=00000000 | font= | comment=None
+Row  55, Col  9 (I55): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  55, Col 10 (J55): val=300 | fill=00000000 | font= | comment=None
+Row  55, Col 11 (K55): val=None | fill=00000000 | font= | comment=None
+Row  56, Col  1 (A56): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  56, Col  2 (B56): val='Продажа (6263/1 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  56, Col  3 (C56): val=222 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  56, Col  4 (D56): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  56, Col  5 (E56): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  56, Col  6 (F56): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  56, Col  7 (G56): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  56, Col  8 (H56): val='Сервисный сбор за ЖД билет (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75114953164661)' | fill=00000000 | font= | comment=None
+Row  56, Col  9 (I56): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  56, Col 10 (J56): val=300 | fill=00000000 | font= | comment=None
+Row  56, Col 11 (K56): val=None | fill=00000000 | font= | comment=None
+Row  57, Col  1 (A57): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 24 Июл 2026г., (SHARAPOV/MARAT M MR: № 555-2397332268)' | fill=00000000 | font= | comment=None
+Row  57, Col  2 (B57): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  57, Col  3 (C57): val=222 | fill=00000000 | font= | comment=None
+Row  57, Col  4 (D57): val=None | fill=00000000 | font= | comment=None
+Row  57, Col  5 (E57): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  57, Col  6 (F57): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  57, Col  7 (G57): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  57, Col  8 (H57): val='ЖД билет  (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75114953157145)' | fill=00000000 | font= | comment=None
+Row  57, Col  9 (I57): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  57, Col 10 (J57): val=2860.4 | fill=00000000 | font= | comment=None
+Row  57, Col 11 (K57): val=None | fill=00000000 | font= | comment=None
+Row  58, Col  1 (A58): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  58, Col  2 (B58): val='Продажа (6263/2 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  58, Col  3 (C58): val=59492 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  58, Col  4 (D58): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  58, Col  5 (E58): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  58, Col  6 (F58): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  58, Col  7 (G58): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  58, Col  8 (H58): val='ЖД билет  (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75114953157156)' | fill=00000000 | font= | comment=None
+Row  58, Col  9 (I58): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  58, Col 10 (J58): val=2860.4 | fill=00000000 | font= | comment=None
+Row  58, Col 11 (K58): val=None | fill=00000000 | font= | comment=None
+Row  59, Col  1 (A59): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 24 Июл 2026г., (SHARAPOV/MARAT M MR: № 555-2397332268)' | fill=00000000 | font= | comment=None
+Row  59, Col  2 (B59): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  59, Col  3 (C59): val=59492 | fill=00000000 | font= | comment=None
+Row  59, Col  4 (D59): val=None | fill=00000000 | font= | comment=None
+Row  59, Col  5 (E59): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  59, Col  6 (F59): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  59, Col  7 (G59): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  59, Col  8 (H59): val='ЖД билет (электронный) по маршруту СМОЛЕНСК ЦЕНТРАЛЬНЫЙ - МОСКВА БЕЛОРУССКАЯ, поезд № 738МА 24 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75114953164661)' | fill=00000000 | font= | comment=None
+Row  59, Col  9 (I59): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  59, Col 10 (J59): val=2860.4 | fill=00000000 | font= | comment=None
+Row  59, Col 11 (K59): val=None | fill=00000000 | font= | comment=None
+Row  60, Col  1 (A60): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col  2 (B60): val='Продажа (6276/1 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col  3 (C60): val=1332 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col  4 (D60): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col  5 (E60): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  60, Col  6 (F60): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  60, Col  7 (G60): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  60, Col  8 (H60): val='23.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col  9 (I60): val='Приход (355/0 от 23.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col 10 (J60): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  60, Col 11 (K60): val=41422 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  61, Col  1 (A61): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/AMIR MR CHD18ИЮН15: № 555-2397372807)' | fill=00000000 | font= | comment=None
+Row  61, Col  2 (B61): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  61, Col  3 (C61): val=444 | fill=00000000 | font= | comment=None
+Row  61, Col  4 (D61): val=None | fill=00000000 | font= | comment=None
+Row  61, Col  5 (E61): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  61, Col  6 (F61): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  61, Col  7 (G61): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  61, Col  8 (H61): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  61, Col  9 (I61): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  61, Col 10 (J61): val=1313 | fill=00000000 | font= | comment=None
+Row  61, Col 11 (K61): val=None | fill=00000000 | font= | comment=None
+Row  62, Col  1 (A62): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROVA/GULNARA MS: № 555-2397372805)' | fill=00000000 | font= | comment=None
+Row  62, Col  2 (B62): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  62, Col  3 (C62): val=444 | fill=00000000 | font= | comment=None
+Row  62, Col  4 (D62): val=None | fill=00000000 | font= | comment=None
+Row  62, Col  5 (E62): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  62, Col  6 (F62): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  62, Col  7 (G62): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  62, Col  8 (H62): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  62, Col  9 (I62): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  62, Col 10 (J62): val=1313 | fill=00000000 | font= | comment=None
+Row  62, Col 11 (K62): val=None | fill=00000000 | font= | comment=None
+Row  63, Col  1 (A63): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/DANIS MR: № 555-2397372806)' | fill=00000000 | font= | comment=None
+Row  63, Col  2 (B63): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  63, Col  3 (C63): val=444 | fill=00000000 | font= | comment=None
+Row  63, Col  4 (D63): val=None | fill=00000000 | font= | comment=None
+Row  63, Col  5 (E63): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  63, Col  6 (F63): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  63, Col  7 (G63): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  63, Col  8 (H63): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  63, Col  9 (I63): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  63, Col 10 (J63): val=1416 | fill=00000000 | font= | comment=None
+Row  63, Col 11 (K63): val=None | fill=00000000 | font= | comment=None
+Row  64, Col  1 (A64): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  64, Col  2 (B64): val='Продажа (6276/2 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  64, Col  3 (C64): val=166902 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  64, Col  4 (D64): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  64, Col  5 (E64): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  64, Col  6 (F64): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  64, Col  7 (G64): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  64, Col  8 (H64): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  64, Col  9 (I64): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  64, Col 10 (J64): val=13132 | fill=00000000 | font= | comment=None
+Row  64, Col 11 (K64): val=None | fill=00000000 | font= | comment=None
+Row  65, Col  1 (A65): val='Авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/AMIR MR CHD18ИЮН15: № 555-2397372807)' | fill=00000000 | font= | comment=None
+Row  65, Col  2 (B65): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  65, Col  3 (C65): val=46582 | fill=00000000 | font= | comment=None
+Row  65, Col  4 (D65): val=None | fill=00000000 | font= | comment=None
+Row  65, Col  5 (E65): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  65, Col  6 (F65): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  65, Col  7 (G65): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  65, Col  8 (H65): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  65, Col  9 (I65): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  65, Col 10 (J65): val=222 | fill=00000000 | font= | comment=None
+Row  65, Col 11 (K65): val=None | fill=00000000 | font= | comment=None
+Row  66, Col  1 (A66): val='Авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROVA/GULNARA MS: № 555-2397372805)' | fill=00000000 | font= | comment=None
+Row  66, Col  2 (B66): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  66, Col  3 (C66): val=54490 | fill=00000000 | font= | comment=None
+Row  66, Col  4 (D66): val=None | fill=00000000 | font= | comment=None
+Row  66, Col  5 (E66): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  66, Col  6 (F66): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  66, Col  7 (G66): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  66, Col  8 (H66): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  66, Col  9 (I66): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  66, Col 10 (J66): val=13132 | fill=00000000 | font= | comment=None
+Row  66, Col 11 (K66): val=None | fill=00000000 | font= | comment=None
+Row  67, Col  1 (A67): val='Авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/DANIS MR: № 555-2397372806)' | fill=00000000 | font= | comment=None
+Row  67, Col  2 (B67): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  67, Col  3 (C67): val=65830 | fill=00000000 | font= | comment=None
+Row  67, Col  4 (D67): val=None | fill=00000000 | font= | comment=None
+Row  67, Col  5 (E67): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  67, Col  6 (F67): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  67, Col  7 (G67): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  67, Col  8 (H67): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  67, Col  9 (I67): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  67, Col 10 (J67): val=222 | fill=00000000 | font= | comment=None
+Row  67, Col 11 (K67): val=None | fill=00000000 | font= | comment=None
+Row  68, Col  1 (A68): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  68, Col  2 (B68): val='Продажа (6284/1 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  68, Col  3 (C68): val=888 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  68, Col  4 (D68): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  68, Col  5 (E68): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  68, Col  6 (F68): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  68, Col  7 (G68): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  68, Col  8 (H68): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  68, Col  9 (I68): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  68, Col 10 (J68): val=14462 | fill=00000000 | font= | comment=None
+Row  68, Col 11 (K68): val=None | fill=00000000 | font= | comment=None
+Row  69, Col  1 (A69): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOVA/AIGUL R MS: № 555-2397346201)' | fill=00000000 | font= | comment=None
+Row  69, Col  2 (B69): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  69, Col  3 (C69): val=444 | fill=00000000 | font= | comment=None
+Row  69, Col  4 (D69): val=None | fill=00000000 | font= | comment=None
+Row  69, Col  5 (E69): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  69, Col  6 (F69): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  69, Col  7 (G69): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  69, Col  8 (H69): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  69, Col  9 (I69): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  69, Col 10 (J69): val=222 | fill=00000000 | font= | comment=None
+Row  69, Col 11 (K69): val=None | fill=00000000 | font= | comment=None
+Row  70, Col  1 (A70): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A MR: № 555-2397346202)' | fill=00000000 | font= | comment=None
+Row  70, Col  2 (B70): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  70, Col  3 (C70): val=444 | fill=00000000 | font= | comment=None
+Row  70, Col  4 (D70): val=None | fill=00000000 | font= | comment=None
+Row  70, Col  5 (E70): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  70, Col  6 (F70): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  70, Col  7 (G70): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  70, Col  8 (H70): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  70, Col  9 (I70): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  70, Col 10 (J70): val=30 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  70, Col 11 (K70): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  71, Col  1 (A71): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  71, Col  2 (B71): val='Продажа (6284/2 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  71, Col  3 (C71): val=30488 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  71, Col  4 (D71): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  71, Col  5 (E71): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  71, Col  6 (F71): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  71, Col  7 (G71): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  71, Col  8 (H71): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  71, Col  9 (I71): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  71, Col 10 (J71): val=1313 | fill=00000000 | font= | comment=None
+Row  71, Col 11 (K71): val=None | fill=00000000 | font= | comment=None
+Row  72, Col  1 (A72): val='ВЫБОР МЕСТА, к авиабилету № 555-2397346201, по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 29 Июл 2026г., (GALIMBEKOVA/AIGUL R Г-ЖА: MCO № 555-4597415126)' | fill=00000000 | font= | comment=None
+Row  72, Col  2 (B72): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  72, Col  3 (C72): val=2700 | fill=00000000 | font= | comment=None
+Row  72, Col  4 (D72): val=None | fill=00000000 | font= | comment=None
+Row  72, Col  5 (E72): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  72, Col  6 (F72): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  72, Col  7 (G72): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  72, Col  8 (H72): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  72, Col  9 (I72): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  72, Col 10 (J72): val=1313 | fill=00000000 | font= | comment=None
+Row  72, Col 11 (K72): val=None | fill=00000000 | font= | comment=None
+Row  73, Col  1 (A73): val='ВЫБОР МЕСТА, к авиабилету № 555-2397346201, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 30 Июл 2026г., (GALIMBEKOVA/AIGUL R Г-ЖА: MCO № 555-4597415127)' | fill=00000000 | font= | comment=None
+Row  73, Col  2 (B73): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  73, Col  3 (C73): val=2700 | fill=00000000 | font= | comment=None
+Row  73, Col  4 (D73): val=None | fill=00000000 | font= | comment=None
+Row  73, Col  5 (E73): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  73, Col  6 (F73): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  73, Col  7 (G73): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  73, Col  8 (H73): val='Сервисный сбор за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  73, Col  9 (I73): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  73, Col 10 (J73): val=1446 | fill=00000000 | font= | comment=None
+Row  73, Col 11 (K73): val=None | fill=00000000 | font= | comment=None
+Row  74, Col  1 (A74): val='ВЫБОР МЕСТА, к авиабилету № 555-2397346202, по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A Г-Н: MCO № 555-4597415128)' | fill=00000000 | font= | comment=None
+Row  74, Col  2 (B74): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  74, Col  3 (C74): val=2610 | fill=00000000 | font= | comment=None
+Row  74, Col  4 (D74): val=None | fill=00000000 | font= | comment=None
+Row  74, Col  5 (E74): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  74, Col  6 (F74): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  74, Col  7 (G74): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  74, Col  8 (H74): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  74, Col  9 (I74): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  74, Col 10 (J74): val=13132 | fill=00000000 | font= | comment=None
+Row  74, Col 11 (K74): val=None | fill=00000000 | font= | comment=None
+Row  75, Col  1 (A75): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOVA/AIGUL R MS: № 555-2397346201)' | fill=00000000 | font= | comment=None
+Row  75, Col  2 (B75): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  75, Col  3 (C75): val=11239 | fill=00000000 | font= | comment=None
+Row  75, Col  4 (D75): val=None | fill=00000000 | font= | comment=None
+Row  75, Col  5 (E75): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  75, Col  6 (F75): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  75, Col  7 (G75): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  75, Col  8 (H75): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2397261508)' | fill=00000000 | font= | comment=None
+Row  75, Col  9 (I75): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  75, Col 10 (J75): val=222 | fill=00000000 | font= | comment=None
+Row  75, Col 11 (K75): val=None | fill=00000000 | font= | comment=None
+Row  76, Col  1 (A76): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A MR: № 555-2397346202)' | fill=00000000 | font= | comment=None
+Row  76, Col  2 (B76): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  76, Col  3 (C76): val=11239 | fill=00000000 | font= | comment=None
+Row  76, Col  4 (D76): val=None | fill=00000000 | font= | comment=None
+Row  76, Col  5 (E76): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  76, Col  6 (F76): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  76, Col  7 (G76): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  76, Col  8 (H76): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  76, Col  9 (I76): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  76, Col 10 (J76): val=13132 | fill=00000000 | font= | comment=None
+Row  76, Col 11 (K76): val=None | fill=00000000 | font= | comment=None
+Row  77, Col  1 (A77): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  77, Col  2 (B77): val='Продажа (11584/1 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  77, Col  3 (C77): val=10 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  77, Col  4 (D77): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  77, Col  5 (E77): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  77, Col  6 (F77): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  77, Col  7 (G77): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  77, Col  8 (H77): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2397261509)' | fill=00000000 | font= | comment=None
+Row  77, Col  9 (I77): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  77, Col 10 (J77): val=222 | fill=00000000 | font= | comment=None
+Row  77, Col 11 (K77): val=None | fill=00000000 | font= | comment=None
+Row  78, Col  1 (A78): val='Размещение в гостинице' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  78, Col  2 (B78): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  78, Col  3 (C78): val=10 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  78, Col  4 (D78): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  78, Col  5 (E78): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  78, Col  6 (F78): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  78, Col  7 (G78): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  78, Col  8 (H78): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  78, Col  9 (I78): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  78, Col 10 (J78): val=14462 | fill=00000000 | font= | comment=None
+Row  78, Col 11 (K78): val=None | fill=00000000 | font= | comment=None
+Row  79, Col  1 (A79): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  79, Col  2 (B79): val='Продажа (11585/2 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  79, Col  3 (C79): val=232000 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  79, Col  4 (D79): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  79, Col  5 (E79): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  79, Col  6 (F79): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  79, Col  7 (G79): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  79, Col  8 (H79): val='Услуга ИТО за Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fill=00000000 | font= | comment=None
+Row  79, Col  9 (I79): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  79, Col 10 (J79): val=222 | fill=00000000 | font= | comment=None
+Row  79, Col 11 (K79): val=None | fill=00000000 | font= | comment=None
+Row  80, Col  1 (A80): val='размещение 11111111111' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  80, Col  2 (B80): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  80, Col  3 (C80): val=232000 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  80, Col  4 (D80): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  80, Col  5 (E80): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  80, Col  6 (F80): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  80, Col  7 (G80): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  80, Col  8 (H80): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  80, Col  9 (I80): val='Приход (356/0 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  80, Col 10 (J80): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  80, Col 11 (K80): val=59714 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  81, Col  1 (A81): val='Обороты за период' | fill=00000000 | font= | comment=None
+Row  81, Col  2 (B81): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  81, Col  3 (C81): val=780132.5 | fill=00000000 | font= | comment=None
+Row  81, Col  4 (D81): val=175000 | fill=00000000 | font= | comment=None
+Row  81, Col  5 (E81): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  81, Col  6 (F81): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  81, Col  7 (G81): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  81, Col  8 (H81): val='Сервисный сбор за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 24 Июл 2026г., (SHARAPOV/MARAT M MR: № 555-2397332268)' | fill=00000000 | font= | comment=None
+Row  81, Col  9 (I81): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  81, Col 10 (J81): val=1000 | fill=00000000 | font= | comment=None
+Row  81, Col 11 (K81): val=None | fill=00000000 | font= | comment=None
+Row  82, Col  1 (A82): val='Сальдо конечное' | fill=00000000 | font= | comment=None
+Row  82, Col  2 (B82): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  82, Col  3 (C82): val=769776.2 | fill=00000000 | font= | comment=None
+Row  82, Col  4 (D82): val=None | fill=00000000 | font= | comment=None
+Row  82, Col  5 (E82): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  82, Col  6 (F82): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  82, Col  7 (G82): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  82, Col  8 (H82): val='Авиабилет  (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 24 Июл 2026г., (SHARAPOV/MARAT M MR: № 555-2397332268)' | fill=00000000 | font= | comment=None
+Row  82, Col  9 (I82): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  82, Col 10 (J82): val=59492 | fill=00000000 | font= | comment=None
+Row  82, Col 11 (K82): val=None | fill=00000000 | font= | comment=None
+Row  83, Col  1 (A83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  2 (B83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  3 (C83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  4 (D83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  5 (E83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  6 (F83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  7 (G83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col  8 (H83): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 24 Июл 2026г., (SHARAPOV/MARAT M MR: № 555-2397332268)' | fill=00000000 | font= | comment=None
+Row  83, Col  9 (I83): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  83, Col 10 (J83): val=222 | fill=00000000 | font= | comment=None
+Row  83, Col 11 (K83): val=None | fill=00000000 | font= | comment=None
+Row  84, Col  1 (A84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  2 (B84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  3 (C84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  4 (D84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  5 (E84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  6 (F84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  7 (G84): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  84, Col  8 (H84): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  84, Col  9 (I84): val='Приход (357/0 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  84, Col 10 (J84): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  84, Col 11 (K84): val=168234 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  85, Col  1 (A85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  2 (B85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  3 (C85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  4 (D85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  5 (E85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  6 (F85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  7 (G85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col  8 (H85): val='Сервисный сбор за оформление авиабилета (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/AMIR MR CHD18ИЮН15: № 555-2397372807)' | fill=00000000 | font= | comment=None
+Row  85, Col  9 (I85): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  85, Col 10 (J85): val=4658.2 | fill=00000000 | font= | comment=None
+Row  85, Col 11 (K85): val=None | fill=00000000 | font= | comment=None
+Row  86, Col  1 (A86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  2 (B86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  3 (C86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  4 (D86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  5 (E86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  6 (F86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  7 (G86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col  8 (H86): val='Сервисный сбор за оформление авиабилета (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROVA/GULNARA MS: № 555-2397372805)' | fill=00000000 | font= | comment=None
+Row  86, Col  9 (I86): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  86, Col 10 (J86): val=5449 | fill=00000000 | font= | comment=None
+Row  86, Col 11 (K86): val=None | fill=00000000 | font= | comment=None
+Row  87, Col  1 (A87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  2 (B87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  3 (C87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  4 (D87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  5 (E87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  6 (F87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  7 (G87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col  8 (H87): val='Сервисный сбор за оформление авиабилета (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/DANIS MR: № 555-2397372806)' | fill=00000000 | font= | comment=None
+Row  87, Col  9 (I87): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  87, Col 10 (J87): val=6583 | fill=00000000 | font= | comment=None
+Row  87, Col 11 (K87): val=None | fill=00000000 | font= | comment=None
+Row  88, Col  1 (A88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  2 (B88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  3 (C88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  4 (D88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  5 (E88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  6 (F88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  7 (G88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col  8 (H88): val='Авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/AMIR MR CHD18ИЮН15: № 555-2397372807)' | fill=00000000 | font= | comment=None
+Row  88, Col  9 (I88): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  88, Col 10 (J88): val=46582 | fill=00000000 | font= | comment=None
+Row  88, Col 11 (K88): val=None | fill=00000000 | font= | comment=None
+Row  89, Col  1 (A89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  2 (B89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  3 (C89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  4 (D89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  5 (E89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  6 (F89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  7 (G89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col  8 (H89): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/AMIR MR CHD18ИЮН15: № 555-2397372807)' | fill=00000000 | font= | comment=None
+Row  89, Col  9 (I89): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  89, Col 10 (J89): val=444 | fill=00000000 | font= | comment=None
+Row  89, Col 11 (K89): val=None | fill=00000000 | font= | comment=None
+Row  90, Col  1 (A90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  2 (B90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  3 (C90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  4 (D90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  5 (E90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  6 (F90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  7 (G90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col  8 (H90): val='Авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROVA/GULNARA MS: № 555-2397372805)' | fill=00000000 | font= | comment=None
+Row  90, Col  9 (I90): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  90, Col 10 (J90): val=54490 | fill=00000000 | font= | comment=None
+Row  90, Col 11 (K90): val=None | fill=00000000 | font= | comment=None
+Row  91, Col  1 (A91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  2 (B91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  3 (C91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  4 (D91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  5 (E91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  6 (F91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  7 (G91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col  8 (H91): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROVA/GULNARA MS: № 555-2397372805)' | fill=00000000 | font= | comment=None
+Row  91, Col  9 (I91): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  91, Col 10 (J91): val=444 | fill=00000000 | font= | comment=None
+Row  91, Col 11 (K91): val=None | fill=00000000 | font= | comment=None
+Row  92, Col  1 (A92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  2 (B92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  3 (C92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  4 (D92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  5 (E92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  6 (F92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  7 (G92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col  8 (H92): val='Авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/DANIS MR: № 555-2397372806)' | fill=00000000 | font= | comment=None
+Row  92, Col  9 (I92): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  92, Col 10 (J92): val=65830 | fill=00000000 | font= | comment=None
+Row  92, Col 11 (K92): val=None | fill=00000000 | font= | comment=None
+Row  93, Col  1 (A93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  2 (B93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  3 (C93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  4 (D93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  5 (E93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  6 (F93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  7 (G93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col  8 (H93): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - АНТАЛЬЯ - КАЗАНЬ, перевозчик:SU, 9 Авг 2026г.- 17 Авг 2026г., (SHAKIROV/DANIS MR: № 555-2397372806)' | fill=00000000 | font= | comment=None
+Row  93, Col  9 (I93): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  93, Col 10 (J93): val=444 | fill=00000000 | font= | comment=None
+Row  93, Col 11 (K93): val=None | fill=00000000 | font= | comment=None
+Row  94, Col  1 (A94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  2 (B94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  3 (C94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  4 (D94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  5 (E94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  6 (F94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  7 (G94): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  94, Col  8 (H94): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  94, Col  9 (I94): val='Приход (358/0 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  94, Col 10 (J94): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  94, Col 11 (K94): val=31376 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row  95, Col  1 (A95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  2 (B95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  3 (C95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  4 (D95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  5 (E95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  6 (F95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  7 (G95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col  8 (H95): val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOVA/AIGUL R MS: № 555-2397346201)' | fill=00000000 | font= | comment=None
+Row  95, Col  9 (I95): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  95, Col 10 (J95): val=1124 | fill=00000000 | font= | comment=None
+Row  95, Col 11 (K95): val=None | fill=00000000 | font= | comment=None
+Row  96, Col  1 (A96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  2 (B96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  3 (C96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  4 (D96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  5 (E96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  6 (F96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  7 (G96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col  8 (H96): val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A MR: № 555-2397346202)' | fill=00000000 | font= | comment=None
+Row  96, Col  9 (I96): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  96, Col 10 (J96): val=1124 | fill=00000000 | font= | comment=None
+Row  96, Col 11 (K96): val=None | fill=00000000 | font= | comment=None
+Row  97, Col  1 (A97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  2 (B97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  3 (C97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  4 (D97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  5 (E97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  6 (F97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  7 (G97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col  8 (H97): val='ВЫБОР МЕСТА, к авиабилету № 555-2397346201, по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 29 Июл 2026г., (GALIMBEKOVA/AIGUL R Г-ЖА: MCO № 555-4597415126)' | fill=00000000 | font= | comment=None
+Row  97, Col  9 (I97): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  97, Col 10 (J97): val=2700 | fill=00000000 | font= | comment=None
+Row  97, Col 11 (K97): val=None | fill=00000000 | font= | comment=None
+Row  98, Col  1 (A98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  2 (B98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  3 (C98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  4 (D98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  5 (E98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  6 (F98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  7 (G98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col  8 (H98): val='ВЫБОР МЕСТА, к авиабилету № 555-2397346201, по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 30 Июл 2026г., (GALIMBEKOVA/AIGUL R Г-ЖА: MCO № 555-4597415127)' | fill=00000000 | font= | comment=None
+Row  98, Col  9 (I98): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  98, Col 10 (J98): val=2700 | fill=00000000 | font= | comment=None
+Row  98, Col 11 (K98): val=None | fill=00000000 | font= | comment=None
+Row  99, Col  1 (A99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  2 (B99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  3 (C99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  4 (D99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  5 (E99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  6 (F99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  7 (G99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col  8 (H99): val='ВЫБОР МЕСТА, к авиабилету № 555-2397346202, по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A Г-Н: MCO № 555-4597415128)' | fill=00000000 | font= | comment=None
+Row  99, Col  9 (I99): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row  99, Col 10 (J99): val=2610 | fill=00000000 | font= | comment=None
+Row  99, Col 11 (K99): val=None | fill=00000000 | font= | comment=None
+Row 100, Col  1 (A100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  2 (B100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  3 (C100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  4 (D100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  5 (E100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  6 (F100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  7 (G100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col  8 (H100): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOVA/AIGUL R MS: № 555-2397346201)' | fill=00000000 | font= | comment=None
+Row 100, Col  9 (I100): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 100, Col 10 (J100): val=11239 | fill=00000000 | font= | comment=None
+Row 100, Col 11 (K100): val=None | fill=00000000 | font= | comment=None
+Row 101, Col  1 (A101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  2 (B101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  3 (C101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  4 (D101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  5 (E101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  6 (F101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  7 (G101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col  8 (H101): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOVA/AIGUL R MS: № 555-2397346201)' | fill=00000000 | font= | comment=None
+Row 101, Col  9 (I101): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 101, Col 10 (J101): val=444 | fill=00000000 | font= | comment=None
+Row 101, Col 11 (K101): val=None | fill=00000000 | font= | comment=None
+Row 102, Col  1 (A102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  2 (B102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  3 (C102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  4 (D102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  5 (E102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  6 (F102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  7 (G102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col  8 (H102): val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A MR: № 555-2397346202)' | fill=00000000 | font= | comment=None
+Row 102, Col  9 (I102): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 102, Col 10 (J102): val=11239 | fill=00000000 | font= | comment=None
+Row 102, Col 11 (K102): val=None | fill=00000000 | font= | comment=None
+Row 103, Col  1 (A103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  2 (B103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  3 (C103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  4 (D103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  5 (E103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  6 (F103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  7 (G103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col  8 (H103): val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА - КАЗАНЬ, перевозчик:SU, 29 Июл 2026г.- 30 Июл 2026г., (GALIMBEKOV/KARIM A MR: № 555-2397346202)' | fill=00000000 | font= | comment=None
+Row 103, Col  9 (I103): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 103, Col 10 (J103): val=444 | fill=00000000 | font= | comment=None
+Row 103, Col 11 (K103): val=None | fill=00000000 | font= | comment=None
+Row 104, Col  1 (A104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  2 (B104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  3 (C104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  4 (D104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  5 (E104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  6 (F104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  7 (G104): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 104, Col  8 (H104): val='24.07.26' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 104, Col  9 (I104): val='Приход (359/2 от 24.07.2026)' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 104, Col 10 (J104): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 104, Col 11 (K104): val=500025 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 105, Col  1 (A105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  2 (B105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  3 (C105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  4 (D105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  5 (E105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  6 (F105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  7 (G105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col  8 (H105): val='Размещение в гостинице' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 105, Col  9 (I105): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 105, Col 10 (J105): val=25 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 105, Col 11 (K105): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 106, Col  1 (A106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  2 (B106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  3 (C106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  4 (D106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  5 (E106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  6 (F106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  7 (G106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col  8 (H106): val='размещение 11111111111' | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 106, Col  9 (I106): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 106, Col 10 (J106): val=500000 | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 106, Col 11 (K106): val=None | fill=Values must be of type <class 'str'> | font= | comment=None
+Row 107, Col  1 (A107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  2 (B107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  3 (C107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  4 (D107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  5 (E107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  6 (F107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  7 (G107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col  8 (H107): val='Обороты за период' | fill=00000000 | font= | comment=None
+Row 107, Col  9 (I107): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 107, Col 10 (J107): val=175000 | fill=00000000 | font= | comment=None
+Row 107, Col 11 (K107): val=1048147.5 | fill=00000000 | font= | comment=None
+Row 108, Col  1 (A108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  2 (B108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  3 (C108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  4 (D108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  5 (E108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  6 (F108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  7 (G108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col  8 (H108): val='Сальдо конечное' | fill=00000000 | font= | comment=None
+Row 108, Col  9 (I108): val=None | fill=00000000 | font=Values must be of type <class 'str'> | comment=None
+Row 108, Col 10 (J108): val=None | fill=00000000 | font= | comment=None
+Row 108, Col 11 (K108): val=1037791.2 | fill=00000000 | font= | comment=None

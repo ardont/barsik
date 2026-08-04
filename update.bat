@@ -1,16 +1,18 @@
 @echo off
 chcp 65001 > nul
-if not exist .venv (
-    echo [Умная сверка 3.0] Виртуальное окружение не обнаружено! Запустите setup.bat.
-    pause
-    exit /b 1
+title Умная сверка 3.0 - Обновление
+
+echo ====================================================
+echo   Обновление приложения «Умная сверка 3.0»
+echo ====================================================
+echo.
+
+echo [ИНФО] Получение последних изменений с GitHub...
+git pull origin main
+if %errorlevel% equ 0 (
+    echo [ИНФО] Успешно обновлено!
+) else (
+    echo [ОШИБКА] Не удалось получить обновления. Проверьте подключение к интернету или права доступа.
 )
-echo [Умная сверка 3.0] Обновление библиотек...
-.venv\Scripts\python.exe -m pip install -r requirements.txt --upgrade
-if %errorlevel% neq 0 (
-    echo Ошибка при обновлении библиотек!
-    pause
-    exit /b %errorlevel%
-)
-echo Обновление завершено!
+echo.
 pause

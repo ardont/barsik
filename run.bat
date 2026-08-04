@@ -7,6 +7,13 @@ echo   Запуск приложения «Умная сверка 3.0»
 echo ====================================================
 echo.
 
+echo [ИНФО] Проверка обновлений с GitHub...
+git pull origin main
+if %errorlevel% neq 0 (
+    echo [ПРЕДУПРЕЖДЕНИЕ] Не удалось получить обновления с GitHub. Запуск локальной версии.
+)
+echo.
+
 :: 1. Проверка наличия Python
 python --version >nul 2>nul
 if %errorlevel% equ 0 goto python_ok

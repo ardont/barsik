@@ -1,0 +1,237 @@
+FILE: C:\Users\Maxim\Downloads\13-19.07.xlsx
+
+--- SHEET: Лист1 ---
+Row  1:
+  Col  1: val='По данным ООО "ТИКЕТПРОФИ", руб.' fill=None font=None comment=None
+  Col  8: val='По данным ООО "БАРС ТУР", руб.' fill=None font=None comment=None
+Row  2:
+  Col  1: val='Дата' fill=None font=None comment=None
+  Col  2: val='Документ' fill=None font=None comment=None
+  Col  3: val='Дебет' fill=None font=None comment=None
+  Col  4: val='Кредит' fill=None font=None comment=None
+  Col  8: val='Дата' fill=None font=None comment=None
+  Col  9: val='Документ' fill=None font=None comment=None
+  Col 10: val='Дебет' fill=None font=None comment=None
+  Col 11: val='Кредит' fill=None font=None comment=None
+Row  3:
+  Col  1: val='Сальдо начальное' fill=None font=None comment=None
+  Col  4: val=19079.8 fill=None font=None comment=None
+  Col  8: val='Сальдо начальное' fill=None font=None comment=None
+  Col 10: val=19079.8 fill=None font=None comment=None
+Row  4:
+  Col  1: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  2: val='Продажа (6056/1 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  3: val=666 fill=Values must be of type <class 'str'> font=None comment=None
+  Col  4: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col  8: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  9: val='Приход (340/0 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col 10: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col 11: val=157376.3 fill=Values must be of type <class 'str'> font=None comment=None
+Row  5:
+  Col  1: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=None font=None comment=None
+  Col  3: val=222 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=None font=None comment=None
+  Col 10: val=1007 fill=None font=None comment=None
+Row  6:
+  Col  1: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=None font=None comment=None
+  Col  3: val=222 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=None font=None comment=None
+  Col 10: val=1129 fill=None font=None comment=None
+Row  7:
+  Col  1: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=None font=None comment=None
+  Col  3: val=222 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=None font=None comment=None
+  Col 10: val=1327 fill=None font=None comment=None
+Row  8:
+  Col  1: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  2: val='Продажа (6056/2 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  3: val=52798.3 fill=Values must be of type <class 'str'> font=None comment=None
+  Col  4: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75014939788965)' fill=None font=None comment=None
+  Col 10: val=605 fill=None font=None comment=None
+Row  9:
+  Col  1: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=None font=None comment=None
+  Col  3: val=10072 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75014939788976)' fill=None font=None comment=None
+  Col 10: val=605 fill=None font=None comment=None
+Row 10:
+  Col  1: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=None font=None comment=None
+  Col  3: val=11292 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75014939788980)' fill=None font=None comment=None
+  Col 10: val=605 fill=None font=None comment=None
+Row 11:
+  Col  1: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=None font=None comment=None
+  Col  3: val=13272 fill=None font=None comment=None
+  Col  8: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=None font=None comment=None
+  Col 10: val=10072 fill=None font=None comment=None
+Row 12:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75014939788965)' fill=None font=None comment=None
+  Col  3: val=6054.1 fill=None font=None comment=None
+  Col  8: val='Услуга ИТО за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=None font=None comment=None
+  Col 10: val=222 fill=None font=None comment=None
+Row 13:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75014939788976)' fill=None font=None comment=None
+  Col  3: val=6054.1 fill=None font=None comment=None
+  Col  8: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=None font=None comment=None
+  Col 10: val=11292 fill=None font=None comment=None
+Row 14:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75014939788980)' fill=None font=None comment=None
+  Col  3: val=6054.1 fill=None font=None comment=None
+  Col  8: val='Услуга ИТО за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=None font=None comment=None
+  Col 10: val=222 fill=None font=None comment=None
+Row 15:
+  Col  1: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  2: val='Продажа (6058/2 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  3: val=93520.8 fill=Values must be of type <class 'str'> font=None comment=None
+  Col  4: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col  8: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=None font=None comment=None
+  Col 10: val=13272 fill=None font=None comment=None
+Row 16:
+  Col  1: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Нурмухаметов Ильнур, Заказ 184533895' fill=None font=None comment=None
+  Col  3: val=30351.6 fill=None font=None comment=None
+  Col  8: val='Услуга ИТО за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=None font=None comment=None
+  Col 10: val=222 fill=None font=None comment=None
+Row 17:
+  Col  1: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Зырянов Никита, Заказ 720956803' fill=None font=None comment=None
+  Col  3: val=30351.6 fill=None font=None comment=None
+  Col  8: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Нурмухаметов Ильнур, Заказ 184533895' fill=None font=None comment=None
+  Col 10: val=36464 fill=None font=None comment=None
+Row 18:
+  Col  1: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Чернов Александр, Заказ 634859889' fill=None font=None comment=None
+  Col  3: val=32817.6 fill=None font=None comment=None
+  Col  8: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Зырянов Никита, Заказ 720956803' fill=None font=None comment=None
+  Col 10: val=33724 fill=None font=None comment=None
+Row 19:
+  Col  1: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  2: val='Продажа (6060/1 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  3: val=444 fill=Values must be of type <class 'str'> font=None comment=None
+  Col  4: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col  8: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.08.2026 по 24.08.2026, 5 суток,Зырянов Никита, Заказ 926595383' fill=None font=None comment=None
+  Col 10: val=33724 fill=None font=None comment=None
+Row 20:
+  Col  1: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=None font=None comment=None
+  Col  3: val=222 fill=None font=None comment=None
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75014939788980)' fill=None font=None comment=None
+  Col 10: val=6054.1 fill=None font=None comment=None
+Row 21:
+  Col  1: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=None font=None comment=None
+  Col  3: val=222 fill=None font=None comment=None
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75014939788976)' fill=None font=None comment=None
+  Col 10: val=6054.1 fill=None font=None comment=None
+Row 22:
+  Col  1: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  2: val='Продажа (6060/2 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  3: val=30571.8 fill=Values must be of type <class 'str'> font=None comment=None
+  Col  4: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75014939788965)' fill=None font=None comment=None
+  Col 10: val=6054.1 fill=None font=None comment=None
+Row 23:
+  Col  1: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=None font=None comment=None
+  Col  3: val=7416 fill=None font=None comment=None
+  Col  8: val='16.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  9: val='Приход (341/0 от 16.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col 10: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col 11: val=31015.8 fill=Values must be of type <class 'str'> font=None comment=None
+Row 24:
+  Col  1: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=None font=None comment=None
+  Col  3: val=7416 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=None font=None comment=None
+  Col 10: val=371 fill=None font=None comment=None
+Row 25:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75114940243442)' fill=None font=None comment=None
+  Col  3: val=6835.5 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=None font=None comment=None
+  Col 10: val=371 fill=None font=None comment=None
+Row 26:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75114940243453)' fill=None font=None comment=None
+  Col  3: val=6835.5 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75114940243442)' fill=None font=None comment=None
+  Col 10: val=342 fill=None font=None comment=None
+Row 27:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064940250280)' fill=None font=None comment=None
+  Col  3: val=1034.4 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75114940243453)' fill=None font=None comment=None
+  Col 10: val=342 fill=None font=None comment=None
+Row 28:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064940250291)' fill=None font=None comment=None
+  Col  3: val=1034.4 fill=None font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064940250280)' fill=None font=None comment=None
+  Col 10: val=300 fill=None font=None comment=None
+Row 29:
+  Col  1: val='17.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  2: val='Продажа (6072/2 от 17.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  3: val=5622.6 fill=Values must be of type <class 'str'> font=None comment=None
+  Col  4: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064940250291)' fill=None font=None comment=None
+  Col 10: val=300 fill=None font=None comment=None
+Row 30:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941184301)' fill=None font=None comment=None
+  Col  3: val=1822.7 fill=None font=None comment=None
+  Col  8: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=None font=None comment=None
+  Col 10: val=7416 fill=None font=None comment=None
+Row 31:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941184312)' fill=None font=None comment=None
+  Col  3: val=1822.7 fill=None font=None comment=None
+  Col  8: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=None font=None comment=None
+  Col 10: val=222 fill=None font=None comment=None
+Row 32:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941188501)' fill=None font=None comment=None
+  Col  3: val=988.6 fill=None font=None comment=None
+  Col  8: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=None font=None comment=None
+  Col 10: val=7416 fill=None font=None comment=None
+Row 33:
+  Col  1: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941188512)' fill=None font=None comment=None
+  Col  3: val=988.6 fill=None font=None comment=None
+  Col  8: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=None font=None comment=None
+  Col 10: val=222 fill=None font=None comment=None
+Row 34:
+  Col  1: val='Обороты за период' fill=None font=None comment=None
+  Col  3: val=183623.5 fill=None font=None comment=None
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75114940243442)' fill=None font=None comment=None
+  Col 10: val=6835.5 fill=None font=None comment=None
+Row 35:
+  Col  1: val='Сальдо конечное' fill=None font=None comment=None
+  Col  3: val=164543.7 fill=None font=None comment=None
+  Col  8: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064940250291)' fill=None font=None comment=None
+  Col 10: val=1034.4 fill=None font=None comment=None
+Row 36:
+  Col  8: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064940250280)' fill=None font=None comment=None
+  Col 10: val=1034.4 fill=None font=None comment=None
+Row 37:
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75114940243453)' fill=None font=None comment=None
+  Col 10: val=6835.5 fill=None font=None comment=None
+Row 38:
+  Col  8: val='17.07.26' fill=Values must be of type <class 'str'> font=None comment=None
+  Col  9: val='Приход (342/0 от 17.07.2026)' fill=Values must be of type <class 'str'> font=None comment=None
+  Col 10: val=None fill=Values must be of type <class 'str'> font=None comment=None
+  Col 11: val=5622.6 fill=Values must be of type <class 'str'> font=None comment=None
+Row 39:
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941184301)' fill=None font=None comment=None
+  Col 10: val=300 fill=None font=None comment=None
+Row 40:
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941184312)' fill=None font=None comment=None
+  Col 10: val=300 fill=None font=None comment=None
+Row 41:
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941188501)' fill=None font=None comment=None
+  Col 10: val=300 fill=None font=None comment=None
+Row 42:
+  Col  8: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941188512)' fill=None font=None comment=None
+  Col 10: val=300 fill=None font=None comment=None
+Row 43:
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941184301)' fill=None font=None comment=None
+  Col 10: val=1822.7 fill=None font=None comment=None
+Row 44:
+  Col  8: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941184312)' fill=None font=None comment=None
+  Col 10: val=1822.7 fill=None font=None comment=None
+Row 45:
+  Col  8: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941188501)' fill=None font=None comment=None
+  Col 10: val=988.6 fill=None font=None comment=None
+Row 46:
+  Col  8: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941188512)' fill=None font=None comment=None
+  Col 10: val=988.6 fill=None font=None comment=None
+Row 47:
+  Col  8: val='Обороты за период' fill=None font=None comment=None
+  Col 11: val=194014.7 fill=None font=None comment=None
+Row 48:
+  Col  8: val='Сальдо конечное' fill=None font=None comment=None
+  Col 11: val=174934.9 fill=None font=None comment=None

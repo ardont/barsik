@@ -1,0 +1,179 @@
+Row   4, Col  1 (A4): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col  2 (B4): val='Оплата (20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col  3 (C4): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col  4 (D4): val=175000 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col  8 (H4): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col  9 (I4): val='Приход (343/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col 10 (J4): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   4, Col 11 (K4): val=53595 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   6, Col  1 (A6): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   6, Col  2 (B6): val='Продажа (6113/1 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   6, Col  3 (C6): val=1110 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   6, Col  4 (D6): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   8, Col  8 (H8): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   8, Col  9 (I8): val='Приход (345/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   8, Col 10 (J8): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row   8, Col 11 (K8): val=13164 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  12, Col  1 (A12): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  12, Col  2 (B12): val='Продажа (6113/2 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  12, Col  3 (C12): val=66870 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  12, Col  4 (D12): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  13, Col  8 (H13): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  13, Col  9 (I13): val='Приход (346/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  13, Col 10 (J13): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  13, Col 11 (K13): val=13704 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  18, Col  8 (H18): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  18, Col  9 (I18): val='Приход (347/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  18, Col 10 (J18): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  18, Col 11 (K18): val=13704 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col  1 (A23): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col  2 (B23): val='Продажа (6122/1 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col  3 (C23): val=222 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col  4 (D23): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col  8 (H23): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col  9 (I23): val='Приход (348/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col 10 (J23): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  23, Col 11 (K23): val=13704 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  25, Col  1 (A25): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  25, Col  2 (B25): val='Продажа (6122/2 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  25, Col  3 (C25): val=53373 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  25, Col  4 (D25): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  27, Col  1 (A27): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  27, Col  2 (B27): val='Продажа (6149/1 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  27, Col  3 (C27): val=222 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  27, Col  4 (D27): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  28, Col  8 (H28): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  28, Col  9 (I28): val='Приход (349/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  28, Col 10 (J28): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  28, Col 11 (K28): val=13704 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  29, Col  1 (A29): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  29, Col  2 (B29): val='Продажа (6149/2 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  29, Col  3 (C29): val=17679.3 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  29, Col  4 (D29): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  32, Col  1 (A32): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  32, Col  2 (B32): val='Продажа (6121/1 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  32, Col  3 (C32): val=222 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  32, Col  4 (D32): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  33, Col  8 (H33): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  33, Col  9 (I33): val='Приход (350/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  33, Col 10 (J33): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  33, Col 11 (K33): val=17901.3 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  34, Col  1 (A34): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  34, Col  2 (B34): val='Продажа (6121/2 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  34, Col  3 (C34): val=59492 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  34, Col  4 (D34): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  36, Col  1 (A36): val='21.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  36, Col  2 (B36): val='Продажа (6186/1 от 21.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  36, Col  3 (C36): val=222 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  36, Col  4 (D36): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  38, Col  1 (A38): val='21.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  38, Col  2 (B38): val='Продажа (6186/2 от 21.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  38, Col  3 (C38): val=5270 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  38, Col  4 (D38): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  39, Col  8 (H39): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  39, Col  9 (I39): val='Приход (360/0 от 20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  39, Col 10 (J39): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  39, Col 11 (K39): val=59714 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  40, Col  1 (A40): val='21.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  40, Col  2 (B40): val='Продажа (6193/1 от 21.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  40, Col  3 (C40): val=444 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  40, Col  4 (D40): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  42, Col  1 (A42): val='21.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  42, Col  2 (B42): val='Продажа (6193/2 от 21.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  42, Col  3 (C42): val=33669 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  42, Col  4 (D42): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  43, Col  8 (H43): val='20.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  43, Col  9 (I43): val='Оплата (20.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  43, Col 10 (J43): val=175000 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  43, Col 11 (K43): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  44, Col  1 (A44): val='23.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  44, Col  2 (B44): val='Продажа (6247/2 от 23.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  44, Col  3 (C44): val=8581.2 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  44, Col  4 (D44): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  45, Col  8 (H45): val='21.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  45, Col  9 (I45): val='Приход (352/0 от 21.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  45, Col 10 (J45): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  45, Col 11 (K45): val=5492 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  48, Col  1 (A48): val='23.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  48, Col  2 (B48): val='Продажа (6249/1 от 23.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  48, Col  3 (C48): val=666 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  48, Col  4 (D48): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  49, Col  8 (H49): val='21.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  49, Col  9 (I49): val='Приход (353/0 от 21.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  49, Col 10 (J49): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  49, Col 11 (K49): val=34113 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  52, Col  1 (A52): val='23.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  52, Col  2 (B52): val='Продажа (6249/2 от 23.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  52, Col  3 (C52): val=40756 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  52, Col  4 (D52): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  53, Col  8 (H53): val='23.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  53, Col  9 (I53): val='Приход (354/0 от 23.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  53, Col 10 (J53): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  53, Col 11 (K53): val=8581.2 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  56, Col  1 (A56): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  56, Col  2 (B56): val='Продажа (6263/1 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  56, Col  3 (C56): val=222 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  56, Col  4 (D56): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  58, Col  1 (A58): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  58, Col  2 (B58): val='Продажа (6263/2 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  58, Col  3 (C58): val=59492 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  58, Col  4 (D58): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col  1 (A60): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col  2 (B60): val='Продажа (6276/1 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col  3 (C60): val=1332 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col  4 (D60): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col  8 (H60): val='23.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col  9 (I60): val='Приход (355/0 от 23.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col 10 (J60): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  60, Col 11 (K60): val=41422 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  64, Col  1 (A64): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  64, Col  2 (B64): val='Продажа (6276/2 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  64, Col  3 (C64): val=166902 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  64, Col  4 (D64): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  68, Col  1 (A68): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  68, Col  2 (B68): val='Продажа (6284/1 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  68, Col  3 (C68): val=888 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  68, Col  4 (D68): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  70, Col  8 (H70): val='Авиабилет (электронный) по маршруту МОСКВА - КАЗАНЬ, перевозчик:SU, 24 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2397261625)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  70, Col 10 (J70): val=30 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  70, Col 11 (K70): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  71, Col  1 (A71): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  71, Col  2 (B71): val='Продажа (6284/2 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  71, Col  3 (C71): val=30488 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  71, Col  4 (D71): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  77, Col  1 (A77): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  77, Col  2 (B77): val='Продажа (11584/1 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  77, Col  3 (C77): val=10 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  77, Col  4 (D77): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  78, Col  1 (A78): val='Размещение в гостинице' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  78, Col  3 (C78): val=10 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  78, Col  4 (D78): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  79, Col  1 (A79): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  79, Col  2 (B79): val='Продажа (11585/2 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  79, Col  3 (C79): val=232000 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  79, Col  4 (D79): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col  1 (A80): val='размещение 11111111111' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col  3 (C80): val=232000 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col  4 (D80): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col  8 (H80): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col  9 (I80): val='Приход (356/0 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col 10 (J80): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  80, Col 11 (K80): val=59714 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  84, Col  8 (H84): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  84, Col  9 (I84): val='Приход (357/0 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  84, Col 10 (J84): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  84, Col 11 (K84): val=168234 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  94, Col  8 (H94): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  94, Col  9 (I94): val='Приход (358/0 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  94, Col 10 (J94): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row  94, Col 11 (K94): val=31376 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 104, Col  8 (H104): val='24.07.26' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 104, Col  9 (I104): val='Приход (359/2 от 24.07.2026)' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 104, Col 10 (J104): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 104, Col 11 (K104): val=500025 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 105, Col  8 (H105): val='Размещение в гостинице' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 105, Col 10 (J105): val=25 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 105, Col 11 (K105): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 106, Col  8 (H106): val='размещение 11111111111' | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 106, Col 10 (J106): val=500000 | fg=Values must be of type <class 'str'> | font=None | comment=None
+Row 106, Col 11 (K106): val=None | fg=Values must be of type <class 'str'> | font=None | comment=None

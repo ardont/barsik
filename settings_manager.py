@@ -13,7 +13,8 @@ DEFAULT_SETTINGS = {
     'default_folder': str(Path.home() / "Downloads"),
     'hotel_margin': 10.0,
     'simple_mode': True,
-    'theme': 'Dark'
+    'theme': 'Dark',
+    'font_scale': 1.0
 }
 
 def load_settings() -> dict:

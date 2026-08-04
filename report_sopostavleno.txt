@@ -1,0 +1,653 @@
+FILE: C:\Users\Maxim\Downloads\13-19.07_сопоставлено.xlsx
+
+--- SHEET: 📋 Сводка ---
+Row  1:
+Row  2:
+  Col  2: val='РЕЗУЛЬТАТЫ СВЕРКИ ДАННЫХ' fill=None font=FF1F497D comment=None
+Row  3:
+  Col  2: val='Дата проведения сверки: 18.07.2026 16:31:49' fill=None font=None comment=None
+Row  4:
+Row  5:
+  Col  2: val='Показатель' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  3: val='Количество' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  4: val='Сумма (руб.)' fill=FF1F497D font=FFFFFFFF comment=None
+Row  6:
+  Col  2: val='Всего операций TicketProf' fill=None font=None comment=None
+  Col  3: val=25 fill=None font=None comment=None
+  Col  4: val=164543.7 fill=None font=None comment=None
+Row  7:
+  Col  2: val='Всего операций Bars Tour' fill=None font=None comment=None
+  Col  3: val=41 fill=None font=None comment=None
+  Col  4: val=221598.5 fill=None font=None comment=None
+Row  8:
+  Col  2: val='Успешно сопоставлено (Стоимость услуг)' fill=None font=None comment=None
+  Col  3: val=23 fill=None font=None comment=None
+  Col  4: val=150805.9 fill=None font=None comment=None
+Row  9:
+  Col  2: val='Успешно сопоставлено (Итого в Барсе)' fill=None font=None comment=None
+  Col  3: val=23 fill=None font=None comment=None
+  Col  4: val=160290.7 fill=None font=None comment=None
+Row 10:
+  Col  2: val='В Тикете, нет в Барсе' fill=None font=None comment=None
+  Col  3: val=2 fill=None font=None comment=None
+  Col  4: val=13737.8 fill=None font=None comment=None
+Row 11:
+  Col  2: val='В Барсе, нет в Тикете' fill=None font=None comment=None
+  Col  3: val=18 fill=None font=None comment=None
+  Col  4: val=61307.8 fill=None font=None comment=None
+Row 12:
+  Col  2: val='Прибыль (Итого в Барсе - Стоимость услуг)' fill=None font=None comment=None
+  Col  4: val=9484.800000000003 fill=None font=None comment=None
+
+--- SHEET: 📊 Все сопоставления ---
+Row  1:
+  Col  1: val='Сквозной ID' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  2: val='Тип услуги' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  3: val='Документ TicketProf' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  4: val='Описание TicketProf' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  5: val='Стоимость услуг' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  6: val='Документ Bars Tour' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  7: val='Описание Bars Tour' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  8: val='Итого в Барсе' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  9: val='Прибыль' fill=FF1F497D font=FFFFFFFF comment=None
+  Col 10: val='Метод сопоставления' fill=FF1F497D font=FFFFFFFF comment=None
+  Col 11: val='Статус' fill=FF1F497D font=FFFFFFFF comment=None
+Row  2:
+  Col  1: val='555-2396327717' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/1 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=222 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Услуга ИТО за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=222 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row  3:
+  Col  1: val='555-2396327893' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/1 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=222 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Услуга ИТО за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=222 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row  4:
+  Col  1: val='555-2396327716' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/1 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=222 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Услуга ИТО за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=222 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row  5:
+  Col  1: val='555-2396327717' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=10072 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=10072 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row  6:
+  Col  1: val='555-2396327893' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=11292 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=11292 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row  7:
+  Col  1: val='555-2396327716' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=13272 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=13272 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row  8:
+  Col  1: val='184533895' fill=FFFFC7CE font=None comment=None
+  Col  2: val='Hotel' fill=FFFFC7CE font=None comment=None
+  Col  3: val='Продажа (6058/2 от 16.07.2026)' fill=FFFFC7CE font=None comment=None
+  Col  4: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Нурмухаметов Ильнур, Заказ 184533895' fill=FFFFC7CE font=None comment=None
+  Col  5: val=30351.6 fill=FFFFC7CE font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFFFC7CE font=None comment=None
+  Col  7: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Нурмухаметов Ильнур, Заказ 184533895' fill=FFFFC7CE font=None comment=None
+  Col  8: val=36464 fill=FFFFC7CE font=None comment=None
+  Col  9: val=6112.400000000001 fill=FFFFC7CE font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFFFC7CE font=None comment=None
+  Col 11: val='Нетипичная маржа' fill=FFFFC7CE font=None comment=None
+Row  9:
+  Col  1: val='720956803' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Hotel' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6058/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Зырянов Никита, Заказ 720956803' fill=FFE2EFDA font=None comment=None
+  Col  5: val=30351.6 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Зырянов Никита, Заказ 720956803' fill=FFE2EFDA font=None comment=None
+  Col  8: val=33724 fill=FFE2EFDA font=None comment=None
+  Col  9: val=3372.400000000001 fill=FFE2EFDA font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 10:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75014939788965)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=6054.1 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75014939788965)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=6054.1 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 11:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75014939788976)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=6054.1 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75014939788976)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=6054.1 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 12:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6056/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75014939788980)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=6054.1 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75014939788980)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=6054.1 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 13:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/1 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=222 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=222 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 14:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/1 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=222 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Услуга ИТО за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=222 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 15:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=7416 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=7416 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 16:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=7416 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=7416 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 17:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75114940243442)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=6835.5 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75114940243442)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=6835.5 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 18:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75114940243453)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=6835.5 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75114940243453)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=6835.5 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 19:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064940250280)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=1034.4 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064940250280)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1034.4 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 20:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6060/2 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064940250291)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=1034.4 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064940250291)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1034.4 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 21:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6072/2 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941184301)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=1822.7 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941184301)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1822.7 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 22:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6072/2 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941184312)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=1822.7 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941184312)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1822.7 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 23:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6072/2 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941188501)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=988.6 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941188501)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=988.6 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 24:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Flight' fill=FFE2EFDA font=None comment=None
+  Col  3: val='Продажа (6072/2 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  4: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941188512)' fill=FFE2EFDA font=None comment=None
+  Col  5: val=988.6 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941188512)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=988.6 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Точное имя' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Совпадение' fill=FFE2EFDA font=None comment=None
+Row 25:
+  Col  1: val='N/A' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Other' fill=FFFCE4D6 font=None comment=None
+  Col  3: val=None fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Сальдо начальное' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=-19079.8 fill=FFFCE4D6 font=None comment=None
+  Col  6: val=None fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Отсутствует в Bars Tour' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Тикете, нет в Барсе' fill=FFFCE4D6 font=None comment=None
+Row 26:
+  Col  1: val='634859889' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Hotel' fill=FFFCE4D6 font=None comment=None
+  Col  3: val='Продажа (6058/2 от 16.07.2026)' fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Чернов Александр, Заказ 634859889' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=32817.6 fill=FFFCE4D6 font=None comment=None
+  Col  6: val=None fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Отсутствует в Bars Tour' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Тикете, нет в Барсе' fill=FFFCE4D6 font=None comment=None
+Row 27:
+  Col  1: val='N/A' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Other' fill=FFFCE4D6 font=None comment=None
+  Col  3: val=None fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  6: val=None fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Сальдо начальное' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=19079.8 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Барсе, нет в Тикете' fill=FFFCE4D6 font=None comment=None
+Row 28:
+  Col  1: val='555-2396327717' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (NURMUKHAMETOV/ILNUR I MR: № 555-2396327717)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1007 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 29:
+  Col  1: val='555-2396327893' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (ZYRIANOV/NIKITA A MR: № 555-2396327893)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1129 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 30:
+  Col  1: val='555-2396327716' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Авиабилет (электронный) по маршруту КАЗАНЬ - МОСКВА, перевозчик:SU, 19 Июл 2026г., (CHERNOV/ALEKSANDR V MR: № 555-2396327716)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=1327 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 31:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Нурмухаметов Ильнур Ильфатович: № ЭЖБ-75014939788965)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=605 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 32:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Зырянов Никита Алексеевич: № ЭЖБ-75014939788976)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=605 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 33:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА БЕЛОРУССКАЯ - СМОЛЕНСК ЦЕНТРАЛЬНЫЙ, поезд № 029ЧА 19 Июл 2026г., (Чернов Александр Васильевич: № ЭЖБ-75014939788980)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=605 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 34:
+  Col  1: val='926595383' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Hotel' fill=FFFCE4D6 font=None comment=None
+  Col  3: val=None fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.08.2026 по 24.08.2026, 5 суток,Зырянов Никита, Заказ 926595383' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=33724 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Барсе, нет в Тикете' fill=FFFCE4D6 font=None comment=None
+Row 35:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (LEBEDEV/NIKITA V MR: № 15К-6111740577)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=371 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 36:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за авиабилет (электронный) по маршруту КАЗАНЬ - ЯРОСЛАВЛЬ, перевозчик:RT, 20 Июл 2026г., (BORISOV/DMITRII I MR: № 15К-6111740578)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=371 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 37:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75114940243442)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=342 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 38:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА КАЗАНСКАЯ - КАЗАНЬ ПАСС, поезд № 130ХА 23 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75114940243453)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=342 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 39:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064940250280)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=300 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 40:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (341/0 от 16.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ТУЛА 1 КУРСКАЯ - МОСКВА КУРСКАЯ, поезд № 826ЩА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064940250291)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=300 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 41:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941184301)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=300 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 42:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту МОСКВА ВК ВОСТОЧНЫЙ - ТУЛА 1 КУРСКАЯ, поезд № 245АА 22 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941184312)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=300 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 43:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Лебедев Никита Вадимович: № ЭЖБ-75064941188501)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=300 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+Row 44:
+  Col  1: val='N/A' fill=FFE2EFDA font=None comment=None
+  Col  2: val='Fee' fill=FFE2EFDA font=None comment=None
+  Col  3: val=None fill=FFE2EFDA font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFE2EFDA font=None comment=None
+  Col  5: val=0 fill=FFE2EFDA font=None comment=None
+  Col  6: val='Приход (342/0 от 17.07.2026)' fill=FFE2EFDA font=None comment=None
+  Col  7: val='Сервисный сбор за Ж.Д. билет (электронный) по маршруту ЯРОСЛАВЛЬ-ГЛАВНЫЙ - МОСКВА ЯРОСЛАВСКАЯ, поезд № 105ЯА 21 Июл 2026г., (Борисов Дмитрий Юрьевич: № ЭЖБ-75064941188512)' fill=FFE2EFDA font=None comment=None
+  Col  8: val=300 fill=FFE2EFDA font=None comment=None
+  Col  9: val=0 fill=FFE2EFDA font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFE2EFDA font=None comment=None
+  Col 11: val='Норма (Сбор в БТ)' fill=FFE2EFDA font=None comment=None
+
+--- SHEET: ⚠ Несоответствия ---
+Row  1:
+  Col  1: val='Сквозной ID' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  2: val='Тип услуги' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  3: val='Документ TicketProf' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  4: val='Описание TicketProf' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  5: val='Стоимость услуг' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  6: val='Документ Bars Tour' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  7: val='Описание Bars Tour' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  8: val='Итого в Барсе' fill=FF1F497D font=FFFFFFFF comment=None
+  Col  9: val='Прибыль' fill=FF1F497D font=FFFFFFFF comment=None
+  Col 10: val='Метод сопоставления' fill=FF1F497D font=FFFFFFFF comment=None
+  Col 11: val='Статус' fill=FF1F497D font=FFFFFFFF comment=None
+Row  2:
+  Col  1: val='184533895' fill=FFFFC7CE font=None comment=None
+  Col  2: val='Hotel' fill=FFFFC7CE font=None comment=None
+  Col  3: val='Продажа (6058/2 от 16.07.2026)' fill=FFFFC7CE font=None comment=None
+  Col  4: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Нурмухаметов Ильнур, Заказ 184533895' fill=FFFFC7CE font=None comment=None
+  Col  5: val=30351.6 fill=FFFFC7CE font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFFFC7CE font=None comment=None
+  Col  7: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Нурмухаметов Ильнур, Заказ 184533895' fill=FFFFC7CE font=None comment=None
+  Col  8: val=36464 fill=FFFFC7CE font=None comment=None
+  Col  9: val=6112.400000000001 fill=FFFFC7CE font=None comment=None
+  Col 10: val='По ID билета/заказа' fill=FFFFC7CE font=None comment=None
+  Col 11: val='Нетипичная маржа' fill=FFFFC7CE font=None comment=None
+Row  3:
+  Col  1: val='N/A' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Other' fill=FFFCE4D6 font=None comment=None
+  Col  3: val=None fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Сальдо начальное' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=-19079.8 fill=FFFCE4D6 font=None comment=None
+  Col  6: val=None fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Отсутствует в Bars Tour' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Тикете, нет в Барсе' fill=FFFCE4D6 font=None comment=None
+Row  4:
+  Col  1: val='634859889' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Hotel' fill=FFFCE4D6 font=None comment=None
+  Col  3: val='Продажа (6058/2 от 16.07.2026)' fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Чернов Александр, Заказ 634859889' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=32817.6 fill=FFFCE4D6 font=None comment=None
+  Col  6: val=None fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Отсутствует в Bars Tour' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Тикете, нет в Барсе' fill=FFFCE4D6 font=None comment=None
+Row  5:
+  Col  1: val='N/A' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Other' fill=FFFCE4D6 font=None comment=None
+  Col  3: val=None fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  6: val=None fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Сальдо начальное' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=19079.8 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Барсе, нет в Тикете' fill=FFFCE4D6 font=None comment=None
+Row  6:
+  Col  1: val='926595383' fill=FFFCE4D6 font=None comment=None
+  Col  2: val='Hotel' fill=FFFCE4D6 font=None comment=None
+  Col  3: val=None fill=FFFCE4D6 font=None comment=None
+  Col  4: val='Отсутствует в TicketProf' fill=FFFCE4D6 font=None comment=None
+  Col  5: val=0 fill=FFFCE4D6 font=None comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFFCE4D6 font=None comment=None
+  Col  7: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.08.2026 по 24.08.2026, 5 суток,Зырянов Никита, Заказ 926595383' fill=FFFCE4D6 font=None comment=None
+  Col  8: val=33724 fill=FFFCE4D6 font=None comment=None
+  Col  9: val=0 fill=FFFCE4D6 font=None comment=None
+  Col 10: val='Не сопоставлено' fill=FFFCE4D6 font=None comment=None
+  Col 11: val='В Барсе, нет в Тикете' fill=FFFCE4D6 font=None comment=None
+Row  7:
+Row  8:
+Row  9:
+Row 10:
+Row 11:
+  Col  3: val='Продажа (6058/2 от 16.07.2026)' fill=FFFFC7CE font=None comment=None
+  Col  4: val='Проживание в г-це Отель Гранд-отель МЕГАПОЛИС, г.СМОЛЕНСК, РОССИЯ, с 19.07.2026 по 24.07.2026, 5 суток,Зырянов Никита, Заказ 720956803' fill=None font=Values must be of type <class 'str'> comment=None
+  Col  6: val='Приход (340/0 от 16.07.2026)' fill=FFFFC7CE font=None comment=None
+  Col  8: val='нет выделения прибыли' fill=None font=Values must be of type <class 'str'> comment=None
