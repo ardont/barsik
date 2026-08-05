@@ -725,6 +725,11 @@ class ReconciliationApp(ctk.CTk):
             self.tp_items = tp_items
             self.bt_items = bt_items
             
+            if len(self.tp_items) == 0 and len(self.bt_items) == 0:
+                filename = os.path.basename(tp_path)
+                msg = f"Файл {filename} не содержит детализированных строк, поэтому он покажет 0 позиций. Пожалуйста, убедитесь, что вы используете детализированную выгрузку."
+                self.after(0, lambda m=msg: messagebox.showwarning("Внимание: Пустой результат", m))
+            
             self.lbl_status.configure(text="Запущен интеллектуальный поиск...")
             self.progress_bar.set(0.5)
             
