@@ -51,7 +51,10 @@ class ServiceItem:
                 expected_margin_pct = getattr(ServiceItem, 'hotel_margin', 10.0)
                 # Расчет ожидаемой маржи
                 expected_profit = (tp_amt * (expected_margin_pct / 100.0)) if tp_amt != 0 else 0.0
-                if abs(profit - expected_profit) > 0.01:
+                
+                if abs(profit) < 0.01:
+                    return "Совпадение (отель, маржа 0)"
+                elif abs(profit - expected_profit) > 0.01:
                     return f"Нетипичная маржа / Расхождение (отель): +{profit:,.2f} руб."
                 else:
                     return "Совпадение (отель)"
