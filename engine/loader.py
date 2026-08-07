@@ -41,6 +41,7 @@ def load_data(tp_path: str, bt_path: Optional[str] = None) -> Tuple[List[Service
     tp_items: List[ServiceItem] = []
     bt_items: List[ServiceItem] = []
     doc_sums = {}
+    bt_header_sum = 0.0
     
     # Режим сводного файла
     if not bt_path:
@@ -50,8 +51,8 @@ def load_data(tp_path: str, bt_path: Optional[str] = None) -> Tuple[List[Service
         # Разбор TicketProf (колонки A-D по COL_MAP_SINGLE_TP)
         tp_items, doc_sums = parse_tp_sheet(ws, COL_MAP_SINGLE_TP)
         
-        # Разбор Bars Tour (колонки H-M по COL_MAP_SINGLE_BT)
-        bt_items = parse_bt_sheet(ws, COL_MAP_SINGLE_BT)
+        # Разбор Bars Tour
+        bt_items, bt_header_sum = parse_bt_sheet(ws, COL_MAP_SINGLE_BT)
         
         wb.close()
     
@@ -66,7 +67,7 @@ def load_data(tp_path: str, bt_path: Optional[str] = None) -> Tuple[List[Service
         # Парсим Bars Tour
         wb_bt = openpyxl.load_workbook(bt_path, data_only=True)
         ws_bt = wb_bt["Лист2"] if "Лист2" in wb_bt.sheetnames else wb_bt.active
-        bt_items = parse_bt_sheet(ws_bt, COL_MAP_DOUBLE_BT)
+        bt_items, bt_header_sum = parse_bt_sheet(ws_bt, COL_MAP_DOUBLE_BT)
         wb_bt.close()
         
     # --- Алгоритм распределения (аллокации) отрицательных сумм корректировок в TicketProf ---
@@ -105,7 +106,9 @@ def load_data(tp_path: str, bt_path: Optional[str] = None) -> Tuple[List[Service
                 if abs(total_allocated - remaining_to_allocate) > 0.01:
                     zero_items[-1].allocated_amount += (remaining_to_allocate - total_allocated)
                     
-    return tp_items, bt_items
+    # Сумма заголовков TP
+    tp_header_sum = sum(doc_sums.values())
+    return tp_items, bt_items, tp_header_sum, bt_header_sum
 
 def parse_tp_sheet(ws: Any, col_map: dict) -> Tuple[List[ServiceItem], dict]:
     """
@@ -160,11 +163,12 @@ def parse_tp_sheet(ws: Any, col_map: dict) -> Tuple[List[ServiceItem], dict]:
                 
     return tp_items, doc_sums
 
-def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
+def parse_bt_sheet(ws: Any, col_map: dict) -> Tuple[List[ServiceItem], float]:
     """
-    Разбирает лист Bars Tour и возвращает список элементов
+    Разбирает лист Bars Tour и возвращает список элементов и сумму кредитовых оборотов (заголовков)
     """
     bt_items = []
+    bt_header_sum = 0.0
     
     current_doc = None
     current_date = None
@@ -172,9 +176,10 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
     for r in range(2, ws.max_row + 1):
         val_date = ws.cell(row=r, column=col_map["date"]).value
         val_doc = ws.cell(row=r, column=col_map["doc"]).value
-        val_amt = ws.cell(row=r, column=col_map["amount"]).value
-        val_profit = ws.cell(row=r, column=col_map["profit"]).value
-        val_net = ws.cell(row=r, column=col_map["net"]).value
+        val_debit = ws.cell(row=r, column=col_map["debit"]).value
+        val_credit = ws.cell(row=r, column=col_map["credit"]).value
+        val_profit = ws.cell(row=r, column=col_map.get("profit", 12)).value
+        val_net = ws.cell(row=r, column=col_map.get("net", 13)).value
         
         is_header = False
         if val_date is not None and val_doc is not None:
@@ -186,13 +191,19 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
         if is_header:
             current_date = str(val_date).strip()
             current_doc = str(val_doc).strip()
+            c_val = to_float(val_debit)
+            d_val = to_float(val_credit)
+            # В Барсе Кредит - это приход, Дебет - возврат (положительное число)
+            amt = d_val if d_val is not None else (-c_val if c_val is not None else 0.0)
+            bt_header_sum += amt
         elif val_date is not None and val_doc is None:
             desc = str(val_date).strip()
             if any(kw in desc for kw in ["Обороты за период", "Сальдо конечное", "Сальдо начальное", "Сальдо", "Итого", "Оплата", "Оплата по счету"]):
                 continue
                 
-            j_val = to_float(val_amt)
-            amt = j_val if j_val is not None else 0.0
+            c_val = to_float(val_debit)
+            d_val = to_float(val_credit)
+            amt = d_val if d_val is not None else (c_val if c_val is not None else 0.0)
             if amt == 0.0 and not extract_identifiers(desc):
                 continue
                 
@@ -260,4 +271,4 @@ def parse_bt_sheet(ws: Any, col_map: dict) -> List[ServiceItem]:
                         unique_items.append(x)
                 final_bt_items.extend(unique_items)
                 
-    return final_bt_items
+    return final_bt_items, bt_header_sum

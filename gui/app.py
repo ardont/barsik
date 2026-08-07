@@ -183,13 +183,13 @@ class ReconciliationApp(ctk.CTk):
         self.kpi_total = KPICard(self.kpi_frame, "ВСЕГО ПОЗИЦИЙ", "0 (0 TP / 0 BT)")
         self.kpi_total.grid(row=0, column=0, padx=(0, 5), sticky="ew")
         
-        self.kpi_rate = KPICard(self.kpi_frame, "СТОИМОСТЬ УСЛУГ (TP)", "0.00 руб.")
+        self.kpi_rate = KPICard(self.kpi_frame, "Дебетовый оборот Тикетпрофи", "0.00 руб.")
         self.kpi_rate.grid(row=0, column=1, padx=5, sticky="ew")
         
-        self.kpi_profit = KPICard(self.kpi_frame, "ИТОГО В БАРСЕ (BT)", "0.00 руб.", text_color=("#0A5F9E", "#90CAF9"))
+        self.kpi_profit = KPICard(self.kpi_frame, "Итого кредитовый оборот Барс Тур", "0.00 руб.", text_color=("#0A5F9E", "#90CAF9"))
         self.kpi_profit.grid(row=0, column=2, padx=5, sticky="ew")
         
-        self.kpi_discrepancy = KPICard(self.kpi_frame, "ПРИБЫЛЬ", "0.00 руб.", text_color=("#2E7D32", "#A5D6A7"))
+        self.kpi_discrepancy = KPICard(self.kpi_frame, "сумма расхождения", "0.00 руб.", text_color=("#2E7D32", "#A5D6A7"))
         self.kpi_discrepancy.grid(row=0, column=3, padx=(5, 0), sticky="ew")
         
         # ----------------------------------------------------
@@ -721,7 +721,7 @@ class ReconciliationApp(ctk.CTk):
             from models import ServiceItem
             ServiceItem.hotel_margin = self.settings.get('hotel_margin', 10.0)
             
-            tp_items, bt_items = load_data(tp_path, None)
+            tp_items, bt_items, tp_sum, bt_sum = load_data(tp_path, None)
             self.tp_items = tp_items
             self.bt_items = bt_items
             
@@ -737,7 +737,7 @@ class ReconciliationApp(ctk.CTk):
                 tp_items, bt_items, self.manual_links, self.settings
             )
             
-            self.summary = calculate_reconciliation(self.tp_items, self.bt_items, self.matches)
+            self.summary = calculate_reconciliation(self.tp_items, self.bt_items, self.matches, tp_sum, bt_sum)
             
             self.after(0, self.on_analysis_complete)
         except Exception as e:
