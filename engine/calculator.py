@@ -20,10 +20,10 @@ def calculate_reconciliation(
     
     # 1. Считаем общие суммы и количество по системам
     summary.total_tp_count = len(tp_items)
-    summary.total_tp_sum = sum(item.allocated_amount for item in tp_items) if tp_sum is None else tp_sum
+    summary.total_tp_sum = sum(item.allocated_amount for item in tp_items)
     
     summary.total_bt_count = len(bt_items)
-    summary.total_bt_sum = sum(item.amount for item in bt_items) if bt_sum is None else bt_sum
+    summary.total_bt_sum = sum(item.amount for item in bt_items)
     
     # 2. Считаем суммы сопоставленных позиций
     # Множества уникальных номеров строк для исключения дубликатов при суммировании
