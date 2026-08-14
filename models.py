@@ -85,3 +85,8 @@ class ReconciliationSummary:
     
     total_profit: float = 0.0
     hotel_profit: float = 0.0
+
+    @property
+    def discrepancy_sum(self) -> float:
+        """Расхождение между дебетовым оборотом TicketProf и кредитовым оборотом Bars Tour"""
+        return self.total_tp_sum - self.total_bt_sum

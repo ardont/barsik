@@ -67,7 +67,7 @@ def export_to_word(
     # 1. Раздел общей сводки
     doc.add_heading("1. Общие показатели взаиморасчетов", level=2)
     
-    stats_table = doc.add_table(rows=5, cols=3)
+    stats_table = doc.add_table(rows=6, cols=3)
     stats_table.style = 'Table Grid'
     
     headers = ["Показатель", "Количество операций", "Сумма (руб.)"]
@@ -82,8 +82,9 @@ def export_to_word(
                 run.font.color.rgb = RGBColor(255, 255, 255)
                 
     row_data = [
-        ("Стоимость услуг (ООО «ТИКЕТПРОФИ»)", str(summary.total_tp_count), f"{summary.total_tp_sum:,.2f}"),
-        ("Итого в Барсе (ООО «БАРС ТУР»)", str(summary.total_bt_count), f"{summary.total_bt_sum:,.2f}"),
+        ("Дебетовый оборот (ООО «ТИКЕТПРОФИ»)", str(summary.total_tp_count), f"{summary.total_tp_sum:,.2f}"),
+        ("Кредитовый оборот (ООО «БАРС ТУР»)", str(summary.total_bt_count), f"{summary.total_bt_sum:,.2f}"),
+        ("Расхождение (Дебет ТП - Кредит БТ)", "", f"{summary.discrepancy_sum:,.2f}"),
         ("Сопоставленные (согласованные) позиции", str(summary.matched_tp_count), f"{summary.matched_tp_sum:,.2f}"),
         ("Прибыль (Итого в Барсе - Стоимость услуг)", "", f"{summary.total_profit:,.2f}")
     ]
@@ -100,7 +101,7 @@ def export_to_word(
         row_cells[2].paragraphs[0].alignment = WD_ALIGN_PARAGRAPH.RIGHT
         
         # Стили
-        if r_idx == 4:
+        if r_idx in (3, 5):
             for cell in row_cells:
                 for p in cell.paragraphs:
                     for run in p.runs:

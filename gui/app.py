@@ -189,7 +189,7 @@ class ReconciliationApp(ctk.CTk):
         self.kpi_profit = KPICard(self.kpi_frame, "Итого кредитовый оборот Барс Тур", "0.00 руб.", text_color=("#0A5F9E", "#90CAF9"))
         self.kpi_profit.grid(row=0, column=2, padx=5, sticky="ew")
         
-        self.kpi_discrepancy = KPICard(self.kpi_frame, "сумма расхождения", "0.00 руб.", text_color=("#2E7D32", "#A5D6A7"))
+        self.kpi_discrepancy = KPICard(self.kpi_frame, "Сумма расхождения", "0.00 руб.", text_color=("#2E7D32", "#A5D6A7"))
         self.kpi_discrepancy.grid(row=0, column=3, padx=(5, 0), sticky="ew")
         
         # ----------------------------------------------------
@@ -758,7 +758,10 @@ class ReconciliationApp(ctk.CTk):
         
         self.kpi_rate.update_value(f"{self.summary.total_tp_sum:,.2f} руб.")
         self.kpi_profit.update_value(f"{self.summary.total_bt_sum:,.2f} руб.")
-        self.kpi_discrepancy.update_value(f"{self.summary.total_profit:,.2f} руб.")
+        
+        disc_val = self.summary.discrepancy_sum
+        disc_color = ("#2E7D32", "#A5D6A7") if abs(disc_val) < 0.01 else ("#C62828", "#EF5350")
+        self.kpi_discrepancy.update_value(f"{disc_val:,.2f} руб.", color=disc_color)
         
         # Скрываем empty state и отображаем Treeview
         if self.empty_state_frame:

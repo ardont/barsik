@@ -31,9 +31,9 @@ class KPICard(ctk.CTkFrame):
         )
         self.value_label.pack(anchor="w", padx=15, pady=(0, 12))
 
-    def update_value(self, new_value: str, color: str = None):
+    def update_value(self, new_value: str, color=None):
         self.value_label.configure(text=new_value)
-        if color:
+        if color is not None:
             self.value_label.configure(text_color=color)
 
 class DetailsPanel(ctk.CTkFrame):

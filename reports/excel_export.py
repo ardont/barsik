@@ -63,8 +63,9 @@ def export_to_excel(
     # Таблица статистики
     stats = [
         ("Показатель", "Количество", "Сумма (руб.)"),
-        ("Всего операций TicketProf", summary.total_tp_count, summary.total_tp_sum),
-        ("Всего операций Bars Tour", summary.total_bt_count, summary.total_bt_sum),
+        ("Всего операций TicketProf (Дебетовый оборот)", summary.total_tp_count, summary.total_tp_sum),
+        ("Всего операций Bars Tour (Кредитовый оборот)", summary.total_bt_count, summary.total_bt_sum),
+        ("Расхождение (Дебет ТП - Кредит БТ)", "", summary.discrepancy_sum),
         ("Успешно сопоставлено (Стоимость услуг)", summary.matched_tp_count, summary.matched_tp_sum),
         ("Успешно сопоставлено (Итого в Барсе)", summary.matched_bt_count, summary.matched_bt_sum),
         ("В Тикете, нет в Барсе", summary.unmatched_tp_count, summary.unmatched_tp_sum),

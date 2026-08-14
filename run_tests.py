@@ -23,13 +23,13 @@ def run_tests():
     # Тест 1: Сводный монолитный файл (Legacy)
     # ----------------------------------------------------
     print("\n[Тест 1] Запуск разбора единого сводного файла...")
-    tp_items_single, bt_items_single = load_data(file_path)
+    tp_items_single, bt_items_single, tp_sum_single, bt_sum_single = load_data(file_path)
     print(f"Загружено из сводного: TicketProf = {len(tp_items_single)}, Bars Tour = {len(bt_items_single)}")
     
     matches_single, unmatched_tp_single, unmatched_bt_single = match_records(
         tp_items_single, bt_items_single, {}
     )
-    summary_single = calculate_reconciliation(tp_items_single, bt_items_single, matches_single)
+    summary_single = calculate_reconciliation(tp_items_single, bt_items_single, matches_single, tp_sum_single, bt_sum_single)
     
     print(f"Сопоставлено: {len(matches_single)}, Прибыль: {summary_single.total_profit:,.2f} руб.")
     
@@ -66,7 +66,7 @@ def run_tests():
     wb_src.close()
     
     print("Временные файлы созданы. Запуск разбора двух раздельных файлов...")
-    tp_items_double, bt_items_double = load_data(tp_temp_path, bt_temp_path)
+    tp_items_double, bt_items_double, tp_sum_double, bt_sum_double = load_data(tp_temp_path, bt_temp_path)
     print(f"Загружено из раздельных: TicketProf = {len(tp_items_double)}, Bars Tour = {len(bt_items_double)}")
     
     # Проверки эквивалентности загруженных данных
@@ -76,7 +76,7 @@ def run_tests():
     matches_double, unmatched_tp_double, unmatched_bt_double = match_records(
         tp_items_double, bt_items_double, {}
     )
-    summary_double = calculate_reconciliation(tp_items_double, bt_items_double, matches_double)
+    summary_double = calculate_reconciliation(tp_items_double, bt_items_double, matches_double, tp_sum_double, bt_sum_double)
     
     print(f"Сопоставлено: {len(matches_double)}, Прибыль: {summary_double.total_profit:,.2f} руб.")
     
@@ -84,6 +84,7 @@ def run_tests():
     assert summary_double.total_profit == summary_single.total_profit, "Сумма прибыли в обоих режимах должна совпадать!"
     assert summary_double.total_tp_sum == summary_single.total_tp_sum, "Сумма TicketProf должна совпадать!"
     assert summary_double.total_bt_sum == summary_single.total_bt_sum, "Сумма Bars Tour должна совпадать!"
+    assert summary_double.discrepancy_sum == summary_single.discrepancy_sum, "Сумма расхождений должна совпадать!"
     
     # Очистка временных файлов
     os.remove(tp_temp_path)
